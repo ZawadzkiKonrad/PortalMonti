@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Web", "PortalMonti.Web\PortalMonti.Web.csproj", "{9FC78A70-FCC0-43FD-ADDC-A4B35AEFBC0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{E1C345E8-DEAA-4283-8D57-C31C0B3FFAEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F2C5FE48-80F4-47A3-84A7-28DED2ADCD07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{768414C9-EAC0-4944-8D42-E7616DBC2DAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C90D21C0-BD3B-4ACE-873D-4D06277BB672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Application", "PortalMonti.Application\PortalMonti.Application.csproj", "{D614E9ED-11CA-4035-BD3C-BA1121A866C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Domain", "PortalMonti.Domain\PortalMonti.Domain.csproj", "{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Infrastructure", "PortalMonti.Infrastructure\PortalMonti.Infrastructure.csproj", "{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Tests", "PortalMonti.Tests\PortalMonti.Tests.csproj", "{1445D1C5-14F7-40E2-A9BA-985C1ACE1564}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FC78A70-FCC0-43FD-ADDC-A4B35AEFBC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC78A70-FCC0-43FD-ADDC-A4B35AEFBC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC78A70-FCC0-43FD-ADDC-A4B35AEFBC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC78A70-FCC0-43FD-ADDC-A4B35AEFBC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D614E9ED-11CA-4035-BD3C-BA1121A866C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D614E9ED-11CA-4035-BD3C-BA1121A866C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D614E9ED-11CA-4035-BD3C-BA1121A866C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D614E9ED-11CA-4035-BD3C-BA1121A866C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1445D1C5-14F7-40E2-A9BA-985C1ACE1564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1445D1C5-14F7-40E2-A9BA-985C1ACE1564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1445D1C5-14F7-40E2-A9BA-985C1ACE1564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1445D1C5-14F7-40E2-A9BA-985C1ACE1564}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D614E9ED-11CA-4035-BD3C-BA1121A866C3} = {E1C345E8-DEAA-4283-8D57-C31C0B3FFAEB}
+		{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C} = {F2C5FE48-80F4-47A3-84A7-28DED2ADCD07}
+		{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B} = {768414C9-EAC0-4944-8D42-E7616DBC2DAC}
+		{1445D1C5-14F7-40E2-A9BA-985C1ACE1564} = {C90D21C0-BD3B-4ACE-873D-4D06277BB672}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F8B3279-0303-433B-B29C-FCC84ECE57A1}
+	EndGlobalSection
+EndGlobal

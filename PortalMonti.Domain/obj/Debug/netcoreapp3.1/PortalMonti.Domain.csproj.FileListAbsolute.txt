@@ -1,0 +1,11 @@
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\netcoreapp3.1\PortalMonti.Domain.deps.json
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\netcoreapp3.1\PortalMonti.Domain.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\netcoreapp3.1\PortalMonti.Domain.pdb
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.AssemblyInfoInputs.cache
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.AssemblyInfo.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.csproj.CoreCompileInputs.cache
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.pdb
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\netcoreapp3.1\PortalMonti.Domain.runtimeconfig.json
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\netcoreapp3.1\PortalMonti.Domain.runtimeconfig.dev.json
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.genruntimeconfig.cache
