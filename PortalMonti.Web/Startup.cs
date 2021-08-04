@@ -43,7 +43,7 @@ namespace PortalMonti.Web
             services.AddApplication();
             services.AddInfrastructure();
 
-            services.AddTransient<IPostRepository, PostRepository>();
+            //services.AddTransient<IPostRepository, PostRepository>();
             
 
             services.AddControllersWithViews();

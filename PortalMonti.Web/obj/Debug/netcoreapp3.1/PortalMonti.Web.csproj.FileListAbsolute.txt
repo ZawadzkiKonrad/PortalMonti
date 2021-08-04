@@ -172,3 +172,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\netcoreapp3.1
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\netcoreapp3.1\Razor\Views\Post\Index.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\netcoreapp3.1\Razor\Views\Post\ViewPost.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\netcoreapp3.1\Razor\Views\Post\AddPost.cshtml.g.cs

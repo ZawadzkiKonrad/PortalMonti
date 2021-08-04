@@ -3,6 +3,7 @@ using PortalMonti.Domain.Interfaces;
 using PortalMonti.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace PortalMonti.Infrastructure
@@ -11,6 +12,7 @@ namespace PortalMonti.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         { services.AddTransient<IPostRepository, PostRepository>();
+            
             return services;
         }
     }

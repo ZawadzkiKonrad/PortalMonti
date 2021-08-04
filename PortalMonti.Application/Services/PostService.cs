@@ -22,15 +22,22 @@ namespace PortalMonti.Application.Services
         }
         public int AddPost(NewPostVm post)
         {
-            throw new NotImplementedException();
+            var pos = _mapper.Map<Domain.Model.Post>(post);
+            var id = _postRepo.AddPost(pos);
+            return id;
         }
 
-        public ListPostForListVm GetAllPostForList()
+        public ListPostForListVm GetAllPostForList(int pageSize,int? pageNo,string searchString)
         {
-            var posts = _postRepo.GetAllPosts().ProjectTo<PostForListVm>(_mapper.ConfigurationProvider).ToList();
+            var posts = _postRepo.GetAllPosts().Where(p=>p.Name.StartsWith(searchString))
+                .ProjectTo<PostForListVm>(_mapper.ConfigurationProvider).ToList();
+            var postToShow = posts.Skip((int)(pageSize * (pageNo - 1))).Take(pageSize).ToList();
             var postList = new ListPostForListVm()
             {
-                Posts = posts,
+                PageSize=pageSize,
+                CurrentPage=pageNo,
+                SearchString=searchString,
+                Posts = postToShow,
                 Count = posts.Count
             };
             return postList;
