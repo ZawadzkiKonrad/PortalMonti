@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using PortalMonti.Application.Interfaces;
 using PortalMonti.Application.ViewModels.Post;
 using PortalMonti.Domain.Interfaces;
+using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,13 @@ namespace PortalMonti.Application.Services
             return id;
         }
 
+      
+
+        public void DeletePost(int id)
+        {
+            _postRepo.DeletePost(id);
+        }
+
         public ListPostForListVm GetAllPostForList(int pageSize,int? pageNo,string searchString)
         {
             var posts = _postRepo.GetAllPosts().Where(p=>p.Name.StartsWith(searchString))
@@ -43,17 +51,29 @@ namespace PortalMonti.Application.Services
             return postList;
            
         }
-        public PostDetailsVm GetPostById(int postId)
+        public PostDetailsVm GetPostById(int id)
         {
+            var post = new Post();
+            post = _postRepo.GetPostById(id);
 
-            var post = _postRepo.GetPostById(postId);
-            
-            var postVm = _mapper.Map<PostDetailsVm>(post);
-          
+            var postVm = _mapper.Map<PostDetailsVm>(post);         
+
             //var postVm = _mapper.Map<PostDetailsVm>(post).ProjectTo<PostDetailsVm>(_mapper.ConfigurationProvider);
 
-
             return postVm;
+        }
+
+        public NewPostVm GetPostForEdit(int id)
+        {
+            var post = _postRepo.GetPostById(id);
+            var postVm = _mapper.Map<NewPostVm>(post);
+            return postVm;
+        }
+
+        public void UpdatePost(NewPostVm model)
+        {
+            var post = _mapper.Map<Post>(model);
+            _postRepo.UpdatePost(post);
         }
     }
 }

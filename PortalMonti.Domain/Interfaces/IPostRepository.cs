@@ -8,17 +8,17 @@ namespace PortalMonti.Domain.Interfaces
 {
     public interface IPostRepository
     {
-        void DeletePost(int postId);
+        void DeletePost(int id);
 
         int AddPost(Domain.Model.Post post);
 
-        Post GetPostById(int postId);
+        Post GetPostById(int id);
 
         IQueryable<Post> GetPostsByTagId(int tagId);
 
         IQueryable<Post> GetAllPosts();
 
         IQueryable<Tag> GetAllTags();
-
+        void UpdatePost(Post post);
     }
 }

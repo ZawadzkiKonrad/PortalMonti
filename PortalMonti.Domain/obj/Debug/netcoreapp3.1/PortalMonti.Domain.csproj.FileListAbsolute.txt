@@ -9,3 +9,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\netcoreapp3.1\PortalMonti.Domain.runtimeconfig.json
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\netcoreapp3.1\PortalMonti.Domain.runtimeconfig.dev.json
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.genruntimeconfig.cache
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\netcoreapp3.1\PortalMonti.Domain.csprojAssemblyReference.cache

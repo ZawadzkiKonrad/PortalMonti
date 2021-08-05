@@ -9,9 +9,9 @@ namespace PortalMonti.Application.Interfaces
     {
        ListPostForListVm GetAllPostForList(int pageSize,int? pageNo,string searchString);
         int AddPost(NewPostVm post);
-        PostDetailsVm GetPostById(int postId);
-
-
-
+        PostDetailsVm GetPostById(int id);
+        NewPostVm GetPostForEdit(int id);
+        void UpdatePost(NewPostVm model);
+        void DeletePost(int id);
     }
 }

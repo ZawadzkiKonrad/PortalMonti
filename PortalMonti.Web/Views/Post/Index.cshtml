@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="AddPost">Dodaj  post</a>
 </p>
 <form asp-action="Index" asp-controller="Post" method="post">
     <div class="row">
@@ -55,7 +55,7 @@
                             @Html.DisplayFor(modelItem => item.PostTags)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Edytuj", "EditPost", new { id =item.Id }) |
                             @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id }) |
                             @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                         </td>

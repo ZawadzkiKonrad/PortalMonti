@@ -19,6 +19,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 
 using PortalMonti.Application;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using PortalMonti.Application.ViewModels.Post;
 
 namespace PortalMonti.Web
 {
@@ -43,10 +46,13 @@ namespace PortalMonti.Web
             services.AddApplication();
             services.AddInfrastructure();
 
-            //services.AddTransient<IPostRepository, PostRepository>();
-            
+            services.AddTransient<IPostRepository, PostRepository>();
 
-            services.AddControllersWithViews();
+
+            services.AddControllersWithViews().AddFluentValidation(fv=> fv.RunDefaultMvcValidationAfterFluentValidationExecutes=false);
+
+            services.AddTransient<IValidator<NewPostVm>, NewPostValidation>();
+
             services.AddRazorPages();
         }
 
@@ -76,7 +82,7 @@ namespace PortalMonti.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Post}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

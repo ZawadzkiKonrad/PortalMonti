@@ -33,9 +33,10 @@ namespace PortalMonti.Infrastructure.Repositories
             return post.Id;
 
         }
-        public Post GetPostById(int postId)
+        public Post GetPostById(int id)
         {
-            var post=_context.Posts.FirstOrDefault(p => p.Id == postId);
+            var post = _context.Posts.FirstOrDefault(p => p.Id == id);
+            
             return post;
         }
         public IQueryable<Post> GetPostsByTagId(int tagId)
@@ -54,6 +55,15 @@ namespace PortalMonti.Infrastructure.Repositories
         {
             var tags = _context.Tags;
             return tags;
+        }
+
+        public void UpdatePost(Post post)
+        {
+            _context.Attach(post);
+            _context.Entry(post).Property("Name").IsModified = true;
+            _context.Entry(post).Property("Text").IsModified = true;
+            _context.Entry(post).Property("Date").IsModified = true;
+            _context.SaveChanges();
         }
 
         //Post IPostRepository.GetPostById(int postId)

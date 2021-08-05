@@ -7,8 +7,8 @@ namespace PortalMonti.Domain.Model
     public class Post
     {
         public int Id{ get; set;}
-        public String Name { get; set; }
-        public String Text { get; set; }
+        public string Name { get; set; }
+        public string Text { get; set; }
                        
         public DateTime Date { get; set; }
         public ICollection <PostTag> PostTags { get; set; }

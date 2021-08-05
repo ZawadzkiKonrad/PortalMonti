@@ -173,3 +173,7 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\netcoreapp3.1
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\netcoreapp3.1\Razor\Views\Post\Index.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\netcoreapp3.1\Razor\Views\Post\ViewPost.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\netcoreapp3.1\Razor\Views\Post\AddPost.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\netcoreapp3.1\Razor\Views\Post\EditPost.cshtml.g.cs

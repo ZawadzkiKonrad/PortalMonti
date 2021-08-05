@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using PortalMonti.Application.Mapping;
 using PortalMonti.Domain.Model;
 using System;
@@ -17,9 +18,19 @@ namespace PortalMonti.Application.ViewModels.Post
         public ICollection<PostTag> PostTags { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<NewPostVm,Domain.Model.Post>();
+            profile.CreateMap<NewPostVm, Domain.Model.Post>().ReverseMap();
 
         }
 
+    }
+    public class NewPostValidation : AbstractValidator<NewPostVm>
+    {
+        public NewPostValidation()
+        {
+            RuleFor(x => x.Id).NotNull();
+            RuleFor(x => x.Text).MaximumLength(255);   
+            RuleFor(x => x.Name).MaximumLength(50);   
+        }
+        
     }
 }

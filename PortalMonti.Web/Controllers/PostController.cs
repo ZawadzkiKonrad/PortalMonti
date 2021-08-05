@@ -57,11 +57,30 @@ namespace PortalMonti.Web.Controllers
             var id = _postService.AddPost(model);
             return RedirectToAction("Index");
         }
-        //na podstawie id postu pobranie z serwisu info o poscie i przekazanie jej do widoku
-        public IActionResult ViewPost(int postId)
+
+        [HttpGet]
+        public IActionResult EditPost(int id)
         {
-            var postModel = _postService.GetPostById(postId);
+            var post = _postService.GetPostForEdit(id);
+            return View(post);
+        }
+
+        [HttpPost]
+        public IActionResult EditPost(NewPostVm model)
+        {
+              _postService.UpdatePost(model);
+            return RedirectToAction("Index");
+        }
+        //na podstawie id postu pobranie z serwisu info o poscie i przekazanie jej do widoku
+        public IActionResult ViewPost(int id)
+        {
+            var postModel = _postService.GetPostById(id);
             return View(postModel);
+        } 
+        public IActionResult Delete(int id)
+        {
+            _postService.DeletePost(id);
+            return RedirectToAction("Index");
         }
 
 
