@@ -22,6 +22,9 @@ using PortalMonti.Application;
 using FluentValidation.AspNetCore;
 using FluentValidation;
 using PortalMonti.Application.ViewModels.Post;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Http;
 
 namespace PortalMonti.Web
 {
@@ -47,22 +50,42 @@ namespace PortalMonti.Web
             services.AddInfrastructure();
 
             services.AddTransient<IPostRepository, PostRepository>();
+           // services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
-            services.AddControllersWithViews().AddFluentValidation(fv=> fv.RunDefaultMvcValidationAfterFluentValidationExecutes=false);
+            services.AddControllersWithViews().AddFluentValidation(/*fv=> fv.RunDefaultMvcValidationAfterFluentValidationExecutes=false*/);
 
             services.AddTransient<IValidator<NewPostVm>, NewPostValidation>();
 
             services.AddRazorPages();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredUniqueChars = 0;
+                options.SignIn.RequireConfirmedEmail = false;
+
+
+            });
+            services.AddAuthentication().AddGoogle(options =>
+            {
+                IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Google");
+                options.ClientId = googleAuthNSection["ClientId"];
+                options.ClientSecret = googleAuthNSection["ClientSecret"];
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddFile("Logs/mylog-{Date}.txt");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                
             }
             else
             {

@@ -144,3 +144,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\netcoreapp3
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\obj\Debug\netcoreapp3.1\PortalMonti.Tests.csprojAssemblyReference.cache

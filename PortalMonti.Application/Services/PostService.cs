@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Filters;
 using PortalMonti.Application.Interfaces;
 using PortalMonti.Application.ViewModels.Post;
 using PortalMonti.Domain.Interfaces;
@@ -7,6 +9,7 @@ using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 
 namespace PortalMonti.Application.Services
@@ -15,15 +18,22 @@ namespace PortalMonti.Application.Services
     {
         private readonly IPostRepository _postRepo;
         private readonly IMapper _mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public PostService(IPostRepository postRepo,IMapper mapper)
+        public PostService(IPostRepository postRepo,IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _postRepo = postRepo;
             _mapper = mapper;
+            _httpContextAccessor = httpContextAccessor;
         }
         public int AddPost(NewPostVm post)
         {
+            
+            
+            var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Email);
             var pos = _mapper.Map<Domain.Model.Post>(post);
+            pos.Date = DateTime.Now;
+            pos.Author = userId;
             var id = _postRepo.AddPost(pos);
             return id;
         }

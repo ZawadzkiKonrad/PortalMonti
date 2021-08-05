@@ -11,6 +11,7 @@ namespace PortalMonti.Domain.Model
         public string Text { get; set; }
                        
         public DateTime Date { get; set; }
+        public string Author { get; set; }
         public ICollection <PostTag> PostTags { get; set; }
             
 

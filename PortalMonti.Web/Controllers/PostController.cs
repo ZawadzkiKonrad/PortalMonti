@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PortalMonti.Application.Interfaces;
 using PortalMonti.Application.ViewModels.Post;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace PortalMonti.Web.Controllers
-{
+{   //[Authorize]
     public class PostController : Controller
 
         
