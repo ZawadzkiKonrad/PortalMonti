@@ -1,4 +1,6 @@
-﻿@model PortalMonti.Application.ViewModels.Post.ListPostForListVm
+﻿@using PortalMonti.Application.ViewModels.Friend;
+@model PortalMonti.Application.ViewModels.Post.ListPostForListVm;
+
 
 @{
     ViewData["Title"] = "Index";
@@ -9,16 +11,23 @@
 <p>
     <a asp-action="AddPost">Dodaj  post</a>
 </p>
+
+@*<partial name="../Friend/_friendList.cshtml" />
+@Html.Partial("../Friend/_friendList.cshtml")*@
+
+
 <form asp-action="Index" asp-controller="Post" method="post">
     <div class="row">
         <input type="text" asp-for="SearchString" name="searchString" id="searchString" />
         <input type="submit" value="Szukaj" />
-        @if (Model.SearchString !=String.Empty)
+        @if (Model.SearchString != String.Empty)
         {
-    <a asp-action="Index">Back to List</a>  
+            <a asp-action="Index">Back to List</a>
         }
-       
+
     </div>
+
+
     <div class="row">
         <table class="table">
             <thead>
@@ -55,7 +64,7 @@
                             @Html.DisplayFor(modelItem => item.PostTags)
                         </td>
                         <td>
-                            @Html.ActionLink("Edytuj", "EditPost", new { id =item.Id }) |
+                            @Html.ActionLink("Edytuj", "EditPost", new { id = item.Id }) |
                             @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id }) |
                             @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                         </td>
@@ -81,18 +90,18 @@
                     </td>
                 }
             </tr>
-            
+
         </table>
-        <input type="hidden" name="pageNo" id="pageNo"/>
-        <input type="hidden" name="pageSize" id="pageSize" value="8"/>
+
+        <input type="hidden" name="pageNo" id="pageNo" />
+        <input type="hidden" name="pageSize" id="pageSize" value="8" />
     </div>
 </form>
 
 @section Scripts
 {
     <script type="text/javascript">
-        function PagerClick(index)
-        {
+        function PagerClick(index) {
             document.getElementById("pageNo").value = index;
             document.forms[0].submit();
         }

@@ -12,6 +12,7 @@ namespace PortalMonti.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         { services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<IFriendRepository, FriendRepository>();
             
             return services;
         }

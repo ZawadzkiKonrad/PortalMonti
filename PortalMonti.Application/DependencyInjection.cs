@@ -13,6 +13,7 @@ namespace PortalMonti.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IFriendService, FriendService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }

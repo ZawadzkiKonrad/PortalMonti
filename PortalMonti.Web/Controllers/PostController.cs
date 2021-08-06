@@ -13,10 +13,12 @@ namespace PortalMonti.Web.Controllers
 
         
     {   private readonly IPostService _postService;
+        private readonly IFriendService _friendService;
 
-        public PostController(IPostService postService)
+        public PostController(IPostService postService, IFriendService friendService)
         {
             _postService = postService;
+            _friendService = friendService;
         }
         [HttpGet]
         public IActionResult Index()

@@ -4,7 +4,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\net5.0\Por
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\net5.0\PortalMonti.Domain.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\net5.0\ref\PortalMonti.Domain.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\bin\Debug\net5.0\PortalMonti.Domain.pdb
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\net5.0\PortalMonti.Domain.csprojAssemblyReference.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\net5.0\PortalMonti.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\net5.0\PortalMonti.Domain.AssemblyInfoInputs.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Domain\obj\Debug\net5.0\PortalMonti.Domain.AssemblyInfo.cs

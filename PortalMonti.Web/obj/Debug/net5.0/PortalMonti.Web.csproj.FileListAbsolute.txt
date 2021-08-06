@@ -148,7 +148,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Portal
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.AssemblyInfoInputs.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.AssemblyInfo.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.csproj.CoreCompileInputs.cache
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.RazorAssemblyInfo.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.RazorAssemblyInfo.cs
@@ -185,3 +184,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Friend\Index.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Friend\_friendList.cshtml.g.cs

@@ -42,5 +42,10 @@ namespace PortalMonti.Infrastructure.Repositories
             var friend = _context.Friends.Where(i => i.Id == friendId);
             return (Friend)friend;
         }
+
+        public object GetAllPosts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
