@@ -84,9 +84,7 @@
 
 
         </table>
-        <div>
-            @await Component.InvokeAsync("FriendList", new { maxPriority = 2, isDone = false })
-        </div>
+        
     </div>
     <div class="row">
         <table>
@@ -107,7 +105,9 @@
             </tr>
             
         </table>
-
+        <div>
+            @await Component.InvokeAsync("FriendList", new())
+        </div>
         <input type="hidden" name="pageNo" id="pageNo" />
         <input type="hidden" name="pageSize" id="pageSize" value="8" />
     </div>

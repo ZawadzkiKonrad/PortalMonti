@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using PortalMonti.Infrastructure;
 using PortalMonti.Domain.Model;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using PortalMonti.Application.ViewModels.Friend;
 
 namespace PortalMonti.Application.ViewComponents
 {
@@ -14,14 +16,16 @@ namespace PortalMonti.Application.ViewComponents
 
     {
         private readonly Context _context;
-        public FriendListViewComponent(Context context)
+        private readonly IMapper _mapper;
+        public FriendListViewComponent(Context context,IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int maxPrority, bool isDone)
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            //var items = await GetFriendsAsync(maxPrority, isDone);
+            
 
             var items2 = await _context.Friends.ToListAsync();
 
@@ -38,14 +42,38 @@ namespace PortalMonti.Application.ViewComponents
 
                 list.Add(model);
             }
-
             return View(list);
         }
 
-        //private Task<IEnumerable<Friend>> GetFriendsAsync(int maxPrority, bool isDone)
-        //{
-        //    return _context.Friends.ToListAsync();
 
+
+
+
+
+        //bez automapper:
+        //      public async Task<IViewComponentResult> InvokeAsync()
+        //{
+
+
+        //    var items2 = await _context.Friends.ToListAsync();
+
+        //    var list = new List<ViewModels.Friend.FriendsForListVm>();
+
+        //    foreach (var item in items2)
+        //    {
+        //        var model = new ViewModels.Friend.FriendsForListVm()
+        //        {
+        //            Id = item.Id,
+        //            Image = item.Image,
+        //            Login = item.Login
+        //        };
+
+        //        list.Add(model);
+        //    }
+        //    return View(list);
         //}
+
+
+
     }
 }
