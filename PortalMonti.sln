@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Web", "PortalMonti.Web\PortalMonti.Web.csproj", "{9FC78A70-FCC0-43FD-ADDC-A4B35AEFBC0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalMonti.Web", "PortalMonti.Web\PortalMonti.Web.csproj", "{9FC78A70-FCC0-43FD-ADDC-A4B35AEFBC0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{E1C345E8-DEAA-4283-8D57-C31C0B3FFAEB}"
 EndProject
@@ -13,13 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C90D21C0-BD3B-4ACE-873D-4D06277BB672}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Application", "PortalMonti.Application\PortalMonti.Application.csproj", "{D614E9ED-11CA-4035-BD3C-BA1121A866C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalMonti.Application", "PortalMonti.Application\PortalMonti.Application.csproj", "{D614E9ED-11CA-4035-BD3C-BA1121A866C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Domain", "PortalMonti.Domain\PortalMonti.Domain.csproj", "{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalMonti.Domain", "PortalMonti.Domain\PortalMonti.Domain.csproj", "{675F8B92-BF3A-4E5F-B5D1-0AB8243C016C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Infrastructure", "PortalMonti.Infrastructure\PortalMonti.Infrastructure.csproj", "{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalMonti.Infrastructure", "PortalMonti.Infrastructure\PortalMonti.Infrastructure.csproj", "{EA3009C0-21C9-448E-B81B-0CB37C9CCB1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalMonti.Tests", "PortalMonti.Tests\PortalMonti.Tests.csproj", "{1445D1C5-14F7-40E2-A9BA-985C1ACE1564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalMonti.Tests", "PortalMonti.Tests\PortalMonti.Tests.csproj", "{1445D1C5-14F7-40E2-A9BA-985C1ACE1564}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

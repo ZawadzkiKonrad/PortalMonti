@@ -2223,6 +2223,29 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "PortalMonti.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.8",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
+          "Microsoft.AspNetCore.Identity.UI": "5.0.8",
+          "Microsoft.EntityFrameworkCore": "5.0.8",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
+          "PortalMonti.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PortalMonti.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PortalMonti.Infrastructure.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -7662,6 +7685,11 @@
       "type": "project",
       "path": "../PortalMonti.Domain/PortalMonti.Domain.csproj",
       "msbuildProject": "../PortalMonti.Domain/PortalMonti.Domain.csproj"
+    },
+    "PortalMonti.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../PortalMonti.Infrastructure/PortalMonti.Infrastructure.csproj",
+      "msbuildProject": "../PortalMonti.Infrastructure/PortalMonti.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7679,6 +7707,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "PortalMonti.Domain >= 1.0.0",
+      "PortalMonti.Infrastructure >= 1.0.0",
       "System.Linq >= 4.3.0"
     ]
   },
@@ -7711,6 +7740,9 @@
           "projectReferences": {
             "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
               "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
+            },
+            "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
             }
           }
         }

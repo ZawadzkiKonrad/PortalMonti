@@ -39,13 +39,10 @@ namespace PortalMonti.Infrastructure.Repositories
         }
         public Friend GetFriendById(int friendId)
         {
-            var friend = _context.Friends.Where(i => i.Id == friendId);
+            var friend = _context.Friends.FirstOrDefault(i => i.Id == friendId);
             return (Friend)friend;
         }
 
-        public object GetAllPosts()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

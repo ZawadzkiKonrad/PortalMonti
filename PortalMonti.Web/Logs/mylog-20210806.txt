@@ -1291,3 +1291,557 @@ File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, 
 2021-08-06T13:59:17.8663110+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
 2021-08-06T13:59:17.8688359+02:00  [INF] Hosting environment: "Development" (c3307c92)
 2021-08-06T13:59:17.8706949+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T14:15:37.0358101+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T14:15:37.0458958+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T14:15:37.0489070+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T14:15:37.0513889+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T14:15:39.0903526+02:00 8000002d-0000-fb00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'PortalMonti.Application.ViewModels.Post.ListPostForListVm', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[FriendForListVm]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method37(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model)
+   at AspNetCore.Views_Post_Index.ExecuteAsync() in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Views\Post\Index.cshtml:line 16
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-08-06T14:31:05.6175770+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T14:31:05.6378582+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T14:31:05.6421088+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T14:31:05.6452671+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T14:31:10.9160119+02:00 80000011-0003-ff00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'PortalMonti.Application.ViewModels.Friend.ListFriendForListVm', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[PortalMonti.Application.ViewModels.Friend.FriendsForListVm]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method87(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-08-06T14:31:15.6379671+02:00 80000015-0003-ff00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'PortalMonti.Application.ViewModels.Friend.ListFriendForListVm', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[PortalMonti.Application.ViewModels.Friend.FriendsForListVm]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method87(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-08-06T14:48:06.4810187+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T14:48:06.4962382+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T14:48:06.4985403+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T14:48:06.5006687+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T14:50:04.0459047+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T14:50:04.0628795+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T14:50:04.0715609+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T14:50:04.0753396+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:02:39.6118592+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:02:39.6207328+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:02:39.6235386+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:02:39.6257348+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:04:27.0559674+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:04:27.0642089+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:04:27.0668269+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:04:27.0688096+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:04:29.0646036+02:00 80000027-0001-ff00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'PortalMonti.Application.ViewModels.Post.ListPostForListVm', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[FriendForListVm]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method37(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model)
+   at AspNetCore.Views_Post_Index.ExecuteAsync() in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Views\Post\Index.cshtml:line 16
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-08-06T15:04:57.4605876+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:04:57.4680918+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:04:57.4705168+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:04:57.4722196+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:04:59.6866006+02:00 80000035-0000-fb00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'PortalMonti.Application.ViewModels.Post.ListPostForListVm', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[FriendForListVm]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method37(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName)
+   at AspNetCore.Views_Post_Index.ExecuteAsync() in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Views\Post\Index.cshtml:line 16
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-08-06T15:05:15.3204536+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:05:15.3277320+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:05:15.3307911+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:05:15.3331806+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:12:50.1252705+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:12:50.1337642+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:12:50.1360769+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:12:50.1377614+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:12:52.4321158+02:00 80000038-0000-fb00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'PortalMonti.Application.ViewModels.Post.ListPostForListVm', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[FriendForListVm]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method37(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName)
+   at AspNetCore.Views_Post_Index.ExecuteAsync() in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Views\Post\Index.cshtml:line 16
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-08-06T15:14:33.5357727+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:14:33.5453157+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:14:33.5480524+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:14:33.5513201+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:14:35.5326107+02:00 80000004-0007-fa00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'PortalMonti.Application.ViewModels.Post.ListPostForListVm', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[FriendForListVm]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method37(Closure , ViewDataDictionary )
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.CreateViewDataDictionary(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName)
+   at AspNetCore.Views_Post_Index.ExecuteAsync() in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Views\Post\Index.cshtml:line 16
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-08-06T15:25:42.9604831+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:25:42.9694929+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:25:42.9721273+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:25:42.9744045+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:26:47.4606419+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:26:47.4721574+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:26:47.4753182+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:26:47.4772007+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:27:36.3007161+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:27:36.3113986+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:27:36.3139403+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:27:36.3163218+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:29:00.8858820+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:29:00.8947622+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:29:00.8968094+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:29:00.8989276+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:29:57.9013444+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:29:57.9090577+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:29:57.9113983+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:29:57.9132343+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:32:07.1227884+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:32:07.1329291+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:32:07.1352560+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:32:07.1371298+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:32:47.4287890+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:32:47.4366233+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:32:47.4388601+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:32:47.4404247+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:33:50.9043661+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:33:50.9119709+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:33:50.9141122+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:33:50.9158716+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:38:17.3133205+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:38:17.3237434+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:38:17.3264861+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:38:17.3287033+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:49:16.6618759+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:49:16.6749560+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:49:16.6792955+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:49:16.6836023+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T15:51:50.5739983+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T15:51:50.5864942+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T15:51:50.5908896+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T15:51:50.5944182+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T16:03:26.5751313+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T16:03:26.5841746+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T16:03:26.5864752+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T16:03:26.5884202+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-06T16:04:34.5384487+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-06T16:04:34.5463273+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-06T16:04:34.5483948+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-06T16:04:34.5505115+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)

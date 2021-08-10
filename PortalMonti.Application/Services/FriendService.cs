@@ -4,6 +4,7 @@ using PortalMonti.Application.Interfaces;
 using PortalMonti.Application.ViewModels.Friend;
 using PortalMonti.Application.ViewModels.Post;
 using PortalMonti.Domain.Interfaces;
+using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,18 +34,37 @@ namespace PortalMonti.Application.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<FriendsForListVm> GetAllFriends()
-        {
-            var posts = _friendRepo.GetAllFriends()
-
-                .ProjectTo<FriendsForListVm>(_mapper.ConfigurationProvider);
-           
-            return posts;
-        }
        
-        public FriendForListVm GetFriendById(int id)
+       
+        public FriendDetailsVm GetFriendById(int id)
         {
-            throw new NotImplementedException();
+            var friend = new Friend();
+            friend = _friendRepo.GetFriendById(id);
+
+            var postVm = _mapper.Map<FriendDetailsVm>(friend);
+
+            //var postVm = _mapper.Map<PostDetailsVm>(post).ProjectTo<PostDetailsVm>(_mapper.ConfigurationProvider);
+
+            return postVm;
+        }
+
+        public ListFriendForListVm GetAllFriends()
+        {
+            var friends = _friendRepo.GetAllFriends()
+                .ProjectTo<FriendsForListVm>(_mapper.ConfigurationProvider).ToList();
+            //friends = friends.ProjectTo<ListFriendForListVm>(_mapper.ConfigurationProvider).ToList();
+            
+            var postList = new ListFriendForListVm()
+            {
+                PageSize = 1,
+                CurrentPage = 1,
+                SearchString = "",
+                Friends=friends
+
+            };
+            return postList;
+
+            
         }
 
        

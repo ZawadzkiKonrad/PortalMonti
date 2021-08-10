@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PortalMonti.Domain\PortalMonti.Domain.csproj" />
+    <ProjectReference Include="..\PortalMonti.Infrastructure\PortalMonti.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

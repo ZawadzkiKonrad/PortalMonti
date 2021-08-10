@@ -28,5 +28,11 @@ namespace PortalMonti.Web.Controllers
             return View(model);
 
         }
+
+        public IActionResult ViewFriend(int id)
+        {
+            var friendModel = _friendService.GetFriendById(id);
+            return View(friendModel);
+        }
     }
 }

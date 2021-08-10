@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-   public class FriendForListVm:IMapFrom<Friend>
+   public class FriendDetailsVm:IMapFrom<Friend>
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,7 +17,7 @@ using System.Threading.Tasks;
         public string PhoneNumber { get; set; }
         public void Mapping(MappingProfile profile)
         {
-            profile.CreateMap<Friend, FriendForListVm>();
+            profile.CreateMap<PortalMonti.Domain.Model.Friend, FriendDetailsVm>();
         }
     }
 

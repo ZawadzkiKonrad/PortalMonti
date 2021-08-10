@@ -21,6 +21,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.8",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "PortalMonti.Domain": "1.0.0",
+          "PortalMonti.Infrastructure": "1.0.0",
           "System.Linq": "4.3.0"
         },
         "runtime": {
@@ -1562,6 +1563,21 @@
         "runtime": {
           "PortalMonti.Domain.dll": {}
         }
+      },
+      "PortalMonti.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.8",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
+          "Microsoft.AspNetCore.Identity.UI": "5.0.8",
+          "Microsoft.EntityFrameworkCore": "5.0.8",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
+          "PortalMonti.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PortalMonti.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2538,6 +2554,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "PortalMonti.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PortalMonti.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

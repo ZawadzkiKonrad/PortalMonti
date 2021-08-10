@@ -10,9 +10,9 @@ namespace PortalMonti.Application.Interfaces
 {
    public interface IFriendService
     {
-        IEnumerable<FriendsForListVm> GetAllFriends();
+        ListFriendForListVm  GetAllFriends();
         int AddFriend(NewFriendVm friend);
-        FriendForListVm GetFriendById(int id);        
+        FriendDetailsVm GetFriendById(int id);        
         void DeleteFriend(int id);
     }
 }

@@ -30,6 +30,9 @@
             "projectReferences": {
               "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
                 "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
+              },
+              "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
               }
             }
           }

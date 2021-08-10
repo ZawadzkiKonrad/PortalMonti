@@ -16,8 +16,7 @@ namespace PortalMonti.Infrastructure
         public DbSet<PostTag> PostTag { get; set; } //tabela posrednia zostaje w liczbie poijedynczej
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Domain.Model.Type> Types { get; set; }
-        //public DbSet<Domain.Model.Post> Names { get; set; }
-        //public DbSet<Domain.Model.Post> Texts { get; set; }
+        
         
         
         public Context(DbContextOptions options): base(options)

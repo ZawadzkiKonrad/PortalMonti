@@ -1,0 +1,25 @@
+﻿@model PortalMonti.Application.ViewModels.Friend.ListFriendForListVm
+
+<tbody>
+    @foreach (var item in Model.Friends)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edytuj", "EditPost", new { id = item.Id }) |
+                @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+<tbody>

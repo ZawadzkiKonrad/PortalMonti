@@ -14,6 +14,7 @@ namespace PortalMonti.Infrastructure
         { services.AddTransient<IPostRepository, PostRepository>();
             services.AddTransient<IFriendRepository, FriendRepository>();
             
+            
             return services;
         }
     }

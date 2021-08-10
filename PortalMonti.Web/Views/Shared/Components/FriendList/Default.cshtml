@@ -1,10 +1,10 @@
-﻿@model PortalMonti.Application.ViewModels.Friend.ListFriendForListVm
+﻿@model IEnumerable<PortalMonti.Application.ViewModels.Friend.FriendsForListVm>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "View";
 }
 
-<h1>Index</h1>
+<h1>View</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,36 +13,32 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CurrentPage)
+                @Html.DisplayNameFor(model => model.Login)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PageSize)
+                @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SearchString)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Count)
+                @Html.DisplayNameFor(model => model.Image)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Friends) {
+@foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Login)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
-            
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("ZObaczSzcegoly", "ViewFriend", new {  id=item.Id}) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
