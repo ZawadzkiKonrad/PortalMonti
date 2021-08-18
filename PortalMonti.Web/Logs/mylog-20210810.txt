@@ -736,3 +736,17 @@ File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, 
 2021-08-10T12:32:14.7474583+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
 2021-08-10T12:32:14.7502588+02:00  [INF] Hosting environment: "Development" (c3307c92)
 2021-08-10T12:32:14.7521807+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-10T14:04:40.9890935+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-10T14:04:40.9993527+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-10T14:04:41.0019132+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-10T14:04:41.0039797+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-10T14:05:15.6849232+02:00 80000055-0006-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-10T14:05:16.9999546+02:00 80000075-0000-fc00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)

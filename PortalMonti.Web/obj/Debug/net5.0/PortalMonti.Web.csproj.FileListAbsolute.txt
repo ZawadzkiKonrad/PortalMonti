@@ -189,3 +189,5 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_FriendForIndex.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Friend\ViewFriend.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\FriendList\Default.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\libman.json
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Chat\Index.cshtml.g.cs

@@ -24,8 +24,7 @@ namespace PortalMonti.Application.ViewComponents
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
-        {
-            
+        {   
 
             var items2 = await _context.Friends.ToListAsync();
 

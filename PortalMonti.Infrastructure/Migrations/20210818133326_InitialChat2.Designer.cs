@@ -10,8 +10,8 @@ using PortalMonti.Infrastructure;
 namespace PortalMonti.Infrastructure.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210806090256_InitialCreate5")]
-    partial class InitialCreate5
+    [Migration("20210818133326_InitialChat2")]
+    partial class InitialChat2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,6 +84,10 @@ namespace PortalMonti.Infrastructure.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -135,6 +139,8 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -252,24 +258,28 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Date")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Receiver")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Sender")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Text")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TypeId")
+                    b.Property<int?>("TypeId")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("When")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TypeId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Messages");
                 });
@@ -343,6 +353,13 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.ToTable("Types");
                 });
 
+            modelBuilder.Entity("PortalMonti.Domain.Model.AppUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.HasDiscriminator().HasValue("AppUser");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -396,13 +413,15 @@ namespace PortalMonti.Infrastructure.Migrations
 
             modelBuilder.Entity("PortalMonti.Domain.Model.Message", b =>
                 {
-                    b.HasOne("PortalMonti.Domain.Model.Type", "Type")
+                    b.HasOne("PortalMonti.Domain.Model.Type", null)
                         .WithMany("Messages")
-                        .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TypeId");
 
-                    b.Navigation("Type");
+                    b.HasOne("PortalMonti.Domain.Model.AppUser", "Sender")
+                        .WithMany("Messages")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.PostTag", b =>
@@ -435,6 +454,11 @@ namespace PortalMonti.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.Type", b =>
+                {
+                    b.Navigation("Messages");
+                });
+
+            modelBuilder.Entity("PortalMonti.Domain.Model.AppUser", b =>
                 {
                     b.Navigation("Messages");
                 });

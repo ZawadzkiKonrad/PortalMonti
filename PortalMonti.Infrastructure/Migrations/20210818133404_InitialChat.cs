@@ -2,7 +2,7 @@
 
 namespace PortalMonti.Infrastructure.Migrations
 {
-    public partial class InitialCreate3 : Migration
+    public partial class InitialChat : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

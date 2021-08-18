@@ -17,6 +17,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.SignalR;
 
 using PortalMonti.Application;
 using FluentValidation.AspNetCore;
@@ -25,6 +26,8 @@ using PortalMonti.Application.ViewModels.Post;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http;
+using PortalMonti.Web.Hubs;
+using PortalMonti.Domain.Model;
 
 namespace PortalMonti.Web
 {
@@ -43,8 +46,11 @@ namespace PortalMonti.Web
             services.AddDbContext<Context>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<Context>();
+            //services.AddIdentity<AppUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<Context>();;
+
 
             services.AddApplication();
             services.AddInfrastructure();
@@ -75,6 +81,8 @@ namespace PortalMonti.Web
                 options.ClientId = googleAuthNSection["ClientId"];
                 options.ClientSecret = googleAuthNSection["ClientSecret"];
             });
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -99,7 +107,9 @@ namespace PortalMonti.Web
             app.UseRouting();
 
             app.UseAuthentication();
+            
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
@@ -107,7 +117,12 @@ namespace PortalMonti.Web
                     name: "default",
                     pattern: "{controller=Post}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ChatHub>("/Chat/Index");
             });
+            //app(route =>
+            //{
+            //    route.MapHub<ChatHub>("/Home/Index");
+            //});
         }
     }
 }

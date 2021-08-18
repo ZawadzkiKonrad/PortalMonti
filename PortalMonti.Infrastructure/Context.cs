@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PortalMonti.Infrastructure
 {
-   public class Context : IdentityDbContext 
+   public class Context : IdentityDbContext
     {
         public DbSet<Friend> Friends { get; set; }
         public DbSet<Message> Messages { get; set; }
@@ -39,6 +39,11 @@ namespace PortalMonti.Infrastructure
             .HasOne<Tag>(pt => pt.Tag)
             .WithMany(p => p.PostTags)
             .HasForeignKey(pt => pt.TagId);
+
+            builder.Entity<Message>()
+                .HasOne<AppUser>(a => a.Sender)
+                .WithMany(d => d.Messages)
+                .HasForeignKey(d => d.UserId);
         }
     }
 }
