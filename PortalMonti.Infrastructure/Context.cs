@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PortalMonti.Infrastructure
 {
-   public class Context : IdentityDbContext
+   public class Context : IdentityDbContext<AppUser>
     {
         public DbSet<Friend> Friends { get; set; }
         public DbSet<Message> Messages { get; set; }

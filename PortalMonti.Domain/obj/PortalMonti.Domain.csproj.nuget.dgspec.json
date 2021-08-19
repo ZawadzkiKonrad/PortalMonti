@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[5.0.8, )"
             },
+            "Microsoft.PowerBI.Api": {
+              "target": "Package",
+              "version": "[3.27.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"

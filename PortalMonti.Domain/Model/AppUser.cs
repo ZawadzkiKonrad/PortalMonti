@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace PortalMonti.Domain.Model
 {
-   public class AppUser:IdentityUser
+    public class AppUser : IdentityUser
     {
         public AppUser()
         {
             Messages = new HashSet<Message>();
         }
-        public virtual ICollection<Message> Messages { get; set; }
-
+        public virtual ICollection<Message>Messages{get;set;}
     }
 }
