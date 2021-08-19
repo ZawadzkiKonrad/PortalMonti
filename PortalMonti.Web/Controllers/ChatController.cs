@@ -29,16 +29,16 @@ namespace PortalMonti.Web.Controllers
 
         public async Task<IActionResult> Create(Message message)
         {
-            if (ModelState.IsValid)
-            {
+         
                 message.UserName = User.Identity.Name;
                 var sender = await _userManager.GetUserAsync(User);
                 message.UserId = sender.Id;
                 await _context.Messages.AddAsync(message);
                 await _context.SaveChangesAsync();
+                RedirectToAction("Chat");
                 return Ok();
-            }
-            return BadRequest();
+                
+            
             
         }
     }
