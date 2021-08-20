@@ -1,0 +1,175 @@
+2021-08-20T09:06:56.3621179+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T09:06:56.3705550+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T09:06:56.3731348+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T09:06:56.3757059+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMontiBeta\PortalMonti.Web" (b5d60022)
+2021-08-20T09:56:47.2618651+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T09:56:47.3052771+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T09:56:47.3106544+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T09:56:47.3140227+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMontiBeta\PortalMonti.Web" (b5d60022)
+2021-08-20T09:56:54.7918169+02:00 80000047-0004-fb00-b63f-84710c7967bb [INF] User logged in. (fdce0db4)
+2021-08-20T09:57:04.1205511+02:00 80000024-0005-fe00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T10:17:36.9859995+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T10:17:36.9936179+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T10:17:36.9955715+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T10:17:36.9972034+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T10:17:48.6167101+02:00 8000004e-0000-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T10:17:52.3094893+02:00 80000050-0000-ff00-b63f-84710c7967bb [INF] User logged in. (fdce0db4)
+2021-08-20T10:46:18.4054509+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T10:46:18.4152019+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T10:46:18.4177270+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T10:46:18.4194246+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T10:46:21.7005803+02:00 80000004-0002-fb00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T10:49:18.8720002+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T10:49:18.8855962+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T10:49:18.8880743+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T10:49:18.8899488+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T10:49:30.3120700+02:00 8000000c-0001-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T10:49:31.6907737+02:00 80000049-0006-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T10:50:33.6520753+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T10:50:33.6660546+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T10:50:33.6689222+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T10:50:33.6710223+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T10:50:38.2506581+02:00 8000001b-0006-fe00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T10:50:49.0988179+02:00 8000001c-0002-fc00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:03:24.1655658+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T11:03:24.1768619+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T11:03:24.1794119+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T11:03:24.1815350+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T11:03:28.2036198+02:00 80000062-0004-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:03:38.5339325+02:00 8000004c-0006-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:03:55.6439158+02:00 80000050-0006-ff00-b63f-84710c7967bb [INF] User logged in. (fdce0db4)
+2021-08-20T11:03:57.1100169+02:00 80000051-0000-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:04:02.7750264+02:00 80000002-0002-fa00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:04:05.5306925+02:00 8000006a-0004-fd00-b63f-84710c7967bb [INF] User logged in. (fdce0db4)
+2021-08-20T11:04:07.0880606+02:00 8000006c-0004-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:08:31.2045740+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T11:08:31.2202841+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T11:08:31.2226613+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T11:08:31.2244711+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T11:08:40.5096679+02:00 80000040-0001-fe00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:28:35.9280862+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T11:28:35.9463181+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T11:28:35.9495634+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T11:28:35.9519914+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T11:29:14.7141271+02:00 80000058-0000-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:39:55.5526263+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T11:39:55.5670001+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T11:39:55.5696884+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T11:39:55.5724697+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T11:40:05.2747515+02:00 80000013-0004-fc00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:14.2311045+02:00 80000022-0003-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:15.6545205+02:00 80000062-0006-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:16.9917795+02:00 8000004b-0007-fe00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:18.2228303+02:00 80000044-0001-fe00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:19.1752988+02:00 80000024-0002-fc00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:57.1758813+02:00 8000005c-0000-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:57.9024847+02:00 80000026-0002-fc00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T11:40:58.5575048+02:00 80000019-0004-fc00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T12:23:08.9763284+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T12:23:08.9867677+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T12:23:08.9890254+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T12:23:08.9913631+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T12:23:12.2995289+02:00 80000066-0006-ff00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T12:23:30.2713635+02:00 80000075-0004-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T12:27:44.4076223+02:00  [FTL] Hosting startup assembly exception (37a7eec1)
+System.InvalidOperationException: Startup assembly Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation failed to execute. See the inner exception for more details.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'. Nie można odnaleźć określonego pliku.
+File name: 'Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.InternalLoad(ObjectHandleOnStack assemblyName, ObjectHandleOnStack requestingAssembly, StackCrawlMarkHandle stackMark, Boolean throwOnFileNotFound, ObjectHandleOnStack assemblyLoadContext, ObjectHandleOnStack retAssembly)
+   at System.Reflection.RuntimeAssembly.InternalLoad(AssemblyName assemblyName, RuntimeAssembly requestingAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.ExecuteHostingStartups()
+   --- End of inner exception stack trace ---
+2021-08-20T12:27:44.4502387+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-08-20T12:27:44.4523047+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-08-20T12:27:44.4537138+02:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-08-20T12:28:04.6828615+02:00 80000079-0004-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-08-20T12:31:35.6873222+02:00 8000002a-0002-fc00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)

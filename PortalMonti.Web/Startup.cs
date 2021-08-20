@@ -25,6 +25,7 @@ using PortalMonti.Application.ViewModels.Post;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http;
+using PortalMonti.Web.Hubs;
 
 namespace PortalMonti.Web
 {
@@ -75,6 +76,7 @@ namespace PortalMonti.Web
                 options.ClientId = googleAuthNSection["ClientId"];
                 options.ClientSecret = googleAuthNSection["ClientSecret"];
             });
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -107,6 +109,7 @@ namespace PortalMonti.Web
                     name: "default",
                     pattern: "{controller=Post}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
         }
     }

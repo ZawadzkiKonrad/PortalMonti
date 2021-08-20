@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<IdentityUser>
+@{
+    ViewData["Title"] = "ListUsers";
+}
+
+<h1>ListUsers</h1>
+@if (Model.Any())
+{
+    <a class="btn btn-primary" style="width:auto"
+       asp-area="Identity" asp-page="/Account/Register">
+        Add new User
+    </a>
+
+    foreach(var user in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                User Id: @user.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@user.UserName</h5>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No uses created yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button bellow to create a user
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-area="Identity" asp-page="/Account/Register">
+                Add new User
+            </a>
+
+            fore
+        </div>
+
+    </div>
+}
+
