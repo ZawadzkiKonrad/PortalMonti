@@ -14,11 +14,12 @@ namespace PortalMonti.Web.Hubs
         }
         public async Task SendToUser(string user, string receiverConnectionID, string message)
         {
-            await Clients.Client(receiverConnectionID).SendAsync("ReceiveMessage", user, message);
+            await Clients.User(receiverConnectionID).SendAsync("ReceiveMessage", user, message);
+           // await Clients.Client(receiverConnectionID).SendAsync("ReceiveMessage", user, message);
 
         }
 
-        public string GetConnectionId() => Context.ConnectionId;
+        public string GetUserId() => Context.UserIdentifier;
 
     }
 }

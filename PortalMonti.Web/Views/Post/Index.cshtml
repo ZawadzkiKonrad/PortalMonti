@@ -2,6 +2,7 @@
 @model PortalMonti.Application.ViewModels.Post.ListPostForListVm;
 
 
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -124,7 +125,7 @@
     <script type="text/javascript">
         function PagerClick(index) {
             document.getElementById("pageNo").value = index;
-            document.forms[0].submit();
+            document.getElementById("pageNo").form.submit();
         }
     </script>
     

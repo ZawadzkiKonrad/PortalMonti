@@ -12,6 +12,7 @@ namespace PortalMonti.Application.ViewModels.Friend
     public class FriendsForListVm : IMapFrom<PortalMonti.Domain.Model.Friend>
     {
         public string Login { get; set; }
+        public string UserLogin { get; set; }
         public int Id { get; set; }
 
         public byte[] Image { get; set; }

@@ -37,7 +37,7 @@ namespace PortalMonti.Application.ViewComponents
                 {
                     Id = item.Id,
                     Image = item.Image,
-                    Login = item.Login
+                    Login = item.UserLogin
                 };
 
                 list.Add(model);
