@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity;
-@model IEnumerable<IdentityUser>
+@model IEnumerable<PortalMonti.Domain.Model.AppUser>
 @{
     ViewData["Title"] = "ListUsers";
 }
@@ -22,7 +22,7 @@
                 <h5 class="card-title">@user.UserName</h5>
             </div>
             <div class="card-body">
-                <h5 class="card-title">@user.UserName</h5>
+                <h5 class="card-title">@user.UserLogin</h5>
             </div>
         </div>
     }

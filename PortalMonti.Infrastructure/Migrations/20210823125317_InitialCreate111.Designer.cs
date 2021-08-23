@@ -10,8 +10,8 @@ using PortalMonti.Infrastructure;
 namespace PortalMonti.Infrastructure.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210823111919_InitialCreate66")]
-    partial class InitialCreate66
+    [Migration("20210823125317_InitialCreate111")]
+    partial class InitialCreate111
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

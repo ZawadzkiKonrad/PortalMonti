@@ -2,22 +2,22 @@
 
 namespace PortalMonti.Infrastructure.Migrations
 {
-    public partial class InitialCreate66 : Migration
+    public partial class InitialCreate122 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Login",
-                table: "Friends",
-                newName: "UserLogin");
+            migrationBuilder.AddColumn<string>(
+                name: "UserLogin",
+                table: "AspNetUsers",
+                type: "nvarchar(max)",
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
+            migrationBuilder.DropColumn(
                 name: "UserLogin",
-                table: "Friends",
-                newName: "Login");
+                table: "AspNetUsers");
         }
     }
 }
