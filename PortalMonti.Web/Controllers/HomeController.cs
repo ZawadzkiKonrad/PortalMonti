@@ -33,6 +33,11 @@ namespace PortalMonti.Web.Controllers
             return View();
         }
 
+        public IActionResult AddFriend(AppUser user)
+        {
+            
+            return View();
+        } 
         public IActionResult Privacy()
         {
             return View();

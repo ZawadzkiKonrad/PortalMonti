@@ -12,5 +12,6 @@ namespace PortalMonti.Domain.Model
 
         public byte[] Image { get; set; }
         public string PhoneNumber{ get; set; }
+
     }
 }

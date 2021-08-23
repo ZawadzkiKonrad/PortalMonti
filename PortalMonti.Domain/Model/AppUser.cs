@@ -10,5 +10,6 @@ namespace PortalMonti.Domain.Model
      public class AppUser: IdentityUser
     {
         public string UserLogin { get; set; }
+        public ICollection<AppUser> Friends { get; set; }
     }
 }
