@@ -18,6 +18,7 @@ namespace PortalMonti.Application.ViewModels.Friend
         public void Mapping(Profile profile)
         {
             profile.CreateMap<PortalMonti.Domain.Model.Friend, ListFriendForListVm>();
+            profile.CreateMap<PortalMonti.Domain.Model.AppUser, ListFriendForListVm>();
         }
     }
 }

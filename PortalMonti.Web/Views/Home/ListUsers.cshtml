@@ -8,7 +8,7 @@
 @if (Model.Any())
 {
     <a class="btn btn-primary" style="width:auto"
-       asp-area="Identity" asp-page="/Account/Register">
+       asp-area="Identity" asp-page="/Account/Register" >
         Add new User
     </a>
 
@@ -23,6 +23,9 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">@user.UserLogin</h5>
+            </div>
+            <div>
+                @Html.ActionLink("Dodaj", "AddFriend", new { id = user.Id })
             </div>
         </div>
     }

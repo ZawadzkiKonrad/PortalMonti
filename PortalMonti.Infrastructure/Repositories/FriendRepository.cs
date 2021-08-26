@@ -1,4 +1,6 @@
-﻿using PortalMonti.Domain.Interfaces;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using PortalMonti.Domain.Interfaces;
 using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,13 @@ namespace PortalMonti.Infrastructure.Repositories
     
     public class FriendRepository : IFriendRepository
     {   private readonly Context _context;
-        public FriendRepository(Context context)
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IHttpContextAccessor _accessor;
+        public FriendRepository(Context context, UserManager<AppUser> userManager, IHttpContextAccessor accessor)
         {
             _context = context;
+            _accessor = accessor;
+            _userManager = userManager;
         }
         public void DeleteFriend(int friendId)
         {
@@ -24,23 +30,28 @@ namespace PortalMonti.Infrastructure.Repositories
             }
 
         }
-        public int AddFriend(Friend friend)
+        public string AddFriend(AppUser friend)
         {
-            _context.Friends.Add(friend);
-            _context.SaveChanges();
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            user.Friends.Add(friend);
+           
+            //_context.Friends.Add(friend);
+            //_context.SaveChanges();
             return friend.Id;
 
         }
 
-        public IQueryable<Friend> GetAllFriends()
+        public IQueryable<AppUser> GetAllFriends()
         {
-            var friends = _context.Friends;
-            return friends;
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+
+            var friends = user.Friends;
+            return (IQueryable<AppUser>)friends;
         }
-        public Friend GetFriendById(int friendId)
+        public AppUser GetFriendById(string friendId)
         {
             var friend = _context.Friends.FirstOrDefault(i => i.Id == friendId);
-            return (Friend)friend;
+            return (AppUser)friend;
         }
 
         

@@ -162,6 +162,9 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -210,6 +213,8 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -395,6 +400,13 @@ namespace PortalMonti.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PortalMonti.Domain.Model.AppUser", b =>
+                {
+                    b.HasOne("PortalMonti.Domain.Model.AppUser", null)
+                        .WithMany("Friends")
+                        .HasForeignKey("AppUserId");
+                });
+
             modelBuilder.Entity("PortalMonti.Domain.Model.Message", b =>
                 {
                     b.HasOne("PortalMonti.Domain.Model.Type", "Type")
@@ -423,6 +435,11 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.Navigation("Post");
 
                     b.Navigation("Tag");
+                });
+
+            modelBuilder.Entity("PortalMonti.Domain.Model.AppUser", b =>
+                {
+                    b.Navigation("Friends");
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.Post", b =>

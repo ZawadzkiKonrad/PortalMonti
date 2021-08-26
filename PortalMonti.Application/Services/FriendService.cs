@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using PortalMonti.Application.Interfaces;
 using PortalMonti.Application.ViewModels.Friend;
 using PortalMonti.Application.ViewModels.Post;
@@ -18,15 +20,23 @@ namespace PortalMonti.Application.Services
     {
         private readonly IFriendRepository _friendRepo;
         private readonly IMapper _mapper;
-        public FriendService(IFriendRepository friendRepo,IMapper mapper)
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IHttpContextAccessor _accessor;
+        public FriendService(IFriendRepository friendRepo,IMapper mapper, UserManager<AppUser> userManager, IHttpContextAccessor accessor)
         {
             _friendRepo = friendRepo;
             _mapper = mapper;
+            _userManager = userManager;
+            _accessor = accessor;
         }
 
-        public int AddFriend(NewFriendVm friend)
+        public string AddFriend(AppUser friend)
         {
-            throw new NotImplementedException();
+            //var user =  _userManager.GetUserAsync(_accessor.HttpContext.User);
+            //var userr = user.Result;
+            //userr.Friends.Add(friend);
+            var id = _friendRepo.AddFriend(friend);
+            return id;
         }
 
         public void DeleteFriend(int id)
@@ -34,11 +44,19 @@ namespace PortalMonti.Application.Services
             throw new NotImplementedException();
         }
 
-       
-       
-        public FriendDetailsVm GetFriendById(int id)
+        public async Task<List<AppUser>> GetAllFriendAsync()
         {
-            var friend = new Friend();
+            
+            var user = await _userManager.GetUserAsync(_accessor.HttpContext.User);
+            var list = user.Friends.ToList();
+            
+            return list;
+        }
+
+
+        public FriendDetailsVm GetFriendById(string id)
+        {
+            var friend = new AppUser();
             friend = _friendRepo.GetFriendById(id);
 
             var postVm = _mapper.Map<FriendDetailsVm>(friend);

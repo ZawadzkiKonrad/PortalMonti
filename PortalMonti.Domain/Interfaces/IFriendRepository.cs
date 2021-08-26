@@ -10,11 +10,11 @@ namespace PortalMonti.Domain.Interfaces
     {
         void DeleteFriend(int friendId);
        
-        int AddFriend(Friend friend);
+        string AddFriend(AppUser friend);
 
-        IQueryable<Friend> GetAllFriends();
+        IQueryable<AppUser> GetAllFriends();
 
-        Friend GetFriendById(int friendId);
+        AppUser GetFriendById(string friendId);
         
     }
 }

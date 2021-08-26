@@ -29,6 +29,7 @@ namespace PortalMonti.Infrastructure.Repositories
         public int AddPost(Domain.Model.Post post )
         {
             _context.Posts.Add(post);
+            
             _context.SaveChanges();
             return post.Id;
 

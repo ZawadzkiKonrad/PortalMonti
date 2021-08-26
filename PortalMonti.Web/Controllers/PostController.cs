@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace PortalMonti.Web.Controllers
-{   //[Authorize]
+{   [Authorize]
     public class PostController : Controller
 
         

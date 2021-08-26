@@ -9,8 +9,9 @@ namespace PortalMonti.Infrastructure
 {
    public class Context : IdentityDbContext<AppUser> 
     {
-        public DbSet<Friend> Friends { get; set; }
+        public DbSet<AppUser> Friends { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostTag> PostTag { get; set; } //tabela posrednia zostaje w liczbie poijedynczej

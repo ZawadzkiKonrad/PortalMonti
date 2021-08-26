@@ -13,12 +13,13 @@ namespace PortalMonti.Application.ViewModels.Friend
     {
         public string Login { get; set; }
         public string UserLogin { get; set; }
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public byte[] Image { get; set; }
         public void Mapping(MappingProfile profile)
         {
             profile.CreateMap< PortalMonti.Domain.Model.Friend, FriendsForListVm >();
+            profile.CreateMap< PortalMonti.Domain.Model.AppUser, FriendsForListVm >();
         }
     }
 }

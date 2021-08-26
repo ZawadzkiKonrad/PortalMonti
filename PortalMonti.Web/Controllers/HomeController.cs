@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PortalMonti.Application.Interfaces;
 using PortalMonti.Domain.Model;
 using PortalMonti.Web.Models;
 using System;
@@ -15,11 +16,13 @@ namespace PortalMonti.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IFriendService _friendService;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IFriendService friendService)
         {
             _logger = logger;
             _userManager = userManager;
+            _friendService = friendService;
         }
         [HttpGet]
         public IActionResult ListUsers()
@@ -33,11 +36,17 @@ namespace PortalMonti.Web.Controllers
             return View();
         }
 
-        public IActionResult AddFriend(AppUser user)
-        {
+        //public IActionResult AddFriend(AppUser user)
+        //{
             
-            return View();
-        } 
+        //    return View();
+        //}
+        public IActionResult AddFriend(AppUser friend)
+        {
+            _friendService.AddFriend(friend);
+            return RedirectToAction("Index");
+
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -48,5 +57,6 @@ namespace PortalMonti.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
