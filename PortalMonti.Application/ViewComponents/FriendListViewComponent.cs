@@ -13,6 +13,7 @@ using PortalMonti.Application.Services;
 using PortalMonti.Application.Interfaces;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 namespace PortalMonti.Application.ViewComponents
 {
@@ -23,21 +24,24 @@ namespace PortalMonti.Application.ViewComponents
         private readonly IMapper _mapper;
         private readonly IFriendService _friendService;
         private readonly IHttpContextAccessor _accessor;
+        private readonly UserManager<AppUser> _userManager;
 
-        public FriendListViewComponent(Context context,IMapper mapper, IFriendService friendService, IHttpContextAccessor accessor)
+        public FriendListViewComponent(Context context,IMapper mapper, IFriendService friendService, IHttpContextAccessor accessor, UserManager<AppUser> userManager)
         {
             _context = context;
             _mapper = mapper;
             _friendService = friendService;
             _accessor = accessor;
+            _userManager = userManager;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-                         
-            var friends = await _friendService.GetAllFriendAsync();
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+
+           // var friends = await _friendService.GetAllFriendAsync();
             var list2 = new List<FriendsForListVm>();
-            foreach (var item in friends)
+            foreach (var item in user.Friends)
             {
                 var model = new FriendsForListVm()
                 {

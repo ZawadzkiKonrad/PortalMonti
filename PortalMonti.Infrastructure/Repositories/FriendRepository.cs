@@ -35,6 +35,7 @@ namespace PortalMonti.Infrastructure.Repositories
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
             user.Friends.Add(friend);
            
+           
             //_context.Friends.Add(friend);
             //_context.SaveChanges();
             return friend.Id;
