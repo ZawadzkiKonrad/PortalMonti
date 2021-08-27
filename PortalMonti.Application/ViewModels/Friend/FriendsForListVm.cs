@@ -14,6 +14,7 @@ namespace PortalMonti.Application.ViewModels.Friend
         public string Login { get; set; }
         public string UserLogin { get; set; }
         public string Id { get; set; }
+        public string Name { get; set; }
 
         public byte[] Image { get; set; }
         public void Mapping(MappingProfile profile)

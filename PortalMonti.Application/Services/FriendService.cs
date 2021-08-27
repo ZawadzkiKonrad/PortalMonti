@@ -33,13 +33,10 @@ namespace PortalMonti.Application.Services
 
         public string AddFriend(string id)
         {
-            //var friend =_userManager.FindByIdAsync(id);
+            
             var sameUser = _userManager.Users.FirstOrDefault(u => u.Id == id);
             _friendRepo.AddFriend(sameUser);
-            //var user = _userManager.GetUserAsync(_accessor.HttpContext.User);
-            //var userr = user.Result;
-            //userr.Friends.Add(friend);
-            //var id = _friendRepo.AddFriend(friend);
+          
             return id;
         }
 

@@ -37,12 +37,14 @@ namespace PortalMonti.Infrastructure.Repositories
             //var sameUser = _userManager.Users.FirstOrDefault(u => u.Id == user);
             var friendss = new Friend()
             {
-                AppUserId = friend.Id,
-                UserLogin = friend.UserLogin
+                //AppUserId = friend.Id,
+                UserLogin = friend.UserLogin,
+                Name=friend.Id
+                
 
             };
             //_context.Users.Find()
-            _context.Friends.Add(friendss);
+            user.Friends.Add(friendss);
             _context.SaveChanges();
             return friend.Id;
 

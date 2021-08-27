@@ -42,15 +42,20 @@ namespace PortalMonti.Application.ViewComponents
 
 
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
-            
+            var posts = _context.Friends.Where(i => i.AppUserId == user.Id).ToList();
+
+
+
             // var friends = await _friendService.GetAllFriendAsync();
             var list2 = new List<FriendsForListVm>();
-            foreach (var item in user.Friends)
+            foreach (var item in posts)
             {
                 var model = new FriendsForListVm()
                 {
                     Id = item.Id.ToString(),
-                    UserLogin = item.UserLogin
+                    UserLogin = item.UserLogin,
+                    Name=item.Name
+                    
                 };
                 list2.Add(model);
             }
