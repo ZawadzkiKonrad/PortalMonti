@@ -10,11 +10,15 @@ namespace PortalMonti.Domain.Model
      public class AppUser: IdentityUser
     {
         public string UserLogin { get; set; }
-        public List<AppUser> Friends { get; set; }
+        public int FriendId { get; set; }
+
+        public virtual List<Friend> Friends { get; set; }
+
+        //public List<AppUser> Friends { get; set; }
 
         public AppUser()
         {
-            Friends = new List<AppUser>();
+            Friends = new List<Friend>();
         }
     }
  

@@ -12,9 +12,9 @@ namespace PortalMonti.Application.Interfaces
    public interface IFriendService
     {
         ListFriendForListVm  GetAllFriends();
-        Task<List<AppUser>> GetAllFriendAsync();
-        string AddFriend(AppUser friend);
-        FriendDetailsVm GetFriendById(string id);        
+        Task<List<Friend>> GetAllFriendAsync();
+        string AddFriend(string id);
+        FriendDetailsVm GetFriendById(int id);        
         void DeleteFriend(int id);
     }
 }

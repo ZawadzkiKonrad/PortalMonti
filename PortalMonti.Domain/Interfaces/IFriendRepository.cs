@@ -14,7 +14,7 @@ namespace PortalMonti.Domain.Interfaces
 
         IQueryable<AppUser> GetAllFriends();
 
-        AppUser GetFriendById(string friendId);
+        Friend GetFriendById(int friendId);
         
     }
 }

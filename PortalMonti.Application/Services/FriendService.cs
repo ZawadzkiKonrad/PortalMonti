@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using PortalMonti.Application.Interfaces;
@@ -20,9 +21,9 @@ namespace PortalMonti.Application.Services
     {
         private readonly IFriendRepository _friendRepo;
         private readonly IMapper _mapper;
-        private readonly UserManager<AppUser> _userManager;
+        private readonly Microsoft.AspNetCore.Identity.UserManager<AppUser> _userManager;
         private readonly IHttpContextAccessor _accessor;
-        public FriendService(IFriendRepository friendRepo,IMapper mapper, UserManager<AppUser> userManager, IHttpContextAccessor accessor)
+        public FriendService(IFriendRepository friendRepo,IMapper mapper, Microsoft.AspNetCore.Identity.UserManager<AppUser> userManager, IHttpContextAccessor accessor)
         {
             _friendRepo = friendRepo;
             _mapper = mapper;
@@ -30,12 +31,15 @@ namespace PortalMonti.Application.Services
             _accessor = accessor;
         }
 
-        public string AddFriend(AppUser friend)
+        public string AddFriend(string id)
         {
-            //var user =  _userManager.GetUserAsync(_accessor.HttpContext.User);
+            //var friend =_userManager.FindByIdAsync(id);
+            var sameUser = _userManager.Users.FirstOrDefault(u => u.Id == id);
+            _friendRepo.AddFriend(sameUser);
+            //var user = _userManager.GetUserAsync(_accessor.HttpContext.User);
             //var userr = user.Result;
             //userr.Friends.Add(friend);
-            var id = _friendRepo.AddFriend(friend);
+            //var id = _friendRepo.AddFriend(friend);
             return id;
         }
 
@@ -44,19 +48,19 @@ namespace PortalMonti.Application.Services
             throw new NotImplementedException();
         }
 
-        public async Task<List<AppUser>> GetAllFriendAsync()
+        public async Task<List<Friend>> GetAllFriendAsync()
         {
+            throw new NotImplementedException();
+            //var user = await _userManager.GetUserAsync(_accessor.HttpContext.User);
+            //var list = user.Friend;
             
-            var user = await _userManager.GetUserAsync(_accessor.HttpContext.User);
-            var list = user.Friends.ToList();
-            
-            return list;
+            //return list;
         }
 
 
-        public FriendDetailsVm GetFriendById(string id)
+        public FriendDetailsVm GetFriendById(int id)
         {
-            var friend = new AppUser();
+            var friend = new Friend();
             friend = _friendRepo.GetFriendById(id);
 
             var postVm = _mapper.Map<FriendDetailsVm>(friend);

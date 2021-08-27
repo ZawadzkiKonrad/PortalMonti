@@ -9,7 +9,7 @@ namespace PortalMonti.Infrastructure
 {
    public class Context : IdentityDbContext<AppUser> 
     {
-        public DbSet<AppUser> Friends { get; set; }
+        public DbSet<Friend> Friends { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
 

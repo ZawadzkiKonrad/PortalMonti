@@ -10,8 +10,8 @@ using PortalMonti.Infrastructure;
 namespace PortalMonti.Infrastructure.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210826094442_InitialCreate112")]
-    partial class InitialCreate112
+    [Migration("20210827083205_InitialCreate2")]
+    partial class InitialCreate2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -236,6 +236,12 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AppUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AppUserId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary(max)");
 
@@ -249,6 +255,8 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId1");
 
                     b.ToTable("Friends");
                 });
@@ -407,6 +415,15 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.HasOne("PortalMonti.Domain.Model.AppUser", null)
                         .WithMany("Friends")
                         .HasForeignKey("AppUserId");
+                });
+
+            modelBuilder.Entity("PortalMonti.Domain.Model.Friend", b =>
+                {
+                    b.HasOne("PortalMonti.Domain.Model.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId1");
+
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.Message", b =>

@@ -5,6 +5,7 @@ using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 
 namespace PortalMonti.Infrastructure.Repositories
@@ -33,11 +34,16 @@ namespace PortalMonti.Infrastructure.Repositories
         public string AddFriend(AppUser friend)
         {
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
-            user.Friends.Add(friend);
-           
-           
-            //_context.Friends.Add(friend);
-            //_context.SaveChanges();
+            //var sameUser = _userManager.Users.FirstOrDefault(u => u.Id == user);
+            var friendss = new Friend()
+            {
+                AppUserId = friend.Id,
+                UserLogin = friend.UserLogin
+
+            };
+            //_context.Users.Find()
+            _context.Friends.Add(friendss);
+            _context.SaveChanges();
             return friend.Id;
 
         }
@@ -49,10 +55,10 @@ namespace PortalMonti.Infrastructure.Repositories
             var friends = user.Friends;
             return (IQueryable<AppUser>)friends;
         }
-        public AppUser GetFriendById(string friendId)
+        public Friend GetFriendById(int friendId)
         {
             var friend = _context.Friends.FirstOrDefault(i => i.Id == friendId);
-            return (AppUser)friend;
+            return friend;
         }
 
         

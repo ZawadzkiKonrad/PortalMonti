@@ -41,9 +41,9 @@ namespace PortalMonti.Web.Controllers
             
         //    return View();
         //}
-        public IActionResult AddFriend(AppUser friend)
+        public IActionResult AddFriend(string id)
         {
-            _friendService.AddFriend(friend);
+            _friendService.AddFriend(id);
             return RedirectToAction("Index");
 
         }

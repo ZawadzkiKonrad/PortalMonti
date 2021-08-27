@@ -37,15 +37,19 @@ namespace PortalMonti.Application.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
 
-           // var friends = await _friendService.GetAllFriendAsync();
+           // throw new NotImplementedException();
+
+
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            
+            // var friends = await _friendService.GetAllFriendAsync();
             var list2 = new List<FriendsForListVm>();
             foreach (var item in user.Friends)
             {
                 var model = new FriendsForListVm()
                 {
-                    Id = item.Id,
+                    Id = item.Id.ToString(),
                     UserLogin = item.UserLogin
                 };
                 list2.Add(model);
