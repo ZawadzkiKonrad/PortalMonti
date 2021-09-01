@@ -46,7 +46,7 @@ namespace PortalMonti.Web.Controllers
         public IActionResult AddFriend(string id)
         {
             _friendService.AddFriend(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Post");
 
         }
         public IActionResult Privacy()

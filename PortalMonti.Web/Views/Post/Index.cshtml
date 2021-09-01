@@ -72,12 +72,13 @@
                     </tr>
                 }
 
-              
+
 
 
         </table>
-        
+
     </div>
+
     <div class="row">
         <table>
             <tr>
@@ -95,15 +96,16 @@
                     </td>
                 }
             </tr>
-            
+
         </table>
-        <div>
-            @await Component.InvokeAsync("FriendList", new())
-        </div>
+
         <input type="hidden" name="pageNo" id="pageNo" />
         <input type="hidden" name="pageSize" id="pageSize" value="8" />
     </div>
 </form>
+<div>
+    @await Component.InvokeAsync("FriendList", new())
+</div>
 <div>
     <div id="trainings" class="tab-pane ">
         <div class="col-sm-12 trainings">
@@ -119,5 +121,5 @@
             document.getElementById("pageNo").form.submit();
         }
     </script>
-    
+
 }
