@@ -10,13 +10,15 @@ namespace PortalMonti.Infrastructure
    public class Context : IdentityDbContext<AppUser> 
     {
         public DbSet<Friend> Friends { get; set; }
-        public DbSet<Message> Messages { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<ReceivedMessage> Messages { get; set; }
+        public DbSet<ReceivedMessage> ReceivedMessages { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostTag> PostTag { get; set; } //tabela posrednia zostaje w liczbie poijedynczej
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<Domain.Model.Type> Types { get; set; }
+        
         
         
         

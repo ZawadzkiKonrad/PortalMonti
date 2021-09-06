@@ -13,7 +13,16 @@ namespace PortalMonti.Domain.Model
         public DateTime Date { get; set; }
         public string Author { get; set; }
         public ICollection <PostTag> PostTags { get; set; }
+        public virtual List<Comment> Comments { get; set; }
+
+        //public List<AppUser> Friends { get; set; }
+
+        public Post()
+        {
+            Comments = new List<Comment>();
             
+        }
+
 
 
     }

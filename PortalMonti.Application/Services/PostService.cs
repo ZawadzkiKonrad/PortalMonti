@@ -30,7 +30,7 @@ namespace PortalMonti.Application.Services
         {
             
             
-            var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Email);
+            var userId = _httpContextAccessor.HttpContext.User.Identity.Name; //pobieranie wlasciwosci zalogowanego usera,np. email: User.FindFirstValue(ClaimTypes.Email)
             var pos = _mapper.Map<Domain.Model.Post>(post);
             pos.Date = DateTime.Now;
             pos.Author = userId;
@@ -47,8 +47,9 @@ namespace PortalMonti.Application.Services
 
         public ListPostForListVm GetAllPostForList(int pageSize,int? pageNo,string searchString)
         {
-            var posts = _postRepo.GetAllPosts().Where(p=>p.Name.StartsWith(searchString))
+            var posts = _postRepo.GetAllPosts().Where(p => p.Name.StartsWith(searchString))
                 .ProjectTo<PostForListVm>(_mapper.ConfigurationProvider).ToList();
+            posts.Reverse(); //odwrocenie listy zeby posty byly od najnowszego
             var postToShow = posts.Skip((int)(pageSize * (pageNo - 1))).Take(pageSize).ToList();
             var postList = new ListPostForListVm()
             {

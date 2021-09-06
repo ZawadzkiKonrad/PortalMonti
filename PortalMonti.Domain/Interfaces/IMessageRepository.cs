@@ -10,16 +10,17 @@ namespace PortalMonti.Domain.Interfaces
     {
         void DeleteMessage(int messageId);
 
-        int AddMessage(Message message);
+        int SendMessage(ReceivedMessage message);
 
 
-        IQueryable<Message> GetAllMessages();
+        IQueryable<ReceivedMessage> GetAllMessages();
+        ReceivedMessage GetMessageById(int id);
 
 
-        IQueryable<Domain.Model.Type> GetAllTypes();
 
 
-        void SendMessage();
-       
+
+
+
     }
 }

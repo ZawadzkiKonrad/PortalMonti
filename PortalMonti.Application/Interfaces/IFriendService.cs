@@ -11,10 +11,11 @@ namespace PortalMonti.Application.Interfaces
 {
    public interface IFriendService
     {
-        ListFriendForListVm  GetAllFriends();
+        IQueryable<Friend> GetAllFriends();
         Task<List<Friend>> GetAllFriendAsync();
         string AddFriend(string id);
         FriendDetailsVm GetFriendById(int id);        
         void DeleteFriend(int id);
+        AppUser GetCurrentUser();
     }
 }

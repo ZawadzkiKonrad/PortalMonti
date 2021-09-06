@@ -12,7 +12,7 @@ namespace PortalMonti.Domain.Interfaces
        
         string AddFriend(AppUser friend);
 
-        IQueryable<AppUser> GetAllFriends();
+        IQueryable<Friend> GetAllFriends();
 
         Friend GetFriendById(int friendId);
         

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PortalMonti.Application.ViewModels.Message.MessageForListVm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Wiadomości</h1>
+
+<p>
+    <a asp-action="SendMessage">Napisz wiadomość</a>
+</p>
+
+
+@*<select id="drpUserList" asp-items="@(new SelectList(ViewBag.Friends, "Name", "Email","Email"))" class="selectpicker col-offset-1">
+</select>*@
+
+
+<form id="messages" method="get" asp-controller="Message"  asp-action="SendMessageToFriend" data="appUserId" >
+    <select id="messages" @*asp-items="@(new SelectList(ViewBag.Friends, "Name", "Name"))"*@>
+        <option value="0">Please select</option>
+        @foreach (var item in ViewBag.Friends)
+        {
+    <option value="@item.Name" >@item.Email </option>
+        }
+        
+    </select>
+    
+    <input id="messages" type="submit" value="Submit" />
+</form>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Author)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Szczegóły", "ViewMessage", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

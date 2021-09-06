@@ -1,4 +1,6 @@
-﻿using PortalMonti.Domain.Interfaces;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using PortalMonti.Domain.Interfaces;
 using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,13 @@ namespace PortalMonti.Infrastructure.Repositories
    public class MessageRepository : IMessageRepository
     {
         private readonly Context _context;
-        public MessageRepository(Context context)
+        private readonly IHttpContextAccessor _accessor;
+        private readonly UserManager<AppUser> _userManager;
+        public MessageRepository(Context context, IHttpContextAccessor accessor, UserManager<AppUser> userManager)
         {
             _context = context;
+            _accessor = accessor;
+            _userManager = userManager;
         }
 
         public void DeleteMessage (int messageId)
@@ -25,27 +31,28 @@ namespace PortalMonti.Infrastructure.Repositories
             }
 
         }
-        public int AddMessage(Message message)
+        public int SendMessage(ReceivedMessage message)
         {
-            _context.Messages.Add(message);
+            var user = _userManager.FindByIdAsync(message.Receiver).Result;
+            user.ReceivedMessages.Add(message);
             _context.SaveChanges();
             return message.Id;
 
         }
 
-        public IQueryable<Message> GetAllMessages()
+        public IQueryable<ReceivedMessage> GetAllMessages()
         {
-            var messages = _context.Messages;
+            
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            var messages = _context.ReceivedMessages.Where(i => i.Receiver == user.Id);
+           
             return messages;
         }
 
-        public IQueryable<Domain.Model.Type> GetAllTypes()
+        public ReceivedMessage GetMessageById(int id)
         {
-            var types = _context.Types;
-            return types;
+            var message=_context.ReceivedMessages.FirstOrDefault(p => p.Id == id);
+            return message;
         }
-
-        public void SendMessage()
-        { }
     }
 }

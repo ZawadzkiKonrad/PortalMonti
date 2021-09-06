@@ -577,3 +577,8 @@ C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.pdb
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.genruntimeconfig.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\Index.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\SendMessage.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\ViewMessage.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\AddComment.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\SendMessageToFriend.cshtml.g.cs

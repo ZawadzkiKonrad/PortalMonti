@@ -11,6 +11,7 @@ namespace PortalMonti.Application.ViewModels.Post
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Author { get; set; }
 
         public DateTime Date { get; set; }
         public ICollection<PostTag> PostTags { get; set; }

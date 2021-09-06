@@ -29,8 +29,8 @@ namespace PortalMonti.Application.ViewComponents
         public FriendListViewComponent(Context context,IMapper mapper, IFriendService friendService, IHttpContextAccessor accessor, UserManager<AppUser> userManager)
         {
             _context = context;
-            _mapper = mapper;
-            _friendService = friendService;
+                    _mapper = mapper;
+                    _friendService = friendService;
             _accessor = accessor;
             _userManager = userManager;
         }

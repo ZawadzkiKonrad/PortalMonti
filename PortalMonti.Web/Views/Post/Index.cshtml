@@ -7,7 +7,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Wyszukiwarka Postów</h1>
 
 <p>
     <a asp-action="AddPost">Dodaj  post</a>
@@ -45,6 +45,9 @@
                     <th>
                         Tagi
                     </th>
+                    <th>
+                        Autor
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -63,11 +66,22 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.PostTags)
+                        </td> 
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Author)
                         </td>
                         <td>
-                            @Html.ActionLink("Edytuj", "EditPost", new { id = item.Id }) |
-                            @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            @if (ViewBag.CurrentUser.UserName == item.Author)
+                            {
+
+                                @Html.ActionLink("Edytuj", "EditPost", new { id = item.Id })
+                                <b>|</b>
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id });
+                                <b>|</b>
+                            }
+
+                            @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id })
+
                         </td>
                     </tr>
                 }

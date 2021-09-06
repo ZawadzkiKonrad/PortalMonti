@@ -20,7 +20,7 @@
             @Html.DisplayNameFor(model => model.Name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Text)
+            @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Text)
@@ -44,5 +44,54 @@
 </div>
 <div>
     @Html.ActionLink("Edit", "EditPost", new { id = Model.Id }) |
+    @Html.ActionLink("Dodaj Komentarz", "AddComment", new { postId = Model.Id }) | 
     <a asp-action="Index">Back to List</a>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+          
+            <th>
+                Data
+            </th>
+            <th>
+                Treść
+            </th>
+            <th>
+                Autor
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Comments)
+        {
+            <tr>
+                <td>
+                    @item.Id                    
+                </td>
+                <td>
+                    @item.Date                   
+                </td>
+                <td>
+                    @item.Text
+                </td>    
+                <td>
+                    @item.Author
+                </td>
+               
+              
+            </tr>
+        }
+
+
+
+
+</table>
+
+
+

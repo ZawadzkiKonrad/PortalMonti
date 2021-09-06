@@ -39,6 +39,12 @@ namespace PortalMonti.Application.Services
           
             return id;
         }
+        public AppUser GetCurrentUser()
+        {
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+
+            return user;
+        }
 
         public void DeleteFriend(int id)
         {
@@ -67,21 +73,21 @@ namespace PortalMonti.Application.Services
             return postVm;
         }
 
-        public ListFriendForListVm GetAllFriends()
+        public IQueryable<Friend> GetAllFriends()
         {
-            var friends = _friendRepo.GetAllFriends()
-                .ProjectTo<FriendsForListVm>(_mapper.ConfigurationProvider).ToList();
-            //friends = friends.ProjectTo<ListFriendForListVm>(_mapper.ConfigurationProvider).ToList();
+            var friends = _friendRepo.GetAllFriends();
+            //    .ProjectTo<FriendsForListVm>(_mapper.ConfigurationProvider).ToList();
+            ////friends = friends.ProjectTo<ListFriendForListVm>(_mapper.ConfigurationProvider).ToList();
             
-            var postList = new ListFriendForListVm()
-            {
-                PageSize = 1,
-                CurrentPage = 1,
-                SearchString = "",
-                Friends=friends
+            //var postList = new ListFriendForListVm()
+            //{
+            //    PageSize = 1,
+            //    CurrentPage = 1,
+            //    SearchString = "",
+            //    Friends=friends
 
-            };
-            return postList;
+            //};
+            return friends;
 
             
         }

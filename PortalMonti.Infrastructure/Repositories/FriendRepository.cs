@@ -34,12 +34,15 @@ namespace PortalMonti.Infrastructure.Repositories
         public string AddFriend(AppUser friend)
         {
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+
             //var sameUser = _userManager.Users.FirstOrDefault(u => u.Id == user);
             var friendss = new Friend()
             {
                 //AppUserId = friend.Id,
                 UserLogin = friend.UserLogin,
-                Name=friend.Id
+                Name=friend.Id,
+                Email=friend.Email,
+                UserName=friend.UserName
                 
 
             };
@@ -50,12 +53,14 @@ namespace PortalMonti.Infrastructure.Repositories
 
         }
 
-        public IQueryable<AppUser> GetAllFriends()
+        public IQueryable<Friend> GetAllFriends()
         {
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            
+            var friends2 = _context.Friends.Where(i => i.AppUserId == user.Id);
 
-            var friends = user.Friends;
-            return (IQueryable<AppUser>)friends;
+            var friends = user.Friends.AsQueryable();//albo to
+            return friends2;
         }
         public Friend GetFriendById(int friendId)
         {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PortalMonti.Application.Interfaces;
+using PortalMonti.Application.ViewModels.Comment;
 using PortalMonti.Application.ViewModels.Post;
 using System;
 using System.Collections.Generic;
@@ -14,20 +15,20 @@ namespace PortalMonti.Web.Controllers
         
     {   private readonly IPostService _postService;
         private readonly IFriendService _friendService;
+        private readonly ICommentService _commentService;
 
-        public PostController(IPostService postService, IFriendService friendService)
+        public PostController(IPostService postService, IFriendService friendService, ICommentService commentService)
         {
             _postService = postService;
             _friendService = friendService;
+            _commentService = commentService;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            //utworzyć widok dla akcji
-            //tabela z postami
-            //filtrowanie postów
-            //przekazac filtry do serwisu
-            //serwis musi przygotowac dane i zwrocic w odpowiednim formacie
+            
+            ViewBag.CurrentUser = _friendService.GetCurrentUser();
+            
             var model = _postService.GetAllPostForList(8,1,"");
             return View(model);
 
@@ -35,7 +36,8 @@ namespace PortalMonti.Web.Controllers
         [HttpPost]
         public IActionResult Index(int pageSize,int? pageNo,string searchString)
         {
-            if(!pageNo.HasValue)
+            ViewBag.CurrentUser = _friendService.GetCurrentUser();
+            if (!pageNo.HasValue)
             {
                 pageNo = 1;
             }
@@ -51,6 +53,7 @@ namespace PortalMonti.Web.Controllers
         [HttpGet]//widok z formularzem dla uzytkownika do wypelnienia
         public IActionResult AddPost()
         {
+            
             return View(new NewPostVm());
         }
       // po wypenieniu formularza zwrocony odpopiedni model ktory zostanie przekazany do serwisu i nastepnie do repozytorium aby utrworzyc post
@@ -58,6 +61,23 @@ namespace PortalMonti.Web.Controllers
         public IActionResult AddPost(NewPostVm model)
         {
             var id = _postService.AddPost(model);
+            return RedirectToAction("Index");
+        }
+        
+        [HttpGet]
+        public IActionResult AddComment(int postId)
+        {
+            return View(new NewCommentVm() 
+            {
+            PostId=postId
+            });
+        }
+    
+        [HttpPost]
+        public IActionResult AddComment(NewCommentVm model)
+        {
+            
+            var id = _commentService.AddComment(model);
             return RedirectToAction("Index");
         }
 
@@ -77,6 +97,7 @@ namespace PortalMonti.Web.Controllers
         //na podstawie id postu pobranie z serwisu info o poscie i przekazanie jej do widoku
         public IActionResult ViewPost(int id)
         {
+            ViewBag.Comments = _commentService.GetAllComment(id);
             var postModel = _postService.GetPostById(id);
             return View(postModel);
         } 
