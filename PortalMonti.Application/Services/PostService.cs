@@ -30,7 +30,7 @@ namespace PortalMonti.Application.Services
         {
             
             
-            var userId = _httpContextAccessor.HttpContext.User.Identity.Name; //pobieranie wlasciwosci zalogowanego usera,np. email: User.FindFirstValue(ClaimTypes.Email)
+            var userId = _httpContextAccessor.HttpContext.User.Identity.Name; //pobieranie wlasciwosci zalogowanego usera sam emial lub name
             var pos = _mapper.Map<Domain.Model.Post>(post);
             pos.Date = DateTime.Now;
             pos.Author = userId;

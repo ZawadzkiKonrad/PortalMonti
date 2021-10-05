@@ -54,6 +54,10 @@ namespace PortalMonti.Web.Areas.Identity.Pages.Account
             
             [Display(Name = "Login")]
             public string UserLogin { get; set; }
+            
+            //[Display(Name = "Image")]
+            //[DataType(DataType.ImageUrl)]
+            //public string Image { get; set; }
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]

@@ -5,14 +5,21 @@
 }
 
 <h1>Lista Zarejestrowanych użytkowników</h1>
+
+
+<p id="test">This is another paragraph.</p>
+
+<button id="btn">schowaj</button>
+<button id="btn2">pokaz</button>
+
 @if (Model.Any())
 {
     <a class="btn btn-primary" style="width:auto"
-       asp-area="Identity" asp-page="/Account/Register" >
+       asp-area="Identity" asp-page="/Account/Register">
         Rejestracja nowego użytkownika
     </a>
 
-    foreach(var user in Model)
+    foreach (var user in Model)
     {
         <div class="card mb-3">
             <div class="card-header">
@@ -28,8 +35,12 @@
                 @Html.ActionLink("Dodaj do znajomych", "AddFriend", new { id = user.Id })
                 @*@Html.ActionLink("Dodaj", "AddFriend", new { AppUser=user })*@
             </div>
+
+            
         </div>
     }
+    <br />
+    <br>
 }
 else
 {
@@ -51,4 +62,17 @@ else
 
     </div>
 }
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $("#test").hide();
+        });
+        $("#btn2").click(function () {
+            $("#test").show();
+        });
+    });
+</script>
 

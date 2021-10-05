@@ -16,6 +16,8 @@ namespace PortalMonti.Infrastructure
         public DbSet<AppUser> AppUsers { get; set; }
 
         public DbSet<Post> Posts { get; set; }
+        
+        public DbSet<Image> Images { get; set; }
         public DbSet<PostTag> PostTag { get; set; } //tabela posrednia zostaje w liczbie poijedynczej
         public DbSet<Tag> Tags { get; set; }
         

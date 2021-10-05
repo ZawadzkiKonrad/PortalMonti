@@ -10,6 +10,7 @@ namespace PortalMonti.Application.Interfaces
     public interface ICommentService
     {
         IQueryable<CommentVm> GetAllComment(int postId);
+        IQueryable<CommentVm> GetFullComment();
         int AddComment(NewCommentVm comment);
       
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace PortalMonti.Domain.Model
 {
     public class Friend

@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+
+<div class="photo-gallery">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Lightbox Gallery</h2>
+            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+        </div>
+
+        <div class="row photos">
+
+            @foreach (var item in ViewBag.Images)
+            {
+            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                <a href="~/upload/@item.Path" data-lightbox="photos"><img class="img-fluid" src="~/upload/@item.Path"></a>
+                @Html.ActionLink("Ustaw jako profilowe", "ProfileSet", new { path = item.Path })
+            </div>
+            }
+
+            @*<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/desk.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
+        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/building.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
+        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/loft.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
+        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/building.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
+        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/loft.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
+        <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/desk.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>*@
+        </div>
+    </div>
+</div>
+
+
+<form method="post" enctype="multipart/form-data" asp-controller="Image" asp-action="Index">
+    <div class="form-group">
+        <div class="col-md-10">
+            <p>Upload File</p>
+            <label class="form-label" for="customFile">Dodaj zdjęcie</label>
+            <input type="file" class="form-control" name="file" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Upload file" />
+    </div>
+
+
+    
+    
+
+    <br />
+    <br>
+    <div class="form-group">
+        <span>@TempData["msg"]</span>
+    </div>
+    <br />
+    <br>
+</form>

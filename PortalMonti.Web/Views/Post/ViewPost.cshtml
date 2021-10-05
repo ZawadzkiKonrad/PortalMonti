@@ -10,43 +10,44 @@
     <h4>PostDetailsVm</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Id)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Id)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Text)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Text)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Date)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Date)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Author)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Author)
         </dd>
     </dl>
+    <div>
+        @Html.ActionLink("Edit", "EditPost", new { id = Model.Id }) |
+        @Html.ActionLink("Dodaj Komentarz", "AddComment", new { postId = Model.Id }) |
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "EditPost", new { id = Model.Id }) |
-    @Html.ActionLink("Dodaj Komentarz", "AddComment", new { postId = Model.Id }) | 
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 <table class="table">
     <thead>
@@ -68,7 +69,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in ViewBag.Comments)
+        @*@foreach (var item in ViewBag.Comments)
         {
             <tr>
                 <td>
@@ -86,7 +87,7 @@
                
               
             </tr>
-        }
+        }*@
 
 
 

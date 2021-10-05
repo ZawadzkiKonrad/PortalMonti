@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,52 +7,132 @@
     <title>@ViewData["Title"] - PortalMonti.Web</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+    <link href="~/mdb/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/mdb/css/mdb.min.css" rel="stylesheet">
+    <link href="~/mdb/css/style.css" rel="stylesheet">
+
+    <link href="~/fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        <!-- Navbar -->
+        <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+        <!-- Container wrapper -->
+        <!--<div class="container-fluid">-->
+        <!-- Toggle button -->
+        <!--<button class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>-->
+        <!-- Collapsible wrapper -->
+        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+        <!-- Navbar brand -->
+        <!--<a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <img src="~/upload/38646c8c-9537-44c7-ad1d-dbd5e58d0592.gif"
+                 height="15"
+                 alt=""
+                 loading="lazy" />
+        </a>-->
+        <!-- Left links -->
+        <!--<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Projects  </a>
+            </li>
+        </ul>-->
+        <!-- Left links -->
+        <!--</div>
+            <partial name="_LoginPartial" />
+
+        </div>-->
+        <!-- Container wrapper -->
+        <!--</nav>-->
+        <!-- Navbar -->
+
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Post" asp-action="Index">PortalMonti.Web</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
+
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Chat</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Chat</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ListUsers">Lista użytkowników</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="ListUsers">Lista użytkowników</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Message" asp-action="Index">Wiadomości</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Message" asp-action="Index">Wiadomości</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Image" asp-action="Index">
+                                Zdjęcia  @TempData["name"]
+
+                            </a>
                         </li>
                     </ul>
                 </div>
+                <partial name="_LoginPartial" />
             </div>
         </nav>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
 
-            
+
         </main>
-       
+
     </div>
-     
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - PortalMonti.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
     <script src="~/js/Chat.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/mdb/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="~/mdb/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/mdb/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/mdb/js/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

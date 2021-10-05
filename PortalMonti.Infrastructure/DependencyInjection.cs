@@ -15,6 +15,7 @@ namespace PortalMonti.Infrastructure
             services.AddTransient<IFriendRepository, FriendRepository>();
             services.AddTransient<IMessageRepository, MessageRepository>();
             services.AddTransient<ICommentRepository, CommentRepository>();
+            services.AddTransient<IImageRepository, ImageRepopsitory>();
             
             
             return services;

@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using PortalMonti.Domain.Model;
 
 namespace PortalMonti.Application.Services
 {
@@ -16,20 +18,26 @@ namespace PortalMonti.Application.Services
     {
         private readonly ICommentRepository _commentRepo;
         private readonly IMapper _mapper;
+        private readonly UserManager<AppUser> _userManager;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public CommentService(ICommentRepository commentRepo, IMapper mapper, IHttpContextAccessor httpContextAccessor)
+        public CommentService(ICommentRepository commentRepo, IMapper mapper, IHttpContextAccessor httpContextAccessor, UserManager<AppUser> userManager)
         {
             _commentRepo = commentRepo;
             _mapper = mapper;
             _httpContextAccessor = httpContextAccessor;
+            _userManager = userManager;
         }
         public int AddComment(NewCommentVm comment)
 
         {
+            var user = _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User).Result;
             var commentNew = _mapper.Map<Domain.Model.Comment>(comment);
-            commentNew.Author= _httpContextAccessor.HttpContext.User.Identity.Name;
+            commentNew.ProfileImage = user.ImageProfile;
+            commentNew.Author = user.Email;
+            
             var data = DateTime.Today.ToString().Remove(10,9); //usuwanie godziny z daty
-            commentNew.Date = data;
+            commentNew.Date = DateTime.Now.ToString();
+
             var id= _commentRepo.AddComment(commentNew);
             return id;
         }
@@ -39,6 +47,11 @@ namespace PortalMonti.Application.Services
             var comments = _commentRepo.GetAllComments(postId).ProjectTo<CommentVm>(_mapper.ConfigurationProvider);
             
             
+            return comments;
+        }
+
+        public IQueryable<CommentVm> GetFullComment()
+        {   var comments = _commentRepo.GetFullComment().ProjectTo<CommentVm>(_mapper.ConfigurationProvider);
             return comments;
         }
     }

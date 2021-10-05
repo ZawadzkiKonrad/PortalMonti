@@ -1,4 +1,6 @@
-﻿using PortalMonti.Domain.Interfaces;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using PortalMonti.Domain.Interfaces;
 using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,13 @@ namespace PortalMonti.Infrastructure.Repositories
     public class PostRepository : IPostRepository
     {
            private readonly Context _context;
-    public PostRepository(Context context)
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IHttpContextAccessor _accessor;
+        public PostRepository(Context context, UserManager<AppUser> userManager, IHttpContextAccessor accessor)
     {
-        _context = context;
+            _context = context;
+            _userManager = userManager;
+            _accessor = accessor;
     }
     
         public void DeletePost(int postId)
@@ -28,8 +34,11 @@ namespace PortalMonti.Infrastructure.Repositories
 
         public int AddPost(Domain.Model.Post post )
         {
-            _context.Posts.Add(post);
-            
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            post.Author = user.Email;
+            post.AuthorImage = user.ImageProfile;
+            post.Date = DateTime.Now;
+            user.Posts.Add(post);
             _context.SaveChanges();
             return post.Id;
 

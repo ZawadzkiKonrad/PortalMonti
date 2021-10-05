@@ -582,3 +582,7 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\ViewMessage.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\AddComment.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\SendMessageToFriend.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Image\Index.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\AddPost\Default.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_AddPostPartial.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_AddCommentPartial.cshtml.g.cs

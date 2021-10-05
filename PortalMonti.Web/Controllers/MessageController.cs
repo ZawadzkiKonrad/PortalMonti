@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PortalMonti.Application.Interfaces;
 using PortalMonti.Application.ViewModels.Message;
 using PortalMonti.Domain.Interfaces;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace PortalMonti.Web.Controllers
 {
     [Authorize]
@@ -16,10 +18,12 @@ namespace PortalMonti.Web.Controllers
     {
         private readonly IMessageService _messageService;
         private readonly IFriendService _friendService;
-        public MessageController(IMessageService messageService, IFriendService friendService)
+        private readonly IMessageRepository _messageRepo;
+        public MessageController(IMessageService messageService, IFriendService friendService, IMessageRepository messageRepo)
         {
             _messageService=messageService;
             _friendService = friendService;
+            _messageRepo = messageRepo;
         }
         [HttpGet]
         public IActionResult Index()
@@ -51,28 +55,54 @@ namespace PortalMonti.Web.Controllers
         public IActionResult SendMessage(NewMessageVm model)
         {
             var id = _messageService.SendMessage(model);
+            
             return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult SendMessageToFriend(string appUserId,IFormCollection form)
         {
-           //string strDDLValue = form["messages"].ToString();
-
-            ViewBag.Friends = _friendService.GetAllFriends();
+            
+            var conversation=_messageRepo.GetConveration(appUserId);
+            ViewBag.Conversation = conversation;
+            //string strDDLValue = form["messages"].ToString();
+            var friends = _friendService.GetAllFriends();
+            List<string>friendsId= new List<string>();
+            foreach (var item in friends)
+            {
+                friendsId.Add(item.Name);
+            }
+            
             return View(new NewMessageVm()
-            {Receiver=appUserId,
-            AppUserId=appUserId}
+            {//Receiver=appUserId,
+            AppUserId=appUserId
+            }
             );
         }
         [HttpPost]
         public IActionResult SendMessageToFriend(NewMessageVm model, IFormCollection form)
         
         {
-           // string strDDLValue = form["messages"].ToString();
+            // string strDDLValue = form["messages"].ToString();
 
-            ViewBag.Friends = _friendService.GetAllFriends();
+            var conversation = _messageRepo.GetConveration(model.Receiver);
+            ViewBag.Convesation = conversation;
+            var appUserId = model.AppUserId;
+            
+            var friends = _friendService.GetAllFriends();
+            List<string> friendsId = new List<string>();
+            foreach (var item in friends)
+            {
+                friendsId.Add(item.Name);
+            }
+            
             var id = _messageService.SendMessage(model);
-            return RedirectToAction("Index");
+            return View(new NewMessageVm()
+            {
+                
+                
+                
+            }
+           );
         }
     }
 }

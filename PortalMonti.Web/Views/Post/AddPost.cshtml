@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddPost">
+        <form method="post" enctype="multipart/form-data" asp-action="AddPost" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id"/>
             <div class="form-group">
@@ -23,9 +23,19 @@
                 <input asp-for="Text" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                    <div class="col-md-10">
+                       @* <p>Upload File</p>*@
+                        <label class="form-label" for="customFile">Dodaj zdjęcie</label>
+                        <input name="file" type="file" class="form-control"  />
+                    </div>
             </div>
+
+                
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
         </form>
     </div>
 </div>

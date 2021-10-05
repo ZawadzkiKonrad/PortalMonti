@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using PortalMonti.Domain.Model;
+using Microsoft.AspNetCore.Http;
 
 namespace PortalMonti.Web.Areas.Identity.Pages.Account
 {
@@ -21,14 +22,17 @@ namespace PortalMonti.Web.Areas.Identity.Pages.Account
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly IHttpContextAccessor _accessor;
 
         public LoginModel(SignInManager<AppUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<AppUser> userManager)
+            UserManager<AppUser> userManager,
+            IHttpContextAccessor accessor)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _accessor = accessor;
         }
 
         [BindProperty]
@@ -57,6 +61,8 @@ namespace PortalMonti.Web.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+           
+
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
@@ -74,6 +80,7 @@ namespace PortalMonti.Web.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+           
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();

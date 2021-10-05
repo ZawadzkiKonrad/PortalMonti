@@ -31,6 +31,7 @@ namespace PortalMonti.Application.Services
             var msg = _mapper.Map<Domain.Model.ReceivedMessage>(message);
             msg.Date = DateTime.Now;
             msg.Author = userId;
+            msg.AppUserId = message.Receiver;
 
             var id = _messageRepo.SendMessage(msg);
             return id;

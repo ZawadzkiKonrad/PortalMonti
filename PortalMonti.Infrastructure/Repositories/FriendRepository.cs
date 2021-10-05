@@ -46,7 +46,7 @@ namespace PortalMonti.Infrastructure.Repositories
                 
 
             };
-            //_context.Users.Find()
+            
             user.Friends.Add(friendss);
             _context.SaveChanges();
             return friend.Id;

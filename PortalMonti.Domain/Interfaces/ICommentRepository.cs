@@ -11,5 +11,6 @@ namespace PortalMonti.Domain.Interfaces
     {
         int AddComment(Comment Comment);
         IQueryable<Comment> GetAllComments(int postId);
+        IQueryable<Comment> GetFullComment();
     }
 }

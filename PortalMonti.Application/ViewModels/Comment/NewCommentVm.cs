@@ -14,6 +14,8 @@ namespace PortalMonti.Application.ViewModels.Comment
         public string Author{ get; set; }
         public string Text { get; set; }
         public string Date { get; set; }
+
+        public string ProfileImage { get; set; }
         public int PostId { get; set; }
         public virtual Domain.Model.Post Post { get; set; }
         public void Mapping(Profile profile)

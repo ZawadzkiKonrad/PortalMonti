@@ -28,12 +28,14 @@ namespace PortalMonti.Web.Controllers
         }
         [HttpGet]
         public IActionResult ListUsers()
-        {
-            var users = _userManager.Users;
+        { var users = _userManager.Users;
+            ViewBag.Users = users;
             return View(users);
         }
         public IActionResult Index()
         {
+            int id = 1;
+            
             _logger.LogInformation("Jestem w Home/Index");
             return View();
         }
@@ -52,7 +54,15 @@ namespace PortalMonti.Web.Controllers
         }
         public IActionResult Privacy()
         {
+             
+             
             return View();
+        }
+        public string SaveEmployeeRecord()
+        {
+            string res = "this is return value";
+            // do here some operation  
+            return res;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -10,6 +10,7 @@ using System.Text;
 namespace PortalMonti.Infrastructure.Repositories
 {
    public class MessageRepository : IMessageRepository
+
     {
         private readonly Context _context;
         private readonly IHttpContextAccessor _accessor;
@@ -33,7 +34,7 @@ namespace PortalMonti.Infrastructure.Repositories
         }
         public int SendMessage(ReceivedMessage message)
         {
-            var user = _userManager.FindByIdAsync(message.Receiver).Result;
+            var user = _userManager.FindByIdAsync(message.AppUserId).Result;
             user.ReceivedMessages.Add(message);
             _context.SaveChanges();
             return message.Id;
@@ -44,7 +45,7 @@ namespace PortalMonti.Infrastructure.Repositories
         {
             
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
-            var messages = _context.ReceivedMessages.Where(i => i.Receiver == user.Id);
+            var messages = _context.ReceivedMessages.Where(i => i.AppUserId == user.Id);
            
             return messages;
         }
@@ -53,6 +54,22 @@ namespace PortalMonti.Infrastructure.Repositories
         {
             var message=_context.ReceivedMessages.FirstOrDefault(p => p.Id == id);
             return message;
+        }
+
+        public IQueryable<ReceivedMessage> GetConveration(string appUserId)
+        {
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            var userReceiver = _context.AppUsers.FirstOrDefault(i => i.Id == appUserId);
+            var messagesReceiver = _context.ReceivedMessages.Where(i => i.AppUserId == appUserId &&i.Author==user.Email).ToList();
+            var messagesReceiver2 = _context.ReceivedMessages.Where(i => i.AppUserId == user.Id &&i.Author==userReceiver.Email).ToList();
+            foreach (var item in messagesReceiver2)
+            {
+                messagesReceiver.Add(item);
+            }
+
+            var newmsg = messagesReceiver.OrderBy(i => i.Date);
+
+            return newmsg.AsQueryable().Reverse();
         }
     }
 }

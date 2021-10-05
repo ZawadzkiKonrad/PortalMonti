@@ -13,8 +13,9 @@ namespace PortalMonti.Domain.Model
         public string Author { get; set; }
         public DateTime Date { get; set; }
 
-        public string Receiver { get; set; }
+        //public string Receiver { get; set; }
         public string AppUserId { get; set; }
+        public string Selected { get; set; }
         public virtual AppUser AppUser { get; set; }
     }
 }

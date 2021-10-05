@@ -11,6 +11,7 @@ namespace PortalMonti.Application.ViewModels.Post
         public int? CurrentPage { get; set; }
         public int PageSize { get; set; }
         public string SearchString { get; set; }
+        public string PostImage { get; set; }
         public int Count { get; set; }
     }
 }

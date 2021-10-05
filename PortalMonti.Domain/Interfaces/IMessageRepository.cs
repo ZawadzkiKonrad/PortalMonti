@@ -14,7 +14,9 @@ namespace PortalMonti.Domain.Interfaces
 
 
         IQueryable<ReceivedMessage> GetAllMessages();
+        IQueryable<ReceivedMessage> GetConveration(string appUserId);
         ReceivedMessage GetMessageById(int id);
+
 
 
 

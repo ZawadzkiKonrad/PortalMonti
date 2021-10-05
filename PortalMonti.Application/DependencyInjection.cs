@@ -16,6 +16,7 @@ namespace PortalMonti.Application
             services.AddTransient<IFriendService, FriendService>();
             services.AddTransient<IMessageService, MessageService>();
             services.AddTransient<ICommentService, CommentService>();
+            services.AddTransient<IImageService, ImageService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
