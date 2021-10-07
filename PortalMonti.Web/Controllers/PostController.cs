@@ -117,7 +117,12 @@ namespace PortalMonti.Web.Controllers
             _postService.DeletePost(id);
             return RedirectToAction("Index");
         }
-
+        [HttpPost]
+        public IActionResult ShowComments(int postId)
+        {
+            var comments = _commentService.GetAllComment(postId);
+            return PartialView("_ShowCommentsPartial", comments);
+        }
 
         public async Task<string> UploadFile(IFormFile file)
         {

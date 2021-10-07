@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PortalMonti.Application.ViewModels.Comment.CommentVm>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@*<div class="card gedf-card" style="padding-top:5px">*@
+    <!--<div id="addpost2"--> @*style="display: none"*@ <!--class="be-comment-block">-->
+        <h5>Komentarze</h5>
+        @foreach (var post in Model)
+        {
+            
+
+                <div class="be-comment">
+                    <div class="be-img-comment">
+                        <a href="blog-detail-2.html">
+                            <img src="~/upload/@post.ProfileImage" alt="" class="be-ava-comment">
+                        </a>
+                    </div>
+                    <div class="be-comment-content">
+
+                        <span class="be-comment-name">
+                            <a href="blog-detail-2.html">@post.Author</a>
+                        </span>
+                        <span class="be-comment-time">
+                            <i class="fa fa-clock-o"></i>
+                            @post.Date
+                        </span>
+
+                        <p class="be-comment-text">
+                            @post.Text
+                        </p>
+                    </div>
+                </div>
+            
+        }
+
+        <div>
+            @await Html.PartialAsync("_AddCommentPartial", new PortalMonti.Application.ViewModels.Comment.NewCommentVm()
+   { PostId = Model.First().PostId })
+        </div>
+    @*</div>*@
+@*</div>*@

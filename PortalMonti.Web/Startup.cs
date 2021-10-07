@@ -27,6 +27,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http;
 using PortalMonti.Web.Hubs;
 using PortalMonti.Domain.Model;
+using Newtonsoft.Json.Serialization;
 
 namespace PortalMonti.Web
 {
@@ -80,6 +81,8 @@ namespace PortalMonti.Web
                 options.ClientSecret = googleAuthNSection["ClientSecret"];
             });
             services.AddSignalR();
+            
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

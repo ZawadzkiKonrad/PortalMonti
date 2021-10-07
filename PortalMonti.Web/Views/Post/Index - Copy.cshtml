@@ -52,27 +52,25 @@
     <div>
 
 
-        @{int indexBtn = 0;
-            int indexCom = 10;}
-        @foreach (var post in Model.Posts)
+        @{int index = 0; }
+        @foreach (var item in Model.Posts)
         {
 
-            indexBtn++;
-            indexCom++;
+            index++;
 
 
 
             <!--- \\\\\\\Post-->
-            <div id="post" class="card gedf-card" style="margin-bottom:5px; margin-top:5px;">
+            <div id="@index" class="card gedf-card" style="margin-bottom:5px; margin-top:5px;">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-2">
-                                <img class="rounded-circle" width="50" height="50" src="~/upload/@post.Authorimage" alt="">
+                                <img class="rounded-circle" width="50" height="50" src="~/upload/@item.Authorimage" alt="">
                             </div>
                             <div class="ml-2">
-                                <div class="h5 m-0">@post.Author</div>
-                                <div class="h7 text-muted">@post.Date</div>
+                                <div class="h5 m-0">@item.Author</div>
+                                <div class="h7 text-muted">@item.Date</div>
                             </div>
                         </div>
                         <div>
@@ -94,16 +92,16 @@
                 <div class="card-body">
                     <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
                     <a class="card-link" href="#">
-                        <h5 class="card-title">@post.Name</h5>
+                        <h5 class="card-title">@item.Name</h5>
                     </a>
                     <div class="col-sm-6 col-md-4 col-lg-3 item">
-                        @if (post.PostImage != null)
+                        @if (item.PostImage != null)
                         {
-                            <a href="~/upload/@post.PostImage" data-lightbox="@post.PostImage"><img class="img-fluid" src="~/upload/@post.PostImage"></a>
+                            <a href="~/upload/@item.PostImage" data-lightbox="@item.PostImage"><img class="img-fluid" src="~/upload/@item.PostImage"></a>
                         }
                     </div>
                     <p class="card-text">
-                        @post.Text
+                        @item.Text
 
                     </p>
                 </div>
@@ -112,41 +110,41 @@
                     @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
 
-                    @Html.ActionLink("Dodaj Komentarz", "AddComment", new { postId = post.Id })
+                    @Html.ActionLink("Dodaj Komentarz", "ShowComments", new { postId = item.Id })
 
                     @*<a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>*@
-                    <button id="@indexBtn" value="@post.Id" class="btn3 btn btn-success" style="margin-left:4px">Komentarze</button>
+                    <button id="btn3" class="btn btn-success" style="margin-left:4px">Komentarze</button>
                     @*<a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>*@
                 </div>
             </div>
 
             //Komentarze
             <div class="card gedf-card" style="padding-top:5px">
-                <div id="@indexCom" style="display: none" class="be-comment-block">
-                    @*<h5>Komentarze</h5>
-                    @foreach (var com in ViewBag.Comments)
+                <div id="addpost2" @*style="display: none"*@ class="be-comment-block">
+                    <h5>Komentarze</h5>
+                    @foreach (var item2 in ViewBag.Comments)
                     {
-                        @if (com.PostId == post.Id)
+                        @if (item2.PostId == item.Id)
                         {
 
                             <div class="be-comment">
                                 <div class="be-img-comment">
                                     <a href="blog-detail-2.html">
-                                        <img src="~/upload/@com.ProfileImage" alt="" class="be-ava-comment">
+                                        <img src="~/upload/@item2.ProfileImage" alt="" class="be-ava-comment">
                                     </a>
                                 </div>
                                 <div class="be-comment-content">
 
                                     <span class="be-comment-name">
-                                        <a href="blog-detail-2.html">@com.Author</a>
+                                        <a href="blog-detail-2.html">@item2.Author</a>
                                     </span>
                                     <span class="be-comment-time">
                                         <i class="fa fa-clock-o"></i>
-                                        @com.Date
+                                        @item2.Date
                                     </span>
 
                                     <p class="be-comment-text">
-                                        @com.Text
+                                        @item2.Text
                                     </p>
                                 </div>
                             </div>
@@ -155,8 +153,8 @@
 
                     <div>
                         @await Html.PartialAsync("_AddCommentPartial", new PortalMonti.Application.ViewModels.Comment.NewCommentVm()
-               { PostId = post.Id })
-                    </div>*@
+               { PostId = item.Id })
+                    </div>
                 </div>
             </div>
 
@@ -293,44 +291,11 @@
         });
         $(document).ready(function () {
 
-            for (let i = 1; i < 9; i++) {
-                    $("#"+i).click(function () {
-                event.preventDefault();
-                console.log("przycisk zostal klikniety");
-
-                $.ajax({
-                    type: "POST",
-                    url: "@Url.Action("ShowComments")",
-                    data: { postId: $("#"+i).val() },
-                    //data: { postId: $("#postId").val() },
-                    dataType:"text",
-                    success: function (data) {
-                        console.log(data);
-                        $("#1" + i).toggle(1000); //zwijanie i rozwijanie, mozna dodac efekty
-                        $("#1"+i).html(data); //wrzucenie w danego diva pobranych danych
-                        
-                    }
-                });
-            });
-
-
-            }
-        });
-            //const buttons = document.getElementsByClassName("btn3");
-            //for (const button of buttons) {
-            //    button.addEventListener('click', function (event) {
-            //        const link = button.getElementByTagName('a');
-            //        console.log(event);
-            //        console.log("kliknieto komentarze");
-            //    })
-            //}
-
             //val1 = $("#postId").val();
 
-            @*$("#btn3").click(function () {
+            $("#btn3").click(function () {
                 event.preventDefault();
                 console.log("przycisk zostal klikniety");
-
                 $.ajax({
                     type: "POST",
                     url: "@Url.Action("ShowComments")",
@@ -343,8 +308,8 @@
                         $("#addpost2").html(data); //wrzucenie w danego diva pobranych danych
                     }
                 });
-            });*@
-        
+            });
+        });
 
 
         //$(document).ready(function () {
