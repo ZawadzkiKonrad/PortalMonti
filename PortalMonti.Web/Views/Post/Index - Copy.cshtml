@@ -41,188 +41,195 @@
             </div>
             <input type="hidden" name="pageNo" id="pageNo" />
                <input type="hidden" name="pageSize" id="pageSize" value="8" />
+            </div></div>
 </form> 
 <!-- Post /////-->
 
 
 
-
-<div>
-    <input id="postId" type="hidden" value="15" />
-    <div>
-
-
-        @{int index = 0; }
-        @foreach (var item in Model.Posts)
-        {
-
-            index++;
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <input id="postId" type="hidden" value="15" />
+            <div>
 
 
+                @{int indexBtn = 0;
+                    int indexCom = 10;}
+                @foreach (var post in Model.Posts)
+                {
 
-            <!--- \\\\\\\Post-->
-            <div id="@index" class="card gedf-card" style="margin-bottom:5px; margin-top:5px;">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="mr-2">
-                                <img class="rounded-circle" width="50" height="50" src="~/upload/@item.Authorimage" alt="">
+                    indexBtn++;
+                    indexCom++;
+
+
+
+                    <!--- \\\\\\\Post-->
+                    <div id="post" class="card gedf-card" @*style="margin-bottom:5px; margin-top:5px;"*@>
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="50" height="50" src="~/upload/@post.Authorimage" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="h5 m-0">@post.Author</div>
+                                        <div class="h7 text-muted">@post.Date</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                            <div class="h6 dropdown-header">Configuration</div>
+                                            <a class="dropdown-item" href="#">Save</a>
+                                            <a class="dropdown-item" href="#">Hide</a>
+                                            <a class="dropdown-item" href="#">Report</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="ml-2">
-                                <div class="h5 m-0">@item.Author</div>
-                                <div class="h7 text-muted">@item.Date</div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                            <a class="card-link" href="#">
+                                <h5 class="card-title">@post.Name</h5>
+                            </a>
+                            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                                @if (post.PostImage != null)
+                                {
+                                    <a href="~/upload/@post.PostImage" data-lightbox="@post.PostImage"><img class="img-fluid" src="~/upload/@post.PostImage"></a>
+                                }
+                            </div>
+                            <p class="card-text">
+                                @post.Text
+
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            @*@Html.ActionLink("Edytuj", "EditPost", new { id = item.Id }) |
+                                @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+
+                            @Html.ActionLink("Dodaj Komentarz", "AddComment", new { postId = post.Id })
+
+                            @*<a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>*@
+                            <button id="@indexBtn" value="@post.Id" class="btn3 btn btn-success" style="margin-left:4px">Komentarze</button>
+                            @*<a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>*@
+                        </div>
+                    </div>
+
+                    //Komentarze
+                    <div class="card gedf-card" @*style="padding-top:5px"*@>
+                        <div id="@indexCom" style="display: none" class="be-comment-block">
+                            @*<h5>Komentarze</h5>
+                                     @foreach (var com in ViewBag.Comments)
+                                     {
+                                         @if (com.PostId == post.Id)
+                                         {
+
+                                             <div class="be-comment">
+                                                 <div class="be-img-comment">
+                                                     <a href="blog-detail-2.html">
+                                                         <img src="~/upload/@com.ProfileImage" alt="" class="be-ava-comment">
+                                                     </a>
+                                                 </div>
+                                                 <div class="be-comment-content">
+
+                                                     <span class="be-comment-name">
+                                                         <a href="blog-detail-2.html">@com.Author</a>
+                                                     </span>
+                                                     <span class="be-comment-time">
+                                                         <i class="fa fa-clock-o"></i>
+                                                         @com.Date
+                                                     </span>
+
+                                                     <p class="be-comment-text">
+                                                         @com.Text
+                                                     </p>
+                                                 </div>
+                                             </div>
+                                         }
+                                     }
+
+                                     <div>
+                                         @await Html.PartialAsync("_AddCommentPartial", new PortalMonti.Application.ViewModels.Comment.NewCommentVm()
+                                { PostId = post.Id })
+                                     </div>*@
+                        </div>
+                    </div>
+
+                    <!-- Post /////-->
+                }
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="push-down"></div>
+                <div class="card card-columns">
+                    <h5 class="card-heading">Friends</h5>
+                    <div class="mda-list">
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Eric Graves</a></h3>
+                                <div class="text-muted text-ellipsis">Ut ac nisi id mauris</div>
                             </div>
                         </div>
-                        <div>
-                            <div class="dropdown">
-                                <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-h"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                    <div class="h6 dropdown-header">Configuration</div>
-                                    <a class="dropdown-item" href="#">Save</a>
-                                    <a class="dropdown-item" href="#">Hide</a>
-                                    <a class="dropdown-item" href="#">Report</a>
-                                </div>
+
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Bruce Ramos</a></h3>
+                                <div class="text-muted text-ellipsis">Sed lacus nisl luctus</div>
+                            </div>
+                        </div>
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Marie Hall</a></h3>
+                                <div class="text-muted text-ellipsis">Donec congue sagittis mi</div>
+                            </div>
+                        </div>
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Russell Hart</a></h3>
+                                <div class="text-muted text-ellipsis">Donec convallis arcu sit</div>
+                            </div>
+                        </div>
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Eric Graves</a></h3>
+                                <div class="text-muted text-ellipsis">Ut ac nisi id mauris</div>
+                            </div>
+                        </div>
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Jessie Cox</a></h3>
+                                <div class="text-muted text-ellipsis">Sed lacus nisl luctus</div>
+                            </div>
+                        </div>
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Jonathan Soto</a></h3>
+                                <div class="text-muted text-ellipsis">Donec congue sagittis mi</div>
+                            </div>
+                        </div>
+                        <div class="mda-list-item">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">Guy Carpenter</a></h3>
+                                <div class="text-muted text-ellipsis">Donec convallis arcu sit</div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="card-body">
-                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
-                    <a class="card-link" href="#">
-                        <h5 class="card-title">@item.Name</h5>
-                    </a>
-                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                        @if (item.PostImage != null)
-                        {
-                            <a href="~/upload/@item.PostImage" data-lightbox="@item.PostImage"><img class="img-fluid" src="~/upload/@item.PostImage"></a>
-                        }
-                    </div>
-                    <p class="card-text">
-                        @item.Text
-
-                    </p>
-                </div>
-                <div class="card-footer">
-                    @*@Html.ActionLink("Edytuj", "EditPost", new { id = item.Id }) |
-                    @Html.ActionLink("ViewPost", "ViewPost", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
-
-                    @Html.ActionLink("Dodaj Komentarz", "ShowComments", new { postId = item.Id })
-
-                    @*<a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>*@
-                    <button id="btn3" class="btn btn-success" style="margin-left:4px">Komentarze</button>
-                    @*<a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>*@
-                </div>
-            </div>
-
-            //Komentarze
-            <div class="card gedf-card" style="padding-top:5px">
-                <div id="addpost2" @*style="display: none"*@ class="be-comment-block">
-                    <h5>Komentarze</h5>
-                    @foreach (var item2 in ViewBag.Comments)
-                    {
-                        @if (item2.PostId == item.Id)
-                        {
-
-                            <div class="be-comment">
-                                <div class="be-img-comment">
-                                    <a href="blog-detail-2.html">
-                                        <img src="~/upload/@item2.ProfileImage" alt="" class="be-ava-comment">
-                                    </a>
-                                </div>
-                                <div class="be-comment-content">
-
-                                    <span class="be-comment-name">
-                                        <a href="blog-detail-2.html">@item2.Author</a>
-                                    </span>
-                                    <span class="be-comment-time">
-                                        <i class="fa fa-clock-o"></i>
-                                        @item2.Date
-                                    </span>
-
-                                    <p class="be-comment-text">
-                                        @item2.Text
-                                    </p>
-                                </div>
-                            </div>
-                        }
-                    }
-
-                    <div>
-                        @await Html.PartialAsync("_AddCommentPartial", new PortalMonti.Application.ViewModels.Comment.NewCommentVm()
-               { PostId = item.Id })
-                    </div>
-                </div>
-            </div>
-
-            <!-- Post /////-->
-        }
-    </div>
-</div>
-        </div>
-<div class="col-md-4">
-    <div class="push-down"></div>
-    <div class="card card-columns">
-        <h5 class="card-heading">Friends</h5>
-        <div class="mda-list">
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Eric Graves</a></h3>
-                    <div class="text-muted text-ellipsis">Ut ac nisi id mauris</div>
-                </div>
-            </div>
-
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Bruce Ramos</a></h3>
-                    <div class="text-muted text-ellipsis">Sed lacus nisl luctus</div>
-                </div>
-            </div>
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Marie Hall</a></h3>
-                    <div class="text-muted text-ellipsis">Donec congue sagittis mi</div>
-                </div>
-            </div>
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Russell Hart</a></h3>
-                    <div class="text-muted text-ellipsis">Donec convallis arcu sit</div>
-                </div>
-            </div>
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Eric Graves</a></h3>
-                    <div class="text-muted text-ellipsis">Ut ac nisi id mauris</div>
-                </div>
-            </div>
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Jessie Cox</a></h3>
-                    <div class="text-muted text-ellipsis">Sed lacus nisl luctus</div>
-                </div>
-            </div>
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Jonathan Soto</a></h3>
-                    <div class="text-muted text-ellipsis">Donec congue sagittis mi</div>
-                </div>
-            </div>
-            <div class="mda-list-item">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="List user" class="mda-list-item-img thumb48">
-                <div class="mda-list-item-text mda-2-line">
-                    <h3><a href="#">Guy Carpenter</a></h3>
-                    <div class="text-muted text-ellipsis">Donec convallis arcu sit</div>
                 </div>
             </div>
         </div>
@@ -286,16 +293,49 @@
         });
         $(document).ready(function () {
             $("#btn2").click(function () {
-                $("#addpost").toggle();
+                $("#addpost").toggle(1500);
             });
         });
         $(document).ready(function () {
 
-            //val1 = $("#postId").val();
-
-            $("#btn3").click(function () {
+            for (let i = 1; i < 9; i++) {
+                    $("#"+i).click(function () {
                 event.preventDefault();
                 console.log("przycisk zostal klikniety");
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("ShowComments")",
+                    data: { postId: $("#"+i).val() },
+                    //data: { postId: $("#postId").val() },
+                    dataType:"text",
+                    success: function (data) {
+                        console.log(data);
+                        $("#1" + i).toggle(1000); //zwijanie i rozwijanie, mozna dodac efekty
+                        $("#1"+i).html(data); //wrzucenie w danego diva pobranych danych
+                        
+                    }
+                });
+            });
+
+
+            }
+        });
+            //const buttons = document.getElementsByClassName("btn3");
+            //for (const button of buttons) {
+            //    button.addEventListener('click', function (event) {
+            //        const link = button.getElementByTagName('a');
+            //        console.log(event);
+            //        console.log("kliknieto komentarze");
+            //    })
+            //}
+
+            //val1 = $("#postId").val();
+
+            @*$("#btn3").click(function () {
+                event.preventDefault();
+                console.log("przycisk zostal klikniety");
+
                 $.ajax({
                     type: "POST",
                     url: "@Url.Action("ShowComments")",
@@ -308,8 +348,8 @@
                         $("#addpost2").html(data); //wrzucenie w danego diva pobranych danych
                     }
                 });
-            });
-        });
+            });*@
+        
 
 
         //$(document).ready(function () {

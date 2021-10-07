@@ -120,8 +120,25 @@ namespace PortalMonti.Web.Controllers
         [HttpPost]
         public IActionResult ShowComments(int postId)
         {
+            
             var comments = _commentService.GetAllComment(postId);
-            return PartialView("_ShowCommentsPartial", comments);
+            if (comments.Count()<1)                                 //gdy nie ma komengtarzy tworze domyslny
+            {
+                List< CommentVm > lista = new List<CommentVm>();
+                CommentVm com = new CommentVm() {
+                    Text = "Brak Komentarzy!"
+                };
+                lista.Add(com);
+                lista.AsQueryable();
+                return PartialView("_ShowCommentsPartial",lista);
+            }
+            else
+            {
+                return PartialView("_ShowCommentsPartial", comments);
+            }
+                        
+            
+            
         }
 
         public async Task<string> UploadFile(IFormFile file)
