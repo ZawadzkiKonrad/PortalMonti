@@ -14,6 +14,7 @@ namespace PortalMonti.Application.ViewModels.Friend
         public int? CurrentPage { get; set; }
         public int PageSize { get; set; }
         public string SearchString { get; set; }
+        public string UserPhoto { get; set; }
         public int Count { get; set; }
         public void Mapping(Profile profile)
         {

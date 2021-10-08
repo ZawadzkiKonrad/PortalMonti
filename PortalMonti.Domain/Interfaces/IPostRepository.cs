@@ -20,5 +20,7 @@ namespace PortalMonti.Domain.Interfaces
 
         IQueryable<Tag> GetAllTags();
         void UpdatePost(Post post);
+        void UpdateImage(string path, AppUser user);
+        void UpdateImageCom(string path, AppUser user);
     }
 }

@@ -13,6 +13,7 @@ namespace PortalMonti.Application.ViewModels.Post
         public string Text { get; set; }   
         public DateTime Date { get; set; }
         public string Author { get; set; }
+        public string AuthorId { get; set; }
         public ICollection<PostTag> PostTags { get; set; }
         public void Mapping(MappingProfile profile)
         {

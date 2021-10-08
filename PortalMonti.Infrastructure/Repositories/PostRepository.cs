@@ -38,6 +38,7 @@ namespace PortalMonti.Infrastructure.Repositories
             post.Author = user.Email;
             post.AuthorImage = user.ImageProfile;
             post.Date = DateTime.Now;
+            post.AuthorId = user.Id;
             user.Posts.Add(post);
             _context.SaveChanges();
             return post.Id;
@@ -73,6 +74,29 @@ namespace PortalMonti.Infrastructure.Repositories
             _context.Entry(post).Property("Name").IsModified = true;
             _context.Entry(post).Property("Text").IsModified = true;
             _context.Entry(post).Property("Date").IsModified = true;
+            _context.SaveChanges();
+        }
+
+        public void UpdateImage(string path, AppUser user)
+        {
+            var posts = _context.Posts.Where(p => p.AuthorId == user.Id);
+            foreach (var post in _context.Posts.Where(p => p.AuthorId == user.Id))
+            {
+                post.AuthorImage = path;
+                
+
+            }
+            _context.SaveChanges();
+        }
+
+        public void UpdateImageCom(string path, AppUser user)
+        {
+            
+            foreach (var com in _context.Comments.Where(p => p.AuthorId == user.Id))
+            {
+                com.ProfileImage = path;
+
+            }
             _context.SaveChanges();
         }
 

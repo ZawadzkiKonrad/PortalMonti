@@ -69,7 +69,7 @@ namespace PortalMonti.Web.Controllers
             List<string>friendsId= new List<string>();
             foreach (var item in friends)
             {
-                friendsId.Add(item.Name);
+                friendsId.Add(item.AuthorId);
             }
             
             return View(new NewMessageVm()
@@ -92,7 +92,7 @@ namespace PortalMonti.Web.Controllers
             List<string> friendsId = new List<string>();
             foreach (var item in friends)
             {
-                friendsId.Add(item.Name);
+                friendsId.Add(item.AuthorId);
             }
             
             var id = _messageService.SendMessage(model);

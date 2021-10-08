@@ -12,6 +12,7 @@ namespace PortalMonti.Domain.Model
                        
         public DateTime Date { get; set; }
         public string Author { get; set; }
+        public string AuthorId { get; set; }
         public string AuthorImage { get; set; }
         public string PostImage { get; set; }
         public ICollection <PostTag> PostTags { get; set; }

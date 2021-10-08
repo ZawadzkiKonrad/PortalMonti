@@ -15,6 +15,6 @@ namespace PortalMonti.Domain.Interfaces
         IQueryable<Friend> GetAllFriends();
 
         Friend GetFriendById(int friendId);
-        
+        void UpdateImage(string path, AppUser user);
     }
 }

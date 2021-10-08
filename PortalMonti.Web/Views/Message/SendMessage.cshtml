@@ -39,7 +39,7 @@
                     <option value="">Wybierz znajomego</option>
                     @foreach (var item in ViewBag.Friends)
                     {
-                        <option value="@item.Name" >@item.UserLogin || @item.Email</option>
+                        <option value="@item.AuthorId" >@item.UserLogin || @item.Email</option>
                     }
                 </select>
                 @*<input asp-for="Receiver" class="form-control" />*@

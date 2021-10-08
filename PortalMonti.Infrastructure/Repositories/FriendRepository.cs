@@ -39,8 +39,9 @@ namespace PortalMonti.Infrastructure.Repositories
             var friendss = new Friend()
             {
                 //AppUserId = friend.Id,
+                UserPhoto=friend.ImageProfile,
                 UserLogin = friend.UserLogin,
-                Name=friend.Id,
+                AuthorId=friend.Id,
                 Email=friend.Email,
                 UserName=friend.UserName
                 
@@ -68,6 +69,14 @@ namespace PortalMonti.Infrastructure.Repositories
             return friend;
         }
 
-        
+        public void UpdateImage(string path, AppUser user)
+        {
+            
+            foreach (var friend in _context.Friends.Where(p => p.AuthorId == user.Id))
+            {
+                friend.UserPhoto = path;
+            }
+            _context.SaveChanges();
+        }
     }
 }

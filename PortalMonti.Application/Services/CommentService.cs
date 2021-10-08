@@ -34,7 +34,8 @@ namespace PortalMonti.Application.Services
             var commentNew = _mapper.Map<Domain.Model.Comment>(comment);
             commentNew.ProfileImage = user.ImageProfile;
             commentNew.Author = user.Email;
-            
+            //commentNew.AuthorId
+            commentNew.AuthorId = user.Id;
             var data = DateTime.Today.ToString().Remove(10,9); //usuwanie godziny z daty
             commentNew.Date = DateTime.Now.ToString();
 

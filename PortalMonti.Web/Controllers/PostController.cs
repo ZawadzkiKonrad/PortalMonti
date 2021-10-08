@@ -29,8 +29,9 @@ namespace PortalMonti.Web.Controllers
         public IActionResult Index()
         {
             
-            ViewBag.CurrentUser = _friendService.GetCurrentUser();
+           // ViewBag.CurrentUser = _friendService.GetCurrentUser();
             ViewBag.Comments = _commentService.GetFullComment();
+            ViewBag.Friends = _friendService.GetAllFriends();
             
             var model = _postService.GetAllPostForList(8,1,"");
             return View(model);
@@ -40,7 +41,8 @@ namespace PortalMonti.Web.Controllers
         public IActionResult Index(int pageSize,int? pageNo,string searchString)
         {
             ViewBag.Comments = _commentService.GetFullComment();
-            ViewBag.CurrentUser = _friendService.GetCurrentUser();
+            ViewBag.Friends = _friendService.GetAllFriends();
+            //ViewBag.CurrentUser = _friendService.GetCurrentUser();
 
             if (!pageNo.HasValue)
             {
@@ -87,10 +89,49 @@ namespace PortalMonti.Web.Controllers
         [HttpPost]
         public IActionResult AddComment(NewCommentVm model)
         {
-            
+            //var comments = _commentService.GetAllComment(model.PostId);
             var id = _commentService.AddComment(model);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult AddCommentNew(int postId)
+        {
+            var comments = _commentService.GetAllComment(postId);
+            if (comments.Count() < 1)                                 //gdy nie ma komengtarzy tworze domyslny
+            {
+                List<CommentVm> lista = new List<CommentVm>();
+                CommentVm com = new CommentVm()
+                {
+                    Text = "Brak Komentarzy!"
+                };
+                lista.Add(com);
+                lista.AsQueryable();
+                return PartialView("_ShowCommentsPartial", lista);
+            }
+            else
+            {
+                return PartialView("_ShowCommentsPartial", comments);
+            }
+
+        }
+
+        [HttpPost]
+        public IActionResult AddCommentNew(NewCommentVm model,string text)
+        {
+            model.Text = text;
+           _commentService.AddComment(model);
+            
+            return new JsonResult(new { success = true });
+           
+        }
+        //[HttpPost]
+        //public IActionResult AddComment(NewCommentVm model)
+        //{
+
+        //    var id = _commentService.AddComment(model);
+        //    return RedirectToAction("Index");
+        //}
 
         [HttpGet]
         public IActionResult EditPost(int id)
@@ -117,7 +158,7 @@ namespace PortalMonti.Web.Controllers
             _postService.DeletePost(id);
             return RedirectToAction("Index");
         }
-        [HttpPost]
+        [HttpGet]
         public IActionResult ShowComments(int postId)
         {
             

@@ -54,7 +54,7 @@ namespace PortalMonti.Application.ViewComponents
                 {
                     Id = item.Id.ToString(),
                     UserLogin = item.UserLogin,
-                    Name=item.Name
+                    Name=item.AuthorId
                     
                 };
                 list2.Add(model);

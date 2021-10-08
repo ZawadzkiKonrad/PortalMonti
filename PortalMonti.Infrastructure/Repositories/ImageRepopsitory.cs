@@ -15,11 +15,15 @@ namespace PortalMonti.Infrastructure.Repositories
         private readonly Context _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly IHttpContextAccessor _accessor;
-        public ImageRepopsitory(Context context, UserManager<AppUser> userManager, IHttpContextAccessor accessor)
+        private readonly IPostRepository _postRepository;
+        private readonly IFriendRepository _friendRepository;
+        public ImageRepopsitory(Context context, UserManager<AppUser> userManager, IHttpContextAccessor accessor, IPostRepository postRepository,IFriendRepository friendRepository)
         {
             _context = context;
             _userManager = userManager;
             _accessor = accessor;
+            _postRepository = postRepository;
+            _friendRepository = friendRepository;
         }
         public string AddImage(Image image)
         {
@@ -51,6 +55,10 @@ namespace PortalMonti.Infrastructure.Repositories
         public void ProfileSet(string path)
         {
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            _postRepository.UpdateImage(path, user);
+            _postRepository.UpdateImageCom(path, user);
+            _friendRepository.UpdateImage(path, user);
+            
             user.ImageProfile = path;
             _context.SaveChanges();
         }
