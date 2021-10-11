@@ -11,7 +11,7 @@ namespace PortalMonti.Application.Interfaces
 {
    public interface IFriendService
     {
-        IQueryable<Friend> GetAllFriends();
+        IQueryable<FriendsForListVm> GetAllFriends();
         Task<List<Friend>> GetAllFriendAsync();
         string AddFriend(string id);
         FriendDetailsVm GetFriendById(int id);        

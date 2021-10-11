@@ -45,6 +45,11 @@ namespace PortalMonti.Application.Services
             throw new NotImplementedException();
         }
 
+        public IQueryable<Image> GetUserImages(string appUserId)
+        {
+            return _imageRepo.GetAllImages().Where(p => p.AppUserId == appUserId);
+        }
+
         public void ProfileSet(string path)
         {
             _imageRepo.ProfileSet(path);

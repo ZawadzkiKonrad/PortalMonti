@@ -562,7 +562,6 @@ C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\ViewPost.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\FriendList\Default.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_FriendForIndex.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -589,3 +588,19 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_ShowCommentsPartial.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\Index - Copy.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_ShowFriendsPartial.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Image\Index.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\Index.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\SendMessage.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\SendMessageToFriend.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\ViewMessage.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\AddComment.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\Index - Copy.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Profile\Index.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\AddPost\Default.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_AddCommentPartial.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_AddPostPartial.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_ShowCommentsPartial.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\_ShowFriendsPartial.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Profile\ViewProfile.cshtml.g.cs

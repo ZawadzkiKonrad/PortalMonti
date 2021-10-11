@@ -13,6 +13,9 @@ namespace PortalMonti.Application.ViewModels.Friend
     {
         public string Login { get; set; }
         public string UserLogin { get; set; }
+        public string Email { get; set; }
+        public string AuthorId { get; set; }
+
         public string Id { get; set; }
         public string Name { get; set; }
         public string UserPhoto { get; set; }

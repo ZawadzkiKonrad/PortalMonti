@@ -34,7 +34,7 @@ namespace PortalMonti.Web.Controllers
         }
         public IActionResult Index()
         {
-            int id = 1;
+            
             
             _logger.LogInformation("Jestem w Home/Index");
             return View();

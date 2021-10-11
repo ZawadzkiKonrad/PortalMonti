@@ -73,9 +73,9 @@ namespace PortalMonti.Application.Services
             return postVm;
         }
 
-        public IQueryable<Friend> GetAllFriends()
+        public IQueryable<FriendsForListVm> GetAllFriends()
         {
-            var friends = _friendRepo.GetAllFriends();
+            var friends = _friendRepo.GetAllFriends().ProjectTo<FriendsForListVm>(_mapper.ConfigurationProvider);
             //    .ProjectTo<FriendsForListVm>(_mapper.ConfigurationProvider).ToList();
             ////friends = friends.ProjectTo<ListFriendForListVm>(_mapper.ConfigurationProvider).ToList();
             

@@ -11,10 +11,12 @@ namespace PortalMonti.Domain.Model
     {
         public string UserLogin { get; set; }
         public string ImageProfile { get; set; }
+
+
+
         public int FriendId { get; set; }
         public int ReceivedMessageId { get; set; }
         public int ImageId { get; set; }
-
         public virtual List<Friend> Friends { get; set; } 
         public virtual List<ReceivedMessage> ReceivedMessages { get; set; }
         public virtual List<Image> Images { get; set; }
