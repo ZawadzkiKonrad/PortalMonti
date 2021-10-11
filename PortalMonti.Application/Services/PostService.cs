@@ -45,6 +45,11 @@ namespace PortalMonti.Application.Services
             _postRepo.DeletePost(id);
         }
 
+        public IEnumerable<Post> GetUserPosts(string appUserId)
+        {
+             return _postRepo.GetAllPosts().Where(p=>p.AppUserId==appUserId).AsEnumerable().Reverse();
+        }
+
         public ListPostForListVm GetAllPostForList(int pageSize,int? pageNo,string searchString)
         {
             var posts = _postRepo.GetAllPosts().Where(p => p.Name.StartsWith(searchString))

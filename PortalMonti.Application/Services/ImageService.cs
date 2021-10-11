@@ -37,7 +37,7 @@ namespace PortalMonti.Application.Services
 
         public IQueryable<Image> GetAllImages()
         {
-            throw new NotImplementedException();
+            return _imageRepo.GetAllImages();
         }
 
         public Image GetImageById(int id)

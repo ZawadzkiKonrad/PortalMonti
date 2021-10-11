@@ -54,7 +54,7 @@
     <div class="col-md-8">
 
       
-        <div>
+        <div >
 
 
             @{int indexBtn = 0;
@@ -265,7 +265,7 @@
 
 
         $(document).ready(function () {
-
+            
             for (let i = 1; i < 9; i++) {
                 $("#"+i).click(function () {
                    
@@ -279,6 +279,7 @@
                     success: function (data) {
                         $("#1" + i).toggle(1000); //zwijanie i rozwijanie, mozna dodac efekty
                         $("#1" + i).html(data); //wrzucenie w danego diva pobranych danych
+                        
 
                 $("#create").click(function () {
                     event.preventDefault();
@@ -300,21 +301,22 @@
                         console.log("kliknieto create");
                         $("#1" + i).show(1000); //zwijanie i rozwijanie, mozna dodac efekty
                         $("#1" + i).html(data); //wrzucenie w danego diva pobranych danych
+                        event.preventDefault(); 
                     }
-                })
+                   })
 
                        }
 
                        });
                 });
 
-                    }
+                                 }
 
                 });
-                    });
+                     });
 
             }
-
+            
         });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
