@@ -33,7 +33,8 @@ namespace PortalMonti.Web.Controllers
             ViewBag.Comments = _commentService.GetFullComment();
             ViewBag.Friends = _friendService.GetAllFriends();
             
-            var model = _postService.GetAllPostForList(8,1,"");
+            var model = _postService.GetAllPostForList(5,1,"");
+            ViewBag.Count = model.Posts.Count;
             return View(model);
 
         }
@@ -62,6 +63,22 @@ namespace PortalMonti.Web.Controllers
         {
             
             return View(new NewPostVm());
+        } 
+        
+        [HttpGet]
+        public IActionResult GetPostForList(int pageSize, int? pageNo,string searchString)
+        {
+            //if (!pageNo.HasValue)
+            //{
+            //    pageNo = 1;
+            //}
+            if (searchString is null)
+            {
+                searchString = String.Empty;
+            }
+            var model = _postService.GetAllPostForList(pageSize, pageNo, searchString);
+            return PartialView("_ShowPostPartial", model);
+
         }
         // po wypenieniu formularza zwrocony odpopiedni model ktory zostanie przekazany do serwisu i nastepnie do repozytorium aby utrworzyc post
         [HttpPost]

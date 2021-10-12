@@ -60,7 +60,8 @@ namespace PortalMonti.Web
 
             services.AddTransient<IValidator<NewPostVm>, NewPostValidation>();
 
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
 
             services.Configure<IdentityOptions>(options =>
             {
