@@ -27,7 +27,7 @@ using PortalMonti.Web.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c8da45ecc9a28c6ec9beba6b93226171cf49c8c6", @"/Views/Shared/Components/FriendList/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4a0fe791533bd4b79acc47efe78846a612c1da45", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c09acd31a92ea1f832ab738140864a564be0124c", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_FriendList_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<PortalMonti.Application.ViewModels.Friend.FriendsForListVm>>
     {
         #pragma warning disable 1998

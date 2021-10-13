@@ -20,6 +20,9 @@ namespace PortalMonti.Infrastructure
         public DbSet<Image> Images { get; set; }
         public DbSet<PostTag> PostTag { get; set; } //tabela posrednia zostaje w liczbie poijedynczej
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Chat> Chats { get; set; }
+        public DbSet<ChatUser> ChatUsers { get; set; }
+        public DbSet<Message> MessagesChat { get; set; }
         
         
         

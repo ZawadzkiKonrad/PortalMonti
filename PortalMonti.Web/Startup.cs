@@ -46,11 +46,13 @@ namespace PortalMonti.Web
             services.AddDbContext<Context>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<Context>();
 
             services.AddApplication();
             services.AddInfrastructure();
+
 
             services.AddTransient<IPostRepository, PostRepository>();
            // services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();

@@ -234,6 +234,49 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("PortalMonti.Domain.Model.Chat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Chats");
+                });
+
+            modelBuilder.Entity("PortalMonti.Domain.Model.ChatUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ChatId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChatId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ChatUser");
+                });
+
             modelBuilder.Entity("PortalMonti.Domain.Model.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -328,6 +371,32 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.HasIndex("AppUserId");
 
                     b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("PortalMonti.Domain.Model.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ChatId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChatId");
+
+                    b.ToTable("MessagesChat");
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.Post", b =>
@@ -478,6 +547,23 @@ namespace PortalMonti.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PortalMonti.Domain.Model.ChatUser", b =>
+                {
+                    b.HasOne("PortalMonti.Domain.Model.Chat", "Chat")
+                        .WithMany("Users")
+                        .HasForeignKey("ChatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PortalMonti.Domain.Model.AppUser", "User")
+                        .WithMany("Chats")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Chat");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PortalMonti.Domain.Model.Comment", b =>
                 {
                     b.HasOne("PortalMonti.Domain.Model.Post", "Post")
@@ -505,6 +591,17 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasForeignKey("AppUserId");
 
                     b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("PortalMonti.Domain.Model.Message", b =>
+                {
+                    b.HasOne("PortalMonti.Domain.Model.Chat", "Chat")
+                        .WithMany("Messages")
+                        .HasForeignKey("ChatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Chat");
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.Post", b =>
@@ -546,6 +643,8 @@ namespace PortalMonti.Infrastructure.Migrations
 
             modelBuilder.Entity("PortalMonti.Domain.Model.AppUser", b =>
                 {
+                    b.Navigation("Chats");
+
                     b.Navigation("Friends");
 
                     b.Navigation("Images");
@@ -553,6 +652,13 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.Navigation("Posts");
 
                     b.Navigation("ReceivedMessages");
+                });
+
+            modelBuilder.Entity("PortalMonti.Domain.Model.Chat", b =>
+                {
+                    b.Navigation("Messages");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.Post", b =>

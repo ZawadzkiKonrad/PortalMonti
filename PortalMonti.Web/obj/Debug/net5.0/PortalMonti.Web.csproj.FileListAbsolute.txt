@@ -884,3 +884,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\refs\W
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\Room\Default.cshtml.g.cs

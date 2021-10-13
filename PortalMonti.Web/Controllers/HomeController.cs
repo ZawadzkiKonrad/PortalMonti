@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PortalMonti.Application.Interfaces;
 using PortalMonti.Domain.Model;
+using PortalMonti.Infrastructure;
 using PortalMonti.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,14 @@ namespace PortalMonti.Web.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<AppUser> _userManager;
         private readonly IFriendService _friendService;
+        private readonly Context _context;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IFriendService friendService)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IFriendService friendService,Context context)
         {
             _logger = logger;
             _userManager = userManager;
             _friendService = friendService;
+            _context = context;
         }
         [HttpGet]
         public IActionResult ListUsers()
@@ -58,11 +61,15 @@ namespace PortalMonti.Web.Controllers
              
             return View();
         }
-        public string SaveEmployeeRecord()
+        public async Task<IActionResult> CreateRoom(string name)
         {
-            string res = "this is return value";
-            // do here some operation  
-            return res;
+            _context.Chats.Add(new Chat
+            {
+                Name = name,
+                Type=ChatType.Room
+            });
+           await  _context.SaveChangesAsync();
+            return RedirectToAction("index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

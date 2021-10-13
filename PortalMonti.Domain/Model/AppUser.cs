@@ -22,10 +22,14 @@ namespace PortalMonti.Domain.Model
         public virtual List<Image> Images { get; set; }
         public virtual List<Post> Posts { get; set; }
 
+        public ICollection<ChatUser> Chats { get; set; }
+
         //public List<AppUser> Friends { get; set; }
 
-        public AppUser()
+        public AppUser():base()
         {
+            Chats = new List<ChatUser>();
+
             Friends = new List<Friend>();
             ReceivedMessages = new List<ReceivedMessage>();
             Images = new List<Image>();

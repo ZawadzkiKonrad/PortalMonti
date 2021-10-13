@@ -1,45 +1,88 @@
-﻿@{
+﻿@model IEnumerable<PortalMonti.Domain.Model.Chat>
+@{
     ViewData["Title"] = "Home Page";
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container">
-    <div>
-        @await Component.InvokeAsync("FriendList", new())
-    </div>
-    <div class="row">
-        <div class="col-3">Connection Id</div>
-        <div class="col-6"><span id="userId" /></div>
-    </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Message</div>
-        <div class="col-4"><input type="text" id="messageInput" /></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Receiver Id</div>
-        <div class="col-4"><input type="text" id="receiverId" /></div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChatApp</title>
 
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">
-            <input type="button" id="sendToUser" value="Send Message" />&nbsp;&nbsp;
-            <input type="button" id="sendButton" value="Send Message to All" />
+    <link rel="stylesheet" href="~/assets/css/site2.css">
 
+</head>
+
+<body>
+
+    @*<div class="navbar">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Find">Find</a>
+        <a asp-controller="Home" asp-action="Private">Private</a>
+    </div>*@
+    <div class="body11">
+        <div class="main">
+            <div class="side-menu">
+                <a class="room-button" href="#">
+                    Pokój
+                </a>
+                <a class="room-button" id="create-room-btn" href="#">
+                   <strong>+</strong>
+                </a>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <vc:room></vc:room>
+            }
+            <div class="chat">
+                @*@RenderBody()*@
+
+             
+                    @*@foreach (var chat in Model)
+                    {
+                        <a class="room-button" asp-controller="Home" asp-action="JoinRoom" asp-route-id="@chat.Id">
+                            @chat.Name
+                        </a>
+                    }*@
+                </div>
+            </div>
+
+        <div class="modal"id="create-room-modal">
+            <button type="button" class="close" onclick="closeModal()">X</button>
+            <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
+              
+                    <header>Utwórz pokój</header>
+               
+                <div><input name="name">
+                </div>
+                <footer>
+                <button>Utwórz </button>
+                </footer>
+            </form>
         </div>
+        <div class="chat-input">
+            <input type="text" />
+            <button>Wyslij</button>
+        </div>
+
+        @*<div class="modal" id="create-room-modal">
+            <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
+                <button type="button" class="close" onclick="closeModal()">X</button>
+                <header>Utwórz pokój</header>
+                <div>
+                    <input name="name">
+                </div>
+                <footer>
+                    <button>Create</button>
+                </footer>
+            </form>
+        </div>*@
+
+        <script src="~/js/site.js"></script>
+
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <hr />
-    </div>
-</div>
-<div class="row">
-    <div class="col-6">
-        <ul id="messagesList"></ul>
-    </div>
-</div>
+</body>
+
+</html>
