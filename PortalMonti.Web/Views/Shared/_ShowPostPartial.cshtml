@@ -69,14 +69,14 @@
                         @*@Html.ActionLink("Dodaj Komentarz", "AddComment", new { postId = post.Id })*@
 
                         @*<a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>*@
-                        <button id="@indexBtn" value="@post.Id" class="btnopen btn3 btn btn-success" style="margin-left:4px">Komentarze</button>
+                        <button data-post-id="@post.Id" value="@post.Id" class="btnopen btn3 btn btn-success" style="margin-left:4px">Komentarze</button>
                         @*<a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>*@
                     </div>
                 </div>
 
                 //Komentarze
                 <div class="card gedf-card" @*style="padding-top:5px"*@>
-                    <div id="@indexCom" style="display: none" class="comopen be-comment-block">
+                    <div id="@indexCom" data-post-id="@post.Id" style="display: none" class="comopen be-comment-block">
                         @*<h5>Komentarze</h5>
                                  @foreach (var com in ViewBag.Comments)
                                  {
@@ -117,4 +117,4 @@
                 <!-- Post /////-->
             }
         </div>
-        
+

@@ -150,7 +150,7 @@
                 if (Math.floor($(window).scrollTop()) >= $(document).height() - $(window).height() - 10) {
                     currentPage += 1;
                     loadPageData(currentPage);
-                    
+
                 }
             });
 
@@ -178,12 +178,17 @@
         const buttons = document.getElementsByClassName('btnopen');
         const coms = document.getElementsByClassName('comopen');
 
-
          function showComments2() {
             $(document).ready(function () {
-
-                for (const com of coms ) {
+                for (const com of coms ) { //todo delete this
                     for (button of buttons) {
+
+                        const postId = button.getAttribute('data-post-id');
+
+                        const element = document.querySelector('#');
+
+                        const commentContainer = document.querySelector(`div[data-post-id="${postId}"]`);
+
                          $(button).click(function () {
 
                     console.log("przycisk zostal klikniety");
