@@ -1,0 +1,118 @@
+﻿@model PortalMonti.Domain.Model.Chat
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChatApp</title>
+
+    <link rel="stylesheet" href="~/css/site2.css">
+    
+</head>
+
+<body>
+
+
+
+    <div class="main">
+
+        @await Component.InvokeAsync("Room")
+
+        <div class="chat">
+            <div class="chat-body">
+                @if (Model.Messages == null)
+                {
+                    <div>adsfasdasdas</div>
+                }
+                else
+                {
+                    @foreach (var message in Model.Messages)
+                    {
+                        <div class="message">
+                            <header>@message.Name</header>
+                            <p>@message.Text</p>
+                            <footer>@message.Timestamp</footer>
+                        </div>
+                    }
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <form class="chat-input" asp-controller="Home" asp-action="CreateMessage">
+        <input type="hidden" name="chatId" value="@Model.Id">
+        <input type="text" name="message">
+        <button type="submit">Wyslij</button>
+    </form>
+
+
+
+
+    @*<div class="modal" id="create-room-modal">
+
+        <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
+            <button onclick="closeModal()" type="button" class="close">X</button>
+            <header>Utwórz Pokój</header>
+            <div><input name="name" /></div>
+            <footer>
+                <button>Utwórz</button>
+            </footer>
+
+        </form>
+    </div>*@
+
+    <script src="~/js/site.js"></script>
+
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script>
+        var connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .build();
+
+        var _connectionId = '';
+
+        connection.on("RecieveMessage", function (data) {
+            console.log(data);
+        })
+        
+
+        var joinRoom = function () {
+            var url='/Chat/JoinRoom/'+ _connectionId+'/@Model.Name'
+            axios.post(url, null)
+                .then(res => {
+                    console.log("dolaczono do pokoju!", res);
+                })
+                .catch(err => {
+                    console.err("nieudalo sie dolaczyc do pokoju", res);
+                })
+        }
+        connection.start()
+            .then(function () {
+                connection.invoke('GetConnectionId')
+                    .then(function (connectionId) {
+                        _connectionId = connectionId
+
+                        joinRoom();
+                    })
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+        
+    </script>
+   
+    
+</body>
+
+</html>
+
+   

@@ -55,9 +55,10 @@
 <!-- Post /////-->
 <div class="row row2">
     <div class="col-md-8">
-        <div id="tblEmployee">
 
-        </div>
+        <div id="tblEmployee"> </div>
+        <h2 id="load_data_message">Ładuje...</h2>
+
     </div>
 
 
@@ -122,9 +123,9 @@
             }
 
     </ul>*@
-    <br />
-    <br />
-    <br>
+<br />
+<br />
+<br>
 
 
 
@@ -142,6 +143,15 @@
     <script type="text/javascript">
 
 
+        $(function () {
+            console.log("strona gotowa");
+        });
+        $(document).ready(function () {
+            $("#btn2").click(function () {
+                $("#addpost").toggle(1500);
+            });
+        });
+
 
         $(document).ready(function () {
             var currentPage = 1;
@@ -158,12 +168,21 @@
                     url: "@Url.Action("GetPostForList")",
                     method: 'get',
                     dataType: "text",
-                    data: { pageNo: currentPageNumber, pageSize:10},
+                    data: { pageNo: currentPageNumber, pageSize:5},
                     success: function (data) {
                         var employeeTable = $('#tblEmployee');
+                        var action = "inactive";
 
                         $(data).each(function (index, emp) {
                             employeeTable.append(data);
+                            if (data == '') {
+                                $('#load_data_message').html("<button type='button' class='btn btn-info'>No Data Found</button>");
+                                action = 'active';
+                            }
+                            else {
+                                $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
+                                action = 'inactive';
+                            }
                             showComments();
                         });
                     },
@@ -173,25 +192,24 @@
                 });
             }
         });
-       
 
 
-        function showComments() {
+
+        function showComments(clicked_id) {
             $(document).ready(function () {
 
-            for (let i = 1; i < @ViewBag.Count; i++) {
-                $("#"+i).click(function () {
+
 
                     console.log("przycisk zostal klikniety");
 
                 $.ajax({
                     type: "GET",
                     url: "@Url.Action("ShowComments")",
-                    data: { postId: $("#"+i).val() },
+                    data: { postId: clicked_id },
                     dataType:"text",
                     success: function (data) {
-                        $("#1" + i).toggle(1000); //zwijanie i rozwijanie, mozna dodac efekty
-                        $("#1" + i).html(data); //wrzucenie w danego diva pobranych danych
+                        $("#"+clicked_id).toggle(1000); //zwijanie i rozwijanie, mozna dodac efekty
+                        $("#"+clicked_id).html(data); //wrzucenie w danego diva pobranych danych
 
 
                 $("#create").click(function () {
@@ -200,56 +218,61 @@
                 $.ajax({
                     type: "POST",
                        url: "@Url.Action("AddCommentNew")",
-                       data: { postId: $("#" + i).val(), text: $("#text").val() },
+                    data: { postId: clicked_id, text: $("#text").val() },
                     dataType:"text",
                     success: function (data) {
 
-                $.ajax({
-                    type: "GET",
-                    url: "@Url.Action("ShowComments")",
-                    data: { postId: $("#" + i).val() },
-                    dataType: "text",
-                    success: function (data) {
+                        showCommentsAfter(); //wyswietlanie razem z dodanym nowo komentarzem
 
-                        console.log("kliknieto create");
-                        $("#1" + i).show(1000); //zwijanie i rozwijanie, mozna dodac efekty
-                        $("#1" + i).html(data); //wrzucenie w danego diva pobranych danych
-                        event.preventDefault();
-                    }
-                   })
 
                        }
 
                        });
                 });
 
+
+
                                  }
 
                 });
-                     });
+          function showCommentsAfter() {
+              $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("ShowComments")",
+                    data: { postId: clicked_id },
+                    dataType: "text",
+                    success: function (data) {
 
-            }
+                        console.log("kliknieto create");
+                        $("#" + clicked_id).show(1000); //zwijanie i rozwijanie, mozna dodac efekty
+                        $("#" + clicked_id).html(data); //wrzucenie w danego diva pobranych danych
+                        event.preventDefault();
+                    }
+                   })
+
+                }
+                @*function CreateComment(com_id) {
+                            event.preventDefault();
+                    console.log("kliknieto");
+                $.ajax({
+                    type: "POST",
+                       url: "@Url.Action("AddCommentNew")",
+                    data: { postId: com_id, text: $("#text").val() },
+                    dataType:"text",
+                    success: function (data) {
+
+                        showCommentsAfter(); //wyswietlanie razem z dodanym nowo komentarzem
+
+
+                       }
+
+                       });
+
+                        }*@
 
         });
 
         }
-
-        
-
-        $(function () {
-            console.log("strona gotowa");
-        });
-        $(document).ready(function () {
-            $("#btn2").click(function () {
-                $("#addpost").toggle(1500);
-            });
-        });
-
-        
-        
-
-
-
 
 
     </script>

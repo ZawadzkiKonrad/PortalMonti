@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PortalMonti.Application.Interfaces;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace PortalMonti.Web.Controllers
 {
+    [Authorize]
     public class ImageController : Controller
     {
         private readonly IImageService _imageService;

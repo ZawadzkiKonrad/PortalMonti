@@ -1,45 +1,58 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<PortalMonti.Domain.Model.Chat>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container">
-    <div>
-        @await Component.InvokeAsync("FriendList", new())
-    </div>
-    <div class="row">
-        <div class="col-3">Connection Id</div>
-        <div class="col-6"><span id="userId" /></div>
-    </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Message</div>
-        <div class="col-4"><input type="text" id="messageInput" /></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Receiver Id</div>
-        <div class="col-4"><input type="text" id="receiverId" /></div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChatApp</title>
 
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">
-            <input type="button" id="sendToUser" value="Send Message" />&nbsp;&nbsp;
-            <input type="button" id="sendButton" value="Send Message to All" />
+    <link rel="stylesheet" href="~/css/site2.css">
+    <script src="~/js/site.js"></script>
+</head>
 
+<body>
+
+
+
+    <div class="main">
+        
+        @await Component.InvokeAsync("Room")
+
+        <div class="chat">
+            <div class="chat-body">
+                @foreach (var chat in Model)
+                {
+                    <a class="room-button" asp-controller="Home" asp-action="JoinRoom" asp-route-id="@chat.Id">
+                        @chat.Name
+                    </a>
+                }
+
+            </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <hr />
+
+
+
+   
+
+    <div class="modal" id="create-room-modal">
+        
+        <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
+            <button onclick="closeModal()" type="button" class="close">X</button>
+            <header>Utwórz Pokój</header>
+            <div><input name="name" /></div>
+            <footer>
+                <button>Utwórz</button>
+            </footer>
+
+        </form>
     </div>
-</div>
-<div class="row">
-    <div class="col-6">
-        <ul id="messagesList"></ul>
-    </div>
-</div>
+
+    <script src="~/js/site.js"></script>
+   
+
+</body>
+
+</html>

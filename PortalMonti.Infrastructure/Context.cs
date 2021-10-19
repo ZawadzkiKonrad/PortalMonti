@@ -11,7 +11,7 @@ namespace PortalMonti.Infrastructure
     {
         public DbSet<Friend> Friends { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<ReceivedMessage> Messages { get; set; }
+       // public DbSet<ReceivedMessage> Messages { get; set; }
         public DbSet<ReceivedMessage> ReceivedMessages { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
 
@@ -20,6 +20,9 @@ namespace PortalMonti.Infrastructure
         public DbSet<Image> Images { get; set; }
         public DbSet<PostTag> PostTag { get; set; } //tabela posrednia zostaje w liczbie poijedynczej
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Chat> Chats { get; set; }
+        public DbSet<ChatUser> ChatUsers { get; set; }
         
         
         
@@ -44,6 +47,9 @@ namespace PortalMonti.Infrastructure
             .HasOne<Tag>(pt => pt.Tag)
             .WithMany(p => p.PostTags)
             .HasForeignKey(pt => pt.TagId);
+
+            builder.Entity<ChatUser>()
+                .HasKey(x => new { x.ChatId, x.UserId });
         }
     }
 }
