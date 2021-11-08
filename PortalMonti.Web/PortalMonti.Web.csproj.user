@@ -12,7 +12,8 @@
     <_SelectedScaffolderID>IdentityScaffolder</_SelectedScaffolderID>
     <_SelectedScaffolderCategoryPath>root/Identity</_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_LayoutPageFile />
-    <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
+    <ActiveDebugProfile>PortalMonti.Web</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Properties\PublishProfiles\Default Settings.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

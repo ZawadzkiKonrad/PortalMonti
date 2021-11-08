@@ -77,6 +77,10 @@ namespace PortalMonti.Web.Controllers
                 searchString = String.Empty;
             }
             var model = _postService.GetAllPostForList(pageSize, pageNo, searchString);
+            //if (model.Posts.Count < 1)
+            //{
+            //    return PartialView("_ShowPostPartialEmpty");
+            //}
             return PartialView("_ShowPostPartial", model);
 
         }

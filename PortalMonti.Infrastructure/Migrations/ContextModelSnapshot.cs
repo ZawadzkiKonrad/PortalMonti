@@ -162,9 +162,6 @@ namespace PortalMonti.Infrastructure.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ChatId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -229,8 +226,6 @@ namespace PortalMonti.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ChatId");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -249,13 +244,21 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NamePrv")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Chats");
                 });
@@ -548,17 +551,17 @@ namespace PortalMonti.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PortalMonti.Domain.Model.AppUser", b =>
+            modelBuilder.Entity("PortalMonti.Domain.Model.Chat", b =>
                 {
-                    b.HasOne("PortalMonti.Domain.Model.Chat", null)
-                        .WithMany("Users")
-                        .HasForeignKey("ChatId");
+                    b.HasOne("PortalMonti.Domain.Model.AppUser", null)
+                        .WithMany("Chats")
+                        .HasForeignKey("AppUserId");
                 });
 
             modelBuilder.Entity("PortalMonti.Domain.Model.ChatUser", b =>
                 {
                     b.HasOne("PortalMonti.Domain.Model.Chat", "Chat")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -653,6 +656,8 @@ namespace PortalMonti.Infrastructure.Migrations
 
             modelBuilder.Entity("PortalMonti.Domain.Model.AppUser", b =>
                 {
+                    b.Navigation("Chats");
+
                     b.Navigation("Friends");
 
                     b.Navigation("Images");

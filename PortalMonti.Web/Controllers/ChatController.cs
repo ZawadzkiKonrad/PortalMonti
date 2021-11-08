@@ -37,7 +37,7 @@ namespace PortalMonti.Web.Controllers
 
             return Ok();
         }
-
+        [HttpPost("[action]")]
         public  async Task<IActionResult> SendMessage(
             int chatId,
             string message,
@@ -55,7 +55,11 @@ namespace PortalMonti.Web.Controllers
             await ctx.SaveChangesAsync();
 
             await _chat.Clients.Group(roomName)
-                .SendAsync("RecieveMessage",msg);
+                .SendAsync("RecieveMessage",new {      //tworze tu niwy obiekt zeby data nie wariowala parsuje ja na string
+                    Text=msg.Text,
+                    Name=msg.Name,
+                    Timestamp=msg.Timestamp.ToString("dd/MM/yyyy hh:mm:ss")
+                });
             return Ok();
         }
     }

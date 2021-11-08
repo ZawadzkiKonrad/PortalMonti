@@ -41,6 +41,8 @@ namespace PortalMonti.Web.Controllers
       
         public IActionResult Index()
         {
+            var friends = _friendService.GetAllFriends();
+            ViewBag.friends = friends;
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var chats = _context.Chats
                 .Include(x => x.Users)
@@ -91,6 +93,31 @@ namespace PortalMonti.Web.Controllers
                 .FirstOrDefault(x => x.Id == id);             
             return View(chat);
         } 
+        [HttpGet]
+        public IActionResult ChatPrv (string appUserId)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var name = appUserId + userId;
+            var name2 = userId+appUserId;
+
+            var chat = _context.Chats
+                .Include(x => x.Messages)
+                .FirstOrDefault(x => x.Name == name||x.Name==name2);
+            if (chat!=null)
+            {
+                return View(chat);
+            }
+            else
+            {
+                var chat2 =  createChatprv(appUserId);
+                return View(chat2);
+            }
+
+            //var chat = _context.Chats
+            //    .Include(x => x.Messages)
+            //    .FirstOrDefault(x => x.Id == id);             
+            
+        } 
 
         [HttpGet]
         public async Task<IActionResult> JoinRoom(int id)
@@ -125,6 +152,28 @@ namespace PortalMonti.Web.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+
+        public Chat createChatprv(string appUserId)
+        {
+            var name = appUserId + User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var chat = new Chat
+            {
+                NamePrv=name,
+                Name = name,
+                Type = ChatType.Room
+            };
+            chat.Users.Add(new ChatUser
+            {
+                UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,  //szybsze pobieranie id uzytkownika
+                Role = UserRole.Admin
+            });
+            _context.Chats.Add(chat);
+             _context.SaveChanges();
+            return chat;
         }
 
     }

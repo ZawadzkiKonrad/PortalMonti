@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dI4taoOBjZxkAjASpOlparwSZnQ/oq7NRCSEyhhyEU06myhA/q8XSXBgVEbDKkf6yhGD/e6w4Dc7OoHhW9kIig==",
+  "dgSpecHash": "rcgu8pcgXUlvsf4oyswUMYnI2Rh5sEHA4VmTb9KXeTpHgChlKbDJ5j0aLLUM3zhjmihlXC54YlB7kmEyg6AjtA==",
   "success": true,
   "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\PortalMonti.Web.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,7 @@
     "C:\\Users\\48797\\.nuget\\packages\\jquery.validation\\1.8.0.1\\jquery.validation.1.8.0.1.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
-    "C:\\Users\\48797\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\5.0.8\\microsoft.aspnetcore.authentication.google.5.0.8.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\5.0.11\\microsoft.aspnetcore.authentication.google.5.0.11.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\2.2.0\\microsoft.aspnetcore.connections.abstractions.2.2.0.nupkg.sha512",

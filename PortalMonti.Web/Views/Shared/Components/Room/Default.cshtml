@@ -1,17 +1,21 @@
 ﻿@model IEnumerable<PortalMonti.Domain.Model.Chat>
 
 
-    <div class="side-menu">
+<div class="side-menu">
 
 
-        @foreach (var chat in Model)
+    @foreach (var chat in Model)
+    {
+        @if (chat.NamePrv == null)
         {
             <a class="room-button" asp-controller="Home" asp-action="Chat" asp-route-id="@chat.Id">
                 @chat.Name
             </a>
-
         }
-        <a class="room-button" href="#" id="create-room-btn">
-            <strong>+</strong>
-        </a>
-    </div>
+
+
+    }
+    <a class="room-button" href="#" id="create-room-btn">
+        <strong>+</strong>
+    </a>
+</div>

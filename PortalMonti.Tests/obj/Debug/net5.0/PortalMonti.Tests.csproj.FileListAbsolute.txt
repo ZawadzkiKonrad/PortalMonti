@@ -202,7 +202,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\runt
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\obj\Debug\net5.0\PortalMonti.Tests.csprojAssemblyReference.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\obj\Debug\net5.0\PortalMonti.Tests.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\obj\Debug\net5.0\PortalMonti.Tests.AssemblyInfoInputs.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\obj\Debug\net5.0\PortalMonti.Tests.AssemblyInfo.cs
@@ -705,3 +704,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\refs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\obj\Debug\net5.0\PortalMonti.Tests.csproj.AssemblyReference.cache

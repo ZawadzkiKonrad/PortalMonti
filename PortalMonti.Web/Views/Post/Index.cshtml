@@ -15,7 +15,7 @@
     </p>*@
 <head>
     @*<script src="jquery-1.11.2.js"></script>*@
-
+    <link rel="stylesheet" href="~/assets/css/post.css">
 </head>
 
 <div id="addpost" style="display: none">@await Html.PartialAsync("_AddPostPartial", new PortalMonti.Application.ViewModels.Post.NewPostVm())</div>
@@ -52,95 +52,106 @@
 <button id="btn2" class="btn btn-success" style="margin-left:4px">Dodaj Post</button>
 <br />
 
-<!-- Post /////-->
-<div class="row row2">
-    <div class="col-md-8">
 
-        <div id="tblEmployee"> </div>
-        <h2 id="load_data_message">Ładuje...</h2>
+        <!-- Post /////-->
+        <div class="row row2">
+            <div class="col-md-8">
 
-    </div>
+                <div id="tblEmployee"> </div>
+                <h2 id="load_data_message">Ładuje...</h2>
+
+            </div>
 
 
 
-    <div class="col-md-4">
-        <div class="push-down"></div>
-        <div class="card card-columns">
-            <h5 class="card-heading">Friends</h5>
-            <div class="mda-list">
-                @foreach (var friend in ViewBag.Friends)
+            <div class="col-md-4 d-none d-lg-block">
+                <div class="push-down"></div>
+                <div class="card card-columns">
+                    <h5 class="card-heading">Friends</h5>
+                    <div class="mda-list">
+                        @foreach (var friend in ViewBag.Friends)
                 {
-                    <div class="mda-list-item">
-                        <img src="~/upload/@friend.UserPhoto" alt="List user" class="mda-list-item-img thumb48">
-                        <div class="mda-list-item-text mda-2-line">
-                            <h3><a href="#">@friend.Email</a></h3>
-                            @Html.ActionLink("Zobacz Profil", "ViewProfile", "Profile", new { appUserId = friend.AuthorId })
-                            <div class="text-muted text-ellipsis">Ut ac nisi id mauris</div>
+                        <div class="mda-list-item">
+                            <img src="~/upload/@friend.UserPhoto" alt="List user" class="mda-list-item-img thumb48">
+                            <div class="mda-list-item-text mda-2-line">
+                                <h3><a href="#">@friend.Email</a></h3>
+                                @Html.ActionLink("Zobacz Profil", "ViewProfile", "Profile", new { appUserId = friend.AuthorId })
+                                <div class="text-muted text-ellipsis">Ut ac nisi id mauris</div>
+                            </div>
                         </div>
-                    </div>
                 }
 
 
 
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 
 
 
-<br />
-<br />
-
-
+        <br />
+        <br />
 
 
 
 
 
 
-@*<ul class="pagination pagination-circle">
 
 
-        @for (int i = 1; i <= Math.Ceiling((double)Model.Count / (double)Model.PageSize); i++)
-        {
-            <td>
-                @if (i != Model.CurrentPage)
+        @*<ul class="pagination pagination-circle">
+
+
+                @for (int i = 1; i <= Math.Ceiling((double)Model.Count / (double)Model.PageSize); i++)
                 {
-                <li class="page-item " aria-current="page">
-                    <a class="page-link" href="javascript:PagerClick(@i)">@i </a>
-                </li>
+                    <td>
+                        @if (i != Model.CurrentPage)
+                        {
+                        <li class="page-item " aria-current="page">
+                            <a class="page-link" href="javascript:PagerClick(@i)">@i </a>
+                        </li>
 
-            }
-            else
-            {
-                <li class="page-item active"><a class="page-link" href="javascript:PagerClick(@i)">@i</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item active"><a class="page-link" href="javascript:PagerClick(@i)">@i</a></li>
 
-            }
-                </td>
-            }
+                    }
+                        </td>
+                    }
 
-    </ul>*@
-<br />
-<br />
-<br>
-
-
+            </ul>*@
+        <br />
+        <br />
+        <br>
 
 
 
-@section Scripts
+
+
+        @section Scripts
 {
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        function PagerClick(index) {
-            document.getElementById("pageNo").value = index;
-            document.getElementById("pageNo").form.submit();
-        }
-    </script>
-    <script type="text/javascript">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                function PagerClick(index) {
+                    document.getElementById("pageNo").value = index;
+                    document.getElementById("pageNo").form.submit();
+                }
+            </script>
+            <script type="text/javascript">
+ 
+    $(document).ready(function () {
+            var currentPage = 1;
+            loadPageData(currentPage);
+            $(window).scroll(function () {
+                if (Math.floor($(window).scrollTop()) >= $(document).height() - $(window).height()-200 ) {
+                    currentPage += 1;
+                    loadPageData(currentPage);
+                }
+            });
 
 
         $(function () {
@@ -151,39 +162,32 @@
                 $("#addpost").toggle(1500);
             });
         });
-
-
-        $(document).ready(function () {
-            var currentPage = 1;
-            loadPageData(currentPage);
-            $(window).scroll(function () {
-                if (Math.floor($(window).scrollTop()) >= $(document).height() - $(window).height() - 10) {
-                    currentPage += 1;
-                    loadPageData(currentPage);
-                }
-            });
-
-            function loadPageData(currentPageNumber) {
+   
+        });
+                function loadPageData(currentPageNumber) {
                 $.ajax({
                     url: "@Url.Action("GetPostForList")",
                     method: 'get',
                     dataType: "text",
-                    data: { pageNo: currentPageNumber, pageSize:5},
+                    data: { pageNo: currentPageNumber, pageSize:8},
                     success: function (data) {
                         var employeeTable = $('#tblEmployee');
                         var action = "inactive";
 
-                        $(data).each(function (index, emp) {
-                            employeeTable.append(data);
-                            if (data == '') {
-                                $('#load_data_message').html("<button type='button' class='btn btn-info'>No Data Found</button>");
+                        $(data).each(function () {
+                            if (data.length<15) {
+
+                                $('#load_data_message').html("<button type='button' class='btn btn-info'>Nie ma więcej postów do wyświetlenia :(</button>");
                                 action = 'active';
                             }
                             else {
-                                $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
+                                console.log("sa dane")
+                                console.log(data)
+                                $('#load_data_message').html("<button type='button' class='btn btn-warning'>Prosze czekać</button>");
                                 action = 'inactive';
                             }
-                            showComments();
+                            employeeTable.append(data);
+
                         });
                     },
                     error: function (err) {
@@ -191,7 +195,6 @@
                     }
                 });
             }
-        });
 
 
 
@@ -244,19 +247,26 @@
                     success: function (data) {
 
                         console.log("kliknieto create");
-                        $("#" + clicked_id).show(1000); //zwijanie i rozwijanie, mozna dodac efekty
+                        $("#" + clicked_id).show(1000);
                         $("#" + clicked_id).html(data); //wrzucenie w danego diva pobranych danych
                         event.preventDefault();
                     }
                    })
 
                 }
-                @*function CreateComment(com_id) {
-                            event.preventDefault();
+
+               
+
+
+        });
+
+        }
+                function createComment(com_id) {
+             //event.preventDefault();
                     console.log("kliknieto");
                 $.ajax({
                     type: "POST",
-                       url: "@Url.Action("AddCommentNew")",
+                    url: "@Url.Action("AddCommentNew")",
                     data: { postId: com_id, text: $("#text").val() },
                     dataType:"text",
                     success: function (data) {
@@ -268,133 +278,138 @@
 
                        });
 
-                        }*@
+                }
+                
+                function showText(click) {
+                    
+                        console.log("kliknieto POKAZ");
+                        $("div").removeClass("poscik");
+                   
+                  
+                    
 
-        });
+                    
+
+                }</script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
         }
 
 
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style type="text/css">
+            body {
+                background-color: #e9ebee;
+            }
 
+            .be-comment-block {
+                margin-bottom: 50px !important;
+                border: 1px solid #edeff2;
+                border-radius: 2px;
+                padding: 50px 70px;
+                border: 1px solid #ffffff;
+            }
 
-}
+            .comments-title {
+                font-size: 16px;
+                color: #262626;
+                margin-bottom: 15px;
+                font-family: 'Conv_helveticaneuecyr-bold';
+            }
 
+            .be-img-comment {
+                width: 60px;
+                height: 60px;
+                float: left;
+                margin-bottom: 15px;
+            }
 
-<style type="text/css">
-    body {
-        background-color: #e9ebee;
-    }
+            .be-ava-comment {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
 
-    .be-comment-block {
-        margin-bottom: 50px !important;
-        border: 1px solid #edeff2;
-        border-radius: 2px;
-        padding: 50px 70px;
-        border: 1px solid #ffffff;
-    }
+            .be-comment-content {
+                margin-left: 80px;
+            }
 
-    .comments-title {
-        font-size: 16px;
-        color: #262626;
-        margin-bottom: 15px;
-        font-family: 'Conv_helveticaneuecyr-bold';
-    }
+                .be-comment-content span {
+                    display: inline-block;
+                    width: 49%;
+                    margin-bottom: 15px;
+                }
 
-    .be-img-comment {
-        width: 60px;
-        height: 60px;
-        float: left;
-        margin-bottom: 15px;
-    }
+            .be-comment-name {
+                font-size: 13px;
+                font-family: 'Conv_helveticaneuecyr-bold';
+            }
 
-    .be-ava-comment {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-    }
+            .be-comment-content a {
+                color: #383b43;
+            }
 
-    .be-comment-content {
-        margin-left: 80px;
-    }
+            .be-comment-content span {
+                display: inline-block;
+                width: 49%;
+                margin-bottom: 15px;
+            }
 
-        .be-comment-content span {
-            display: inline-block;
-            width: 49%;
-            margin-bottom: 15px;
-        }
+            .be-comment-time {
+                text-align: right;
+            }
 
-    .be-comment-name {
-        font-size: 13px;
-        font-family: 'Conv_helveticaneuecyr-bold';
-    }
+            .be-comment-time {
+                font-size: 11px;
+                color: #b4b7c1;
+            }
 
-    .be-comment-content a {
-        color: #383b43;
-    }
+            .be-comment-text {
+                font-size: 13px;
+                line-height: 18px;
+                color: #7a8192;
+                display: block;
+                background: #f6f6f7;
+                border: 1px solid #edeff2;
+                padding: 15px 20px 20px 20px;
+            }
 
-    .be-comment-content span {
-        display: inline-block;
-        width: 49%;
-        margin-bottom: 15px;
-    }
+            .form-group.fl_icon .icon {
+                position: absolute;
+                top: 1px;
+                left: 16px;
+                width: 48px;
+                height: 48px;
+                background: #f6f6f7;
+                color: #b5b8c2;
+                text-align: center;
+                line-height: 50px;
+                -webkit-border-top-left-radius: 2px;
+                -webkit-border-bottom-left-radius: 2px;
+                -moz-border-radius-topleft: 2px;
+                -moz-border-radius-bottomleft: 2px;
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+            }
 
-    .be-comment-time {
-        text-align: right;
-    }
+            .form-group .form-input {
+                font-size: 13px;
+                line-height: 50px;
+                font-weight: 400;
+                color: #b4b7c1;
+                width: 100%;
+                height: 50px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border: 1px solid #edeff2;
+                border-radius: 3px;
+            }
 
-    .be-comment-time {
-        font-size: 11px;
-        color: #b4b7c1;
-    }
+            .form-group.fl_icon .form-input {
+                padding-left: 70px;
+            }
 
-    .be-comment-text {
-        font-size: 13px;
-        line-height: 18px;
-        color: #7a8192;
-        display: block;
-        background: #f6f6f7;
-        border: 1px solid #edeff2;
-        padding: 15px 20px 20px 20px;
-    }
-
-    .form-group.fl_icon .icon {
-        position: absolute;
-        top: 1px;
-        left: 16px;
-        width: 48px;
-        height: 48px;
-        background: #f6f6f7;
-        color: #b5b8c2;
-        text-align: center;
-        line-height: 50px;
-        -webkit-border-top-left-radius: 2px;
-        -webkit-border-bottom-left-radius: 2px;
-        -moz-border-radius-topleft: 2px;
-        -moz-border-radius-bottomleft: 2px;
-        border-top-left-radius: 2px;
-        border-bottom-left-radius: 2px;
-    }
-
-    .form-group .form-input {
-        font-size: 13px;
-        line-height: 50px;
-        font-weight: 400;
-        color: #b4b7c1;
-        width: 100%;
-        height: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-        border: 1px solid #edeff2;
-        border-radius: 3px;
-    }
-
-    .form-group.fl_icon .form-input {
-        padding-left: 70px;
-    }
-
-    .form-group textarea.form-input {
-        height: 150px;
-    }
-</style>
+            .form-group textarea.form-input {
+                height: 150px;
+            }
+        </style>

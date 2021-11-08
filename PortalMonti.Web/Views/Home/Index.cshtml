@@ -9,7 +9,7 @@
     <title>ChatApp</title>
 
     <link rel="stylesheet" href="~/css/site2.css">
-    <script src="~/js/site.js"></script>
+    
 </head>
 
 <body>
@@ -17,8 +17,21 @@
 
 
     <div class="main">
-        
+
         @await Component.InvokeAsync("Room")
+
+        <div class="side-menu">
+
+
+            @foreach (var friend in ViewBag.friends)
+            {
+                <a class="room-button" asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
+                    @friend.Email
+                </a>
+
+            }
+            
+        </div>
 
         <div class="chat">
             <div class="chat-body">

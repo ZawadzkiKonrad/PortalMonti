@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-PortalMonti.Web-83021F0B-0121-421D-A6C4-E9A918F8ED9A</UserSecretsId>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+	  <AspNetCoreHostingModel>OutofProcess</AspNetCoreHostingModel>  
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -13,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="5.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.8" />

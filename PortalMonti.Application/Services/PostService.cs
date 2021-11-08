@@ -54,10 +54,11 @@ namespace PortalMonti.Application.Services
         {
             var posts = _postRepo.GetAllPosts().Where(p => p.Name.StartsWith(searchString))
                 .ProjectTo<PostForListVm>(_mapper.ConfigurationProvider).ToList();
-            posts.Reverse(); //odwrocenie listy zeby posty byly od najnowszego
-
+            //posts.Reverse(); //odwrocenie listy zeby posty byly od najnowszego
+            posts.OrderBy(p => p.Date);
+            posts.Reverse();
             var postToShow = posts.Skip((int)(pageSize * (pageNo - 1))).Take(pageSize).ToList();
-
+            
             var postList = new ListPostForListVm()
             {
                 PageSize=pageSize,

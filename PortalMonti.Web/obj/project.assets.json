@@ -108,7 +108,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Abstractions.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.Google/5.0.8": {
+      "Microsoft.AspNetCore.Authentication.Google/5.0.11": {
         "type": "package",
         "compile": {
           "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
@@ -2848,10 +2848,7 @@
         },
         "runtime": {
           "bin/placeholder/PortalMonti.Application.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "PortalMonti.Domain/1.0.0": {
         "type": "project",
@@ -2874,10 +2871,7 @@
         },
         "runtime": {
           "bin/placeholder/PortalMonti.Domain.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "PortalMonti.Infrastructure/1.0.0": {
         "type": "project",
@@ -2901,10 +2895,7 @@
         },
         "runtime": {
           "bin/placeholder/PortalMonti.Infrastructure.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -3063,10 +3054,10 @@
         "microsoft.aspnetcore.authentication.abstractions.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authentication.Google/5.0.8": {
-      "sha512": "4wDWumiau69Crz9FBBvqMoqo80J6cpQ7T5Akdz/3jZE3gLPBYvkJwn96cxezt6Q1wdV70lodrHB9J0F20zP9rA==",
+    "Microsoft.AspNetCore.Authentication.Google/5.0.11": {
+      "sha512": "PeLGGX5UaKcy85hCCGTCjaLMA40+4xv1o+bMg5GSR3EzYNFF/AbHUtnfP7hfHCrpqjId/qmEUVYG14EVavmJFg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authentication.google/5.0.8",
+      "path": "microsoft.aspnetcore.authentication.google/5.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3074,7 +3065,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll",
         "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.xml",
-        "microsoft.aspnetcore.authentication.google.5.0.8.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.5.0.11.nupkg.sha512",
         "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
@@ -9165,7 +9156,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "FluentValidation >= 10.3.0",
-      "Microsoft.AspNetCore.Authentication.Google >= 5.0.8",
+      "Microsoft.AspNetCore.Authentication.Google >= 5.0.11",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.8",
       "Microsoft.AspNetCore.Identity.UI >= 5.0.8",
@@ -9236,7 +9227,7 @@
           },
           "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",
-            "version": "[5.0.8, )"
+            "version": "[5.0.11, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
@@ -9317,7 +9308,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ChatApp</title>
-
-    <link rel="stylesheet" href="~/css/site2.css">
     
+    <link rel="stylesheet" href="~/css/site2.css">
+
 </head>
 
 <body>
@@ -45,10 +45,11 @@
         </div>
     </div>
 
-
-    <form class="chat-input" asp-controller="Home" asp-action="CreateMessage">
+                                                            @*asp-controller="Home" asp-action="CreateMessage"*@
+    <form class="chat-input" onsubmit="sendMessage(event)">
         <input type="hidden" name="chatId" value="@Model.Id">
-        <input type="text" name="message">
+        <input type="hidden" name="roomName" value="@Model.Name">
+        <input type="text" name="message" id="message-input">
         <button type="submit">Wyslij</button>
     </form>
 
@@ -57,22 +58,23 @@
 
     @*<div class="modal" id="create-room-modal">
 
-        <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
-            <button onclick="closeModal()" type="button" class="close">X</button>
-            <header>Utwórz Pokój</header>
-            <div><input name="name" /></div>
-            <footer>
-                <button>Utwórz</button>
-            </footer>
+            <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
+                <button onclick="closeModal()" type="button" class="close">X</button>
+                <header>Utwórz Pokój</header>
+                <div><input name="name" /></div>
+                <footer>
+                    <button>Utwórz</button>
+                </footer>
 
-        </form>
-    </div>*@
+            </form>
+        </div>*@
 
-    <script src="~/js/site.js"></script>
+
 
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
+    <script src="~/js/site.js"></script>
+
     <script>
         var connection = new signalR.HubConnectionBuilder()
             .withUrl("/chatHub")
@@ -82,8 +84,26 @@
 
         connection.on("RecieveMessage", function (data) {
             console.log(data);
+            var message = document.createElement("div")
+            message.classList.add('message')
+
+            var header = document.createElement("header")
+            header.appendChild(document.createTextNode(data.name))
+
+            var p = document.createElement("p")
+            p.appendChild(document.createTextNode(data.text))
+
+            var footer = document.createElement("footer")
+            footer.appendChild(document.createTextNode(data.timestamp))
+
+            message.appendChild(header);
+            message.appendChild(p);
+            message.appendChild(footer);
+
+            var body = document.querySelector('.chat-body')
+            body.append(message);
         })
-        
+
 
         var joinRoom = function () {
             var url='/Chat/JoinRoom/'+ _connectionId+'/@Model.Name'
@@ -107,10 +127,26 @@
             .catch(function (err) {
                 console.log(err)
             })
-        
+
+
+        var sendMessage = function (event) {
+            event.preventDefault();
+            var data = new FormData(event.target);
+
+            document.getElementById('message-input').value = '';   //czysczenie inputu "message"
+
+            axios.post('/Chat/SendMessage', data)
+                .then(res => {
+                    console.log("wiadomosc wyslana")
+                })
+                .catch(err => {
+                    console.log("nie udalo sie wyslac")
+                })
+        }
+
     </script>
-   
-    
+    <script src="~/js/site.js"></script>
+
 </body>
 
 </html>
