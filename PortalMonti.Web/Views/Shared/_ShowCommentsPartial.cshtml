@@ -36,6 +36,10 @@
         <div post-id="@Model.First().PostId">
             @await Html.PartialAsync("_AddCommentPartial", new PortalMonti.Application.ViewModels.Comment.NewCommentVm()
    { PostId = Model.First().PostId })
-        </div>
-    @*</div>*@
-@*</div>*@
+        </div> 
+
+@*<div post-id="@Model.First().PostId">
+            @await Html.PartialAsync("_AddCommentPartial", new PortalMonti.Application.ViewModels.Comment.NewCommentVm()
+   { PostId = Model.First().PostId })
+        </div>*@
+  

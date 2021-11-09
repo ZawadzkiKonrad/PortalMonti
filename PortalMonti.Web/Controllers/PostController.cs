@@ -115,27 +115,28 @@ namespace PortalMonti.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public IActionResult AddCommentNew(int postId)
-        {
-            var comments = _commentService.GetAllComment(postId);
-            if (comments.Count() < 1)                                 //gdy nie ma komengtarzy tworze domyslny
-            {
-                List<CommentVm> lista = new List<CommentVm>();
-                CommentVm com = new CommentVm()
-                {
-                    Text = "Brak Komentarzy!"
-                };
-                lista.Add(com);
-                lista.AsQueryable();
-                return PartialView("_ShowCommentsPartial", lista);
-            }
-            else
-            {
-                return PartialView("_ShowCommentsPartial", comments);
-            }
+        //[HttpGet]
+        //public IActionResult AddCommentNew(int postId)
+        //{
+        //    var comments = _commentService.GetAllComment(postId);
+        //    if (comments.Count() < 1)                                 //gdy nie ma komengtarzy tworze domyslny
+        //    {
+        //        List<CommentVm> lista = new List<CommentVm>();
+        //        CommentVm com = new CommentVm()
+        //        {
+        //            Text = "Brak komentarzy !",
+        //            //PostId=postId
+        //        };
+        //        lista.Add(com);
+        //        lista.AsQueryable();
+        //        return PartialView("_ShowCommentsPartial", lista);
+        //    }
+        //    else
+        //    {
+        //        return PartialView("_ShowCommentsPartial", comments);
+        //    }
 
-        }
+        //}
 
         [HttpPost]
         public IActionResult AddCommentNew(NewCommentVm model,string text)
@@ -188,7 +189,8 @@ namespace PortalMonti.Web.Controllers
             {
                 List< CommentVm > lista = new List<CommentVm>();
                 CommentVm com = new CommentVm() {
-                    Text = "Brak Komentarzy!"
+                    Text = "Brak Komentarzy!",
+                    PostId=postId
                 };
                 lista.Add(com);
                 lista.AsQueryable();

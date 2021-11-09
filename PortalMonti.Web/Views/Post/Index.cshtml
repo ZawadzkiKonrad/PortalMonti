@@ -87,50 +87,11 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
         <br />
         <br />
-
-
-
-
-
-
-
-
-        @*<ul class="pagination pagination-circle">
-
-
-                @for (int i = 1; i <= Math.Ceiling((double)Model.Count / (double)Model.PageSize); i++)
-                {
-                    <td>
-                        @if (i != Model.CurrentPage)
-                        {
-                        <li class="page-item " aria-current="page">
-                            <a class="page-link" href="javascript:PagerClick(@i)">@i </a>
-                        </li>
-
-                    }
-                    else
-                    {
-                        <li class="page-item active"><a class="page-link" href="javascript:PagerClick(@i)">@i</a></li>
-
-                    }
-                        </td>
-                    }
-
-            </ul>*@
         <br />
         <br />
         <br>
-
-
-
-
 
         @section Scripts
 {
@@ -142,7 +103,9 @@
                 }
             </script>
             <script type="text/javascript">
- 
+
+
+
     $(document).ready(function () {
             var currentPage = 1;
             loadPageData(currentPage);
@@ -162,7 +125,7 @@
                 $("#addpost").toggle(1500);
             });
         });
-   
+
         });
                 function loadPageData(currentPageNumber) {
                 $.ajax({
@@ -198,7 +161,7 @@
 
 
 
-        function showComments(clicked_id) {
+        function showComments(post_id) {
             $(document).ready(function () {
 
 
@@ -208,25 +171,32 @@
                 $.ajax({
                     type: "GET",
                     url: "@Url.Action("ShowComments")",
-                    data: { postId: clicked_id },
+                    data: { postId: post_id },
                     dataType:"text",
                     success: function (data) {
-                        $("#"+clicked_id).toggle(1000); //zwijanie i rozwijanie, mozna dodac efekty
-                        $("#"+clicked_id).html(data); //wrzucenie w danego diva pobranych danych
+                        var div = document.getElementById(post_id);
+                        var poscikk3 = div.getAttribute("data-arg1");
+                        var poscikk4 = div.getAttribute("data-arg2");
+                        var poscikk5 = div.getAttribute("data-arg3");
+                        console.log(poscikk3);
+                        console.log(poscikk4);
+
+                        $("#" + poscikk3).toggle(1000); //zwijanie i rozwijanie, mozna dodac efekty
+                        $("#" + poscikk3).html(data); //wrzucenie w danego diva pobranych danych
 
 
-                $("#create").click(function () {
+                        $("#" + poscikk4).click(function () {
                     event.preventDefault();
                     console.log("kliknieto");
                 $.ajax({
                     type: "POST",
-                       url: "@Url.Action("AddCommentNew")",
-                    data: { postId: clicked_id, text: $("#text").val() },
+                    url: "@Url.Action("AddCommentNew")",
+                    data: { postId: post_id, text: $("#" + poscikk5).val() },
                     dataType:"text",
                     success: function (data) {
 
                         showCommentsAfter(); //wyswietlanie razem z dodanym nowo komentarzem
-
+                        
 
                        }
 
@@ -235,34 +205,56 @@
 
 
 
-                                 }
-
-                });
-          function showCommentsAfter() {
+function showCommentsAfter() {
               $.ajax({
                     type: "GET",
-                    url: "@Url.Action("ShowComments")",
-                    data: { postId: clicked_id },
+                  url: "@Url.Action("ShowComments")",
+                  data: { postId: post_id },
                     dataType: "text",
                     success: function (data) {
-
-                        console.log("kliknieto create");
-                        $("#" + clicked_id).show(1000);
-                        $("#" + clicked_id).html(data); //wrzucenie w danego diva pobranych danych
                         event.preventDefault();
+                        console.log("kliknieto create");
+                        $("#" + poscikk3).show(1000);
+                        $("#" + poscikk3).html(data); //wrzucenie w danego diva pobranych danych
+
                     }
                    })
 
+                }                                 }
+
+                });
+
+
+
+
+
+
+
+
+            });
+
+
                 }
 
-               
+
+                var bol = true;
+                function showText(click,poscikk2) {
+                    console.log(click);
+                    if (bol==true) {
+                        $(click).removeClass("poscik");
+                        $(poscikk2).text("Zwiń");
+                        bol = false;
+                    } else {
+                        $(click).addClass("poscik");
+                        $(poscikk2).text("Pokaż całość");
+                        bol = true;
+                    }
 
 
-        });
+                }
 
-        }
-                function createComment(com_id) {
-             //event.preventDefault();
+                @*function createComment(com_id) {
+
                     console.log("kliknieto");
                 $.ajax({
                     type: "POST",
@@ -270,7 +262,7 @@
                     data: { postId: com_id, text: $("#text").val() },
                     dataType:"text",
                     success: function (data) {
-
+                        console.log("dodaj komentarz");
                         showCommentsAfter(); //wyswietlanie razem z dodanym nowo komentarzem
 
 
@@ -278,19 +270,11 @@
 
                        });
 
-                }
-                
-                function showText(click) {
-                    
-                        console.log("kliknieto POKAZ");
-                        $("div").removeClass("poscik");
-                   
-                  
-                    
+                }*@
 
-                    
 
-                }</script>
+
+            </script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 

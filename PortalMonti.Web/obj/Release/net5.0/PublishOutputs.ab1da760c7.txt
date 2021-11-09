@@ -2085,11 +2085,13 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubT
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\mdb\src\scss\free\_utilities.scss
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\mdb\src\scss\free\_variables.scss
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\mdb\src\scss\mdb.free.scss
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\068ce445-7acc-482d-89da-0573aece0a7f.PNG
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\0d55fe83-d791-4f1c-b9bd-f8798ba3e324.gif
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\24a67808-6dc5-4b6b-8cf2-9ab282caff89.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\2c7e10d1-4327-4425-8b8c-99ac774ecb86.PNG
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\3c783ba0-d563-41ba-a4b5-66fd3ba10b67.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\64518d96-ee49-4928-9004-fd94f09d6c9d.jpg
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\6684813c-165f-4f17-8692-c8c650c2dbe4.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\7d4fae26-05ca-49ae-876c-dfd162a6b75c.PNG
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\802de58b-dea8-4032-8713-82052fa7ab90.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\92623b77-057f-4f6c-97f4-50bfdb417d0e.jpg

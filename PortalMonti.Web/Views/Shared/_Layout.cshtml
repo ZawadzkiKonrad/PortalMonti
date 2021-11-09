@@ -32,97 +32,6 @@
 <body>
     <header>
 
-
-        @*<nav class="navbar navbar-expand-lg navbar-light bg-light">
-             Container wrapper
-            <div class="container-fluid">
-             Toggle button
-            <button class="navbar-toggler"
-                    type="button"
-                    data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-             Collapsible wrapper
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-             Navbar brand
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                <img src="~/upload/38646c8c-9537-44c7-ad1d-dbd5e58d0592.gif"
-                     height="15"
-                     alt=""
-                     loading="lazy" />
-            </a>
-             Left links
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Projects  </a>
-                </li>
-            </ul>
-             Left links
-            </div>
-                <partial name="_LoginPartial" />
-
-            </div>
-
-            </nav>*@
-
-
-
-        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
-                <div class="container">
-                    <button class="navbar-toggler"
-                                type="button"
-                                data-mdb-toggle="collapse"
-                                data-mdb-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent"
-                                aria-expanded="false"
-                                aria-label="Toggle navigation">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    <a class="navbar-brand" asp-area="" asp-controller="Post" asp-action="Index">PortalMonti.Web</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <partial name="_LoginPartial" />
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Chat</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ListUsers">Lista użytkowników</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Message" asp-action="Index">Wiadomości</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Profil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Image" asp-action="Index">
-                                    Zdjęcia
-
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </div>
-            </nav>*@
-
-
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- Container wrapper -->
@@ -169,66 +78,80 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Post" asp-action="Index">Posty</a>
                         </li>
+
+
+                        <partial name="_LoginPartial"/>
                     </ul>
                     <!-- Left links -->
                 </div>
                 <!-- Collapsible wrapper -->
                 <!-- Right elements -->
 
-                <partial name="_LoginPartial" />
+
+               
+
+
+
+
+                
+
+
+
+
+
 
                 <!--<div class="d-flex align-items-center">-->
                 <!-- Icon -->
                 <!--<a class="text-reset me-3" href="#">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>-->
+        <i class="fas fa-shopping-cart"></i>
+    </a>-->
                 <!-- Notifications -->
                 <!--<a class="text-reset me-3 dropdown-toggle hidden-arrow"
-                   href="#"
-                   id="navbarDropdownMenuLink"
-                   role="button"
-                   data-mdb-toggle="dropdown"
-                   aria-expanded="false">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdownMenuLink">
-                    <li>
-                        <a class="dropdown-item" href="#">Some news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Another news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                </ul>-->
+       href="#"
+       id="navbarDropdownMenuLink"
+       role="button"
+       data-mdb-toggle="dropdown"
+       aria-expanded="false">
+        <i class="fas fa-bell"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink">
+        <li>
+            <a class="dropdown-item" href="#">Some news</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#">Another news</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </li>
+    </ul>-->
                 <!-- Avatar -->
                 @*<a class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                       href="#"
-                       id="navbarDropdownMenuLink"
-                       role="button"
-                       data-mdb-toggle="dropdown"
-                       aria-expanded="false">
-                        <img src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                             class="rounded-circle"
-                             height="25"
-                             alt=""
-                             loading="lazy" />
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end"
-                        aria-labelledby="navbarDropdownMenuLink">
-                        <li>
-                            <a class="dropdown-item" href="#">My profile</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Settings</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </li>
-                    </ul>*@
+           href="#"
+           id="navbarDropdownMenuLink"
+           role="button"
+           data-mdb-toggle="dropdown"
+           aria-expanded="false">
+            <img src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                 class="rounded-circle"
+                 height="25"
+                 alt=""
+                 loading="lazy" />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink">
+            <li>
+                <a class="dropdown-item" href="#">My profile</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Settings</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Logout</a>
+            </li>
+        </ul>*@
             </div>
             <!-- Right elements -->
             </div>

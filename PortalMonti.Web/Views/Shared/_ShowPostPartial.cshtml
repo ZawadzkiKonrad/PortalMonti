@@ -63,18 +63,40 @@
                     </div>
                 </div>
                 
-                @*@{var poscik="p"+@post.Id;}*@
-                <div class="card-body poscik" id="dwa" >
-                    <p >
-                   
-                        @post.Text
-                        <p onclick="showText(dwa)">pokaz calosc</p>
-                    </p>
-                    @if (post.PostImage != null)
-                    {
-                <a href="~/upload/@post.PostImage" data-lightbox="@post.PostImage"><img class="img-fluid" src="~/upload/@post.PostImage"></a>
+                @{
+                    var poscikk ="pe"+@post.Id;
+                    var poscikk2 ="de"+@post.Id;
+                    var poscikk3 ="ke"+@post.Id;
+                    var poscikk4 = "komshow" + @post.Id;
+                    var poscikk5 = "text" + post.Id;
                     }
-                </div>
+            <div class="card-body">
+                <p class="poscik" id="@poscikk">
+
+                    @post.Text
+
+
+                </p>
+                @if (string.IsNullOrEmpty(post.Text))
+                {
+
+                    <h1>brak tekstu :(</h1>
+                }
+                else
+                {
+                    @if (post.Text.Length > 50)
+                    {
+                        <p onclick="showText(@poscikk,@poscikk2)" id="@poscikk2">Pokaż całość</p>
+                    }
+                }
+
+
+
+                @if (post.PostImage != null)
+                {
+                    <a href="~/upload/@post.PostImage" data-lightbox="@post.PostImage"><img class="img-fluid" src="~/upload/@post.PostImage"></a>
+                }
+            </div>
                 <div class="card-footer">
                     
                     <div class="d-flex post-actions">
@@ -84,7 +106,7 @@
                             </svg>
                             <p class="d-none d-md-block ml-2">Lubię to !</p>
                         </a>
-                        <a href="javascript:;" class="d-flex align-items-center text-muted mr-4"onclick="showComments(@post.Id)">
+                        <a href="javascript:;" class="d-flex align-items-center text-muted mr-4"  onclick="showComments(@post.Id)" id="@post.Id" data-arg1="@poscikk3" data-arg2="@poscikk4" data-arg3="@poscikk5">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square icon-md">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                             </svg>
@@ -104,7 +126,8 @@
         </div>
         @*//Komentarze*@
         <div class="" @*style="padding-top:5px"*@>
-            <div id="@post.Id" style="display: none" class="card-body">
+            <div id="@poscikk3" style="display: none" class="card-body">
+
                
             </div>
         </div>
