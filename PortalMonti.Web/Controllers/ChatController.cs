@@ -7,6 +7,7 @@ using PortalMonti.Web.Hubs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace PortalMonti.Web.Controllers
@@ -49,7 +50,8 @@ namespace PortalMonti.Web.Controllers
                 ChatId = chatId,
                 Text = message,
                 Name = User.Identity.Name,
-                Timestamp = DateTime.Now
+                Timestamp = DateTime.Now,
+                
             };
             ctx.Messages.Add(msg);
             await ctx.SaveChangesAsync();

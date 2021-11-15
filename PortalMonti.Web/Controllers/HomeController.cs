@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,13 +24,15 @@ namespace PortalMonti.Web.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IFriendService _friendService;
         private readonly Context _context;
+        private readonly IHttpContextAccessor _accessor;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IFriendService friendService,Context context)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IFriendService friendService,Context context, IHttpContextAccessor accessor)
         {
             _logger = logger;
             _userManager = userManager;
             _friendService = friendService;
             _context = context;
+            _accessor = accessor;
         }
         [HttpGet]
         public IActionResult ListUsers()
@@ -99,6 +102,9 @@ namespace PortalMonti.Web.Controllers
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var name = appUserId + userId;
             var name2 = userId+appUserId;
+            //ViewBag.UserName = User.Identity.Name;
+            ViewBag.User = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            ViewBag.UserToChat = _context.Users.FirstOrDefault(x => x.Id == appUserId);
 
             var chat = _context.Chats
                 .Include(x => x.Messages)

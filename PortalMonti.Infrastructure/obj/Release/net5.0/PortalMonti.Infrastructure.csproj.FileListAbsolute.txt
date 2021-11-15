@@ -291,4 +291,3 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Infrastructure\obj\Release\
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Infrastructure\obj\Release\net5.0\ref\PortalMonti.Infrastructure.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Infrastructure\obj\Release\net5.0\PortalMonti.Infrastructure.pdb
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Infrastructure\obj\Release\net5.0\PortalMonti.Infrastructure.genruntimeconfig.cache
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Infrastructure\obj\Release\net5.0\PortalMonti.Infrastructure.csproj.CopyComplete
