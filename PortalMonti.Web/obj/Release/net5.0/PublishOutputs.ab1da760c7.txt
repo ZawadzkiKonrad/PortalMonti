@@ -2085,6 +2085,7 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubT
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\mdb\src\scss\free\_utilities.scss
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\mdb\src\scss\free\_variables.scss
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\mdb\src\scss\mdb.free.scss
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\0341c92e-28c3-4367-8dc3-81cb5b4c9890.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\068ce445-7acc-482d-89da-0573aece0a7f.PNG
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\0d55fe83-d791-4f1c-b9bd-f8798ba3e324.gif
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\24a67808-6dc5-4b6b-8cf2-9ab282caff89.jpg
@@ -2092,14 +2093,19 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubT
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\3c783ba0-d563-41ba-a4b5-66fd3ba10b67.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\64518d96-ee49-4928-9004-fd94f09d6c9d.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\6684813c-165f-4f17-8692-c8c650c2dbe4.jpg
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\6b69d89c-52f9-4fc9-b61a-af335507f628.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\7d4fae26-05ca-49ae-876c-dfd162a6b75c.PNG
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\802de58b-dea8-4032-8713-82052fa7ab90.jpg
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\8665aeca-65c4-4393-967d-1a78d5f0a681.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\92623b77-057f-4f6c-97f4-50bfdb417d0e.jpg
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\950d9fe9-d275-4cb1-8f25-2b8d3fd1d634.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\a35c5855-6d6a-4213-a0e2-4ecff201fce6.jpeg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\ab9d56cc-ed95-40b5-a6e7-a9196ed002b1.pdf
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\ae4d8e02-ffdc-4668-96f0-1837c5c55be8.gif
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\c67309da-5330-46c4-aa3e-10e746fbd727.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\cf710302-35e0-4c84-b3a1-3b3019c94931.png
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\d2cc4da8-90d7-4d8d-863a-4c972c57b8c9.PNG
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\d5759998-0231-4388-b98e-ab865d339f3e.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\f4175c51-2aef-4bda-9bd6-736583f12e9f.gif
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\f8102dea-9fe4-4472-9f76-d0933b22d022.jpg
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\upload\f9c519e8-8b4c-43bf-aa56-a8d2be52047a.jpg
@@ -2164,6 +2170,7 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubT
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Serilog.Sinks.Async.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Serilog.Sinks.File.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Serilog.Sinks.RollingFile.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\SixLabors.ImageSharp.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\System.Composition.AttributedModel.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\System.Composition.Convention.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\System.Composition.Hosting.dll

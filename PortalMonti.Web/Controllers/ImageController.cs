@@ -37,7 +37,7 @@ namespace PortalMonti.Web.Controllers
         {
 
             ViewBag.Images = _imageRepo.GetAllImages();
-            var path=await _imageService.AddImage(file);
+            var path= _imageService.AddImage(file);
             return View();
         } 
         [HttpGet]

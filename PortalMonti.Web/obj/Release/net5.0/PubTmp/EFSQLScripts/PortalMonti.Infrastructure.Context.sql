@@ -517,3 +517,28 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211109134818_InitialCompress1')
+BEGIN
+    ALTER TABLE [Images] ADD [Height] float NOT NULL DEFAULT 0.0E0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211109134818_InitialCompress1')
+BEGIN
+    ALTER TABLE [Images] ADD [Width] float NOT NULL DEFAULT 0.0E0;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211109134818_InitialCompress1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211109134818_InitialCompress1', N'5.0.8');
+END;
+GO
+
+COMMIT;
+GO
+

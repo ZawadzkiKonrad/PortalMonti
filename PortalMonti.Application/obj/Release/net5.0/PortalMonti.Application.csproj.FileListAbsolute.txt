@@ -293,3 +293,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\obj\Release\net
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\obj\Release\net5.0\ref\PortalMonti.Application.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\obj\Release\net5.0\PortalMonti.Application.pdb
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\obj\Release\net5.0\PortalMonti.Application.genruntimeconfig.cache
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\obj\Release\net5.0\PortalMonti.Application.csproj.CopyComplete

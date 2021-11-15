@@ -20,12 +20,12 @@
 
         @await Component.InvokeAsync("Room")
 
-        <div class="side-menu">
+        <div class="">
 
 
             @foreach (var friend in ViewBag.friends)
             {
-                <a class="room-button" asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
+                <a class="room-button text-wrap" asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
                     @friend.Email
                 </a>
 

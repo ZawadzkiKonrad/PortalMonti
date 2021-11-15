@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rcgu8pcgXUlvsf4oyswUMYnI2Rh5sEHA4VmTb9KXeTpHgChlKbDJ5j0aLLUM3zhjmihlXC54YlB7kmEyg6AjtA==",
+  "dgSpecHash": "+7T+vT2196VBvHlxFdNPHe53mhn9cNffbLxRzE1hslmNQOw2lD7/KRh7olXUnK3PZu7fszDNKfRYz8gekNLxDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\PortalMonti.Web.csproj",
   "expectedPackageFiles": [
@@ -110,6 +110,7 @@
     "C:\\Users\\48797\\.nuget\\packages\\serilog.sinks.async\\1.1.0\\serilog.sinks.async.1.1.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\serilog.sinks.file\\3.2.0\\serilog.sinks.file.3.2.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\serilog.sinks.rollingfile\\3.3.0\\serilog.sinks.rollingfile.3.3.0.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

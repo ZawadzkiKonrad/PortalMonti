@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pcP3TOjfxMg+IjMMY3OIpG/h5M7qSgLHEqw0pTX3K6qr6VsiaC9yBnfCxW+OgTUlySuJmv5uXK+ITxgFZI44Fg==",
+  "dgSpecHash": "8QK/e8P2D7yEoabDIqU6UTIjf2Df7tml2W2zSYIz3G8EEgilxcq6h5QsKS4BiTUpw+5HqWmhuDjD7+V7FyDt+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
   "expectedPackageFiles": [
@@ -100,6 +100,7 @@
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

@@ -489,3 +489,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Port
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\ref\PortalMonti.Web.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PortalMonti.Web.pdb
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PortalMonti.Web.genruntimeconfig.cache
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\SixLabors.ImageSharp.dll

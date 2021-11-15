@@ -1,0 +1,6 @@
+2021-11-15T09:01:21.8660975+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-11-15T09:01:21.8724986+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-11-15T09:01:21.8771951+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-11-15T09:01:21.8790890+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-11-15T09:01:21.8805885+01:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-11-15T09:01:30.3178877+01:00 0HMD81OEI0F5A:00000009 [INF] User logged in. (fdce0db4)
