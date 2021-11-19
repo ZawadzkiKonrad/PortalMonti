@@ -33,7 +33,7 @@ namespace PortalMonti.Web.Controllers
             ViewBag.Comments = _commentService.GetFullComment();
             ViewBag.Friends = _friendService.GetAllFriends();
             
-            var model = _postService.GetAllPostForList(5,1,"");
+            var model = _postService.GetAllPostForList(8,1,"");
             ViewBag.Count = model.Posts.Count;
             return View(model);
 
@@ -45,14 +45,14 @@ namespace PortalMonti.Web.Controllers
             ViewBag.Friends = _friendService.GetAllFriends();
             //ViewBag.CurrentUser = _friendService.GetCurrentUser();
 
-            if (!pageNo.HasValue)
-            {
-                pageNo = 1;
-            }
-            if(searchString is null)
-            {
-                searchString = String.Empty;
-            }
+            //if (!pageNo.HasValue)
+            //{
+            //    pageNo = 1;
+            //}
+            //if(searchString is null)
+            //{
+            //    searchString = String.Empty;
+            //}
             var model = _postService.GetAllPostForList(pageSize,pageNo,searchString);
             return View(model);
 
@@ -64,7 +64,19 @@ namespace PortalMonti.Web.Controllers
             
             return View(new NewPostVm());
         } 
-        
+        [HttpPost]
+        public async Task<ActionResult> AddPost(NewPostVm model, IFormFile file)
+        {
+            if (file != null)
+            {
+                var path = await UploadFile(file);
+                model.PostImage = path;
+            }
+
+            var id = _postService.AddPost(model);
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public IActionResult GetPostForList(int pageSize, int? pageNo,string searchString)
         {
@@ -85,19 +97,7 @@ namespace PortalMonti.Web.Controllers
 
         }
         // po wypenieniu formularza zwrocony odpopiedni model ktory zostanie przekazany do serwisu i nastepnie do repozytorium aby utrworzyc post
-        [HttpPost]
-        public async Task<ActionResult> AddPost(NewPostVm model, IFormFile file)
-        {
-            if (file != null)
-            {
-                var path = await UploadFile(file);
-                model.PostImage = path;
-            }
-
-            var id = _postService.AddPost(model);
-            return RedirectToAction("Index");
-        }
-
+        
         [HttpGet]
         public IActionResult AddComment(int postId)
         {

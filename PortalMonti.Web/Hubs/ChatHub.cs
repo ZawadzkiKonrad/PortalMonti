@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using PortalMonti.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace PortalMonti.Web.Hubs
         //}
 
         //public string GetUserId() => Context.UserIdentifier;
-
+       
         public string GetConnectionId() => Context.ConnectionId;
 
     }

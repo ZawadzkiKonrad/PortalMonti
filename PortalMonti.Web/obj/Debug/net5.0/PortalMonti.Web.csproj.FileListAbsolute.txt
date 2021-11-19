@@ -529,7 +529,6 @@ C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\bin\Debug\net
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\bin\Debug\net5.0\PortalMonti.Application.pdb
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\bin\Debug\net5.0\PortalMonti.Infrastructure.pdb
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\bin\Debug\net5.0\PortalMonti.Domain.pdb
-C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.csprojAssemblyReference.cache
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.AssemblyInfoInputs.cache
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.AssemblyInfo.cs
@@ -574,7 +573,6 @@ C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\ref\PortalMonti.Web.dll
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.pdb
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.genruntimeconfig.cache
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\Index.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\SendMessage.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Message\ViewMessage.cshtml.g.cs
@@ -2148,3 +2146,9 @@ C:\Users\48797\Documents\web\PortalMonti — kopiaChat\PortalMonti.Web\obj\Debug
 C:\Users\48797\Documents\web\PortalMonti — kopiaChat\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.pdb
 C:\Users\48797\Documents\web\PortalMonti — kopiaChat\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.genruntimeconfig.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\SixLabors.ImageSharp.dll
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\bin\Debug\net5.0\SixLabors.ImageSharp.dll
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\PortalMonti.Web.csproj.AssemblyReference.cache
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Home\Chat.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Home\ChatPrv.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\Room\Default.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\Notifications\Default.cshtml.g.cs

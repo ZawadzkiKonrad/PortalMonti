@@ -72,8 +72,8 @@ namespace PortalMonti.Application.Services
         }
         public PostDetailsVm GetPostById(int id)
         {
-            var post = new Post();
-            post = _postRepo.GetPostById(id);
+           // var post = new Post();
+           var post = _postRepo.GetPostById(id);
 
             var postVm = _mapper.Map<PostDetailsVm>(post);         
 

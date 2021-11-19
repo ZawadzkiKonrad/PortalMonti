@@ -102,9 +102,13 @@ namespace PortalMonti.Web.Controllers
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var name = appUserId + userId;
             var name2 = userId+appUserId;
+
             //ViewBag.UserName = User.Identity.Name;
+
             ViewBag.User = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
             ViewBag.UserToChat = _context.Users.FirstOrDefault(x => x.Id == appUserId);
+            var friends = _friendService.GetAllFriends();
+            ViewBag.friends = friends;
 
             var chat = _context.Chats
                 .Include(x => x.Messages)

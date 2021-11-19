@@ -9,62 +9,46 @@
     <title>ChatApp</title>
 
     <link rel="stylesheet" href="~/css/site2.css">
-    
+    <link href="~/css/chatroom.css" rel="stylesheet" />
+    <script src="~/js/site.js"></script>
 </head>
 
 <body>
 
 
 
-    <div class="main">
-
-        @await Component.InvokeAsync("Room")
-
-        <div class="">
-
-
-            @foreach (var friend in ViewBag.friends)
-            {
-                <a class="room-button text-wrap" asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
-                    @friend.Email
-                </a>
-
-            }
-            
-        </div>
-
-        <div class="chat">
-            <div class="chat-body">
-                @foreach (var chat in Model)
-                {
-                    <a class="room-button" asp-controller="Home" asp-action="JoinRoom" asp-route-id="@chat.Id">
-                        @chat.Name
-                    </a>
-                }
-
+    
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    @*<div class="card chat-app">*@
+                        <div id="plist" class="people-list">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>
+                            <ul class="list-unstyled chat-list mt-2 mb-0">
+                                @foreach (var friend in ViewBag.friends)
+                                {
+                                <li class="clearfix">
+                                    <a asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
+                                        <img src="~/upload/@friend.UserPhoto" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">@friend.Email</div>
+                                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                }
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-
-
-   
-
-    <div class="modal" id="create-room-modal">
-        
-        <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
-            <button onclick="closeModal()" type="button" class="close">X</button>
-            <header>Utwórz Pokój</header>
-            <div><input name="name" /></div>
-            <footer>
-                <button>Utwórz</button>
-            </footer>
-
-        </form>
-    </div>
-
-    <script src="~/js/site.js"></script>
-   
 
 </body>
 

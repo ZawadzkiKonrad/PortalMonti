@@ -435,19 +435,12 @@
             });
         });
 
+
         $(document).ready(function () {
             $("#FriendsArea").click(function () {
-                  $.ajax({
-                    type: "GET",
-                    url: "@Url.Action("ShowFriends","Profile")",
-                    dataType: "text",
-                    success: function (data) {
 
-                        //$("#1" + i).show(1000); //zwijanie i rozwijanie, mozna dodac efekty
-                        $("#postArea").html(data); //wrzucenie w danego diva pobranych danych
-                        event.preventDefault();
-                    }
-                })
+                $("#postArea").load("@Url.Action("ShowFriends", "Profile")"); //szybsze podmienianie danego div po id z zaladowaniem danych z controllera(wrzucanie znajomych)
+
             });
         });
 
@@ -474,7 +467,7 @@
                             $("#1" + i).html(data); //wrzucenie w danego diva pobranych danych
 
                         }
-                        
+
 
                 $("#create").click(function () {
                     event.preventDefault();

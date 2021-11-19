@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using PortalMonti.Application.Interfaces;
 using PortalMonti.Domain.Model;
 using PortalMonti.Infrastructure;
 using PortalMonti.Web.Hubs;
@@ -9,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.Extensions;
 
 namespace PortalMonti.Web.Controllers
 {
@@ -18,11 +21,13 @@ namespace PortalMonti.Web.Controllers
     {
         private IHubContext<ChatHub> _chat;
         private Context _context;
+        private IFriendService _friendService;
 
-        public ChatController(IHubContext<ChatHub> chat,Context context)
+        public ChatController(IHubContext<ChatHub> chat,Context context, IFriendService friendService)
         {
             _chat = chat;
             _context = context;
+            _friendService = friendService;
         }
         [HttpPost("[action]/{connectionId}/{roomName}")]
         public async Task<IActionResult> JoinRoom( string connectionId,string roomName)
@@ -39,11 +44,7 @@ namespace PortalMonti.Web.Controllers
             return Ok();
         }
         [HttpPost("[action]")]
-        public  async Task<IActionResult> SendMessage(
-            int chatId,
-            string message,
-            string roomName,
-            [FromServices]Context ctx)
+        public  async Task<IActionResult> SendMessage( int chatId,string message,string roomName,string appUserId)
         {
             var msg = new Message
             {
@@ -53,8 +54,8 @@ namespace PortalMonti.Web.Controllers
                 Timestamp = DateTime.Now,
                 
             };
-            ctx.Messages.Add(msg);
-            await ctx.SaveChangesAsync();
+            _context.Messages.Add(msg);
+            await _context.SaveChangesAsync();
 
             await _chat.Clients.Group(roomName)
                 .SendAsync("RecieveMessage",new {      //tworze tu niwy obiekt zeby data nie wariowala parsuje ja na string
@@ -62,7 +63,52 @@ namespace PortalMonti.Web.Controllers
                     Name=msg.Name,
                     Timestamp=msg.Timestamp.ToString("dd/MM/yyyy hh:mm:ss")
                 });
+
             return Ok();
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SendNotification(string appUserId)
+        {
+            var not = new Notification() { Text="nowa wiadomość!!!"};
+            var user = _context.Users.FirstOrDefault(x => x.Id == appUserId);
+            user.Notifications.Add(not);
+            await _context.SaveChangesAsync();
+
+            await _chat.Clients.User(appUserId)
+                .SendAsync("RecieveNotification");
+            return Ok();
+        }
+
+       //HttpPost("[action]")]
+       [HttpGet]
+        public IActionResult SetNotiShowed()
+        {
+            var user = _friendService.GetCurrentUser();
+            var notitest = user.Notifications;
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var noti = _context.Notifications.Where(n => n.AppUserId == userId);
+            foreach (var not in noti)
+            {
+                if (not.Showed==false)
+                {
+                    not.Showed = true;
+                    
+                }
+
+            }
+            _context.SaveChanges();
+            var path = Request.Path;
+            var location = new Uri($"{Request.Scheme}://{Request.Host}{Request.Path}{Request.QueryString}");
+            string CurrentURL = Request.GetEncodedPathAndQuery();
+            string CurrentURL2 = Request.GetEncodedUrl();
+          var name=  Url.ActionContext.HttpContext.Request.ToString();
+            return ViewComponent("Notifications",noti);
+
+            //return View(CurrentURL);
+           // return RedirectToAction("Index", "Home");
+           // return Redirect(location.ToString());
+            // return RedirectToPage(Request.Path.ToString());
         }
     }
 }

@@ -4,10 +4,10 @@
 
 
 
-    @if (SignInManager.IsSignedIn(User))
-        {
+@if (SignInManager.IsSignedIn(User))
+{
 
-    <li class="nav-item" >
+    <li class="nav-item">
 
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Siemano @User.Identity.Name!</a>
     </li>
@@ -19,27 +19,27 @@
 
 
 
- <!-- Collapsible wrapper -->
- <!-- Right elements -->
+    <!-- Collapsible wrapper -->
+    <!-- Right elements -->
 
-    <li class="d-flex align-items-center">
+    <li class="d-flex align-items-center" id="zaladuj">
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
-            <i class="fas fa-bell"></i>
-        </a>
+        @*<a class="text-reset me-3" href="#">
+                <i class="fas fa-bell"></i>
+            </a>*@
 
         <!-- Notifications -->
-        <a class="text-reset me-3 dropdown-toggle hidden-arrow"
+        <!--<a class="text-reset me-3 dropdown-toggle hidden-arrow"
            href="#"
            id="navbarDropdownMenuLink"
            role="button"
            data-mdb-toggle="dropdown"
            aria-expanded="false">
-            <i class="fas fa-bell"></i>
-            <span class="badge rounded-pill badge-notification bg-danger">3</span>
+            <i class="fas fa-bell" onclick="removeNotifications()" id="dzwonekPow" >-->
+        @*<span class="badge rounded-pill badge-notification bg-danger"id="notifications">.</span>*@
+        <!--</i>
         </a>
-        <ul class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuLink">
+        <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuLink" id="listaPow">
             <li>
                 <a class="dropdown-item" href="#">Some news</a>
             </li>
@@ -49,7 +49,8 @@
             <li>
                 <a class="dropdown-item" href="#">Something else here</a>
             </li>
-        </ul>
+        </ul>-->
+        @await Component.InvokeAsync("Notifications")
 
         <!-- Avatar -->
         <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
@@ -78,14 +79,195 @@
             </ul>*@
     </li>
     <!-- Right elements -->
-    }
-    else
-    {
+}
+else
+{
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Rejestracja</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Logowanie</a>
     </li>
+}
+
+
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="~/js/site.js"></script>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+
+
+<script>
+
+    //function removeNotifications() {
+    //    $('span[id^="notifications"]').remove();
+    //}
+
+    function removeNoti() {
+        $("#zaladuj").load("@Url.Action("SetNotiShowed", "Chat")"); //podmieniam na navbarze dzwonek z powiadomeiniami na 'odczytany'
     }
-    
+
+       
+
+
+        var connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .build();
+
+        var _connectionId = '';
+
+
+
+        connection.on("RecieveMessage", function (data) {
+            //var pow = $('<span/>', {
+            //    'id': 'notifications',
+            //    'class': 'badge rounded-pill badge-notification bg-danger',
+            //    'text': '.',
+            //});
+
+            //var dzwonekpow = document.getElementById('dzwonekPow');
+            //pow.appendTo(dzwonekpow);  //POWIADOMIENIA
+
+            var message = document.createElement("ul")
+            message.classList.add('m-b-0')
+            if (UserLogin != data.name) {//sprawdzam czy wczesniej podany userlopgin nalzy do odbiorcy/nadawcy
+                var li = document.createElement("li")
+                li.classList.add("clearfix")
+
+                var span = document.createElement("span");
+                span.classList.add("message-data-time");
+                span.appendChild(document.createTextNode(data.timestamp));
+
+                var div1 = document.createElement("div")
+                div1.classList.add("message-data")
+                div1.classList.add("text-right")
+                div1.appendChild(span); //dolaczam wczesniej span do div1 aby byl w srodku div(wystylizowana data)
+
+
+                var div2 = document.createElement("div");
+                div2.classList.add("message");
+                div2.classList.add("other-message");
+                div2.classList.add("float-right");
+                div2.appendChild(document.createTextNode(data.text))
+
+                message.appendChild(li);
+                message.appendChild(div1);
+                //message.appendChild(span);
+                message.appendChild(div2);
+
+                var body = document.querySelector('.chat-history')
+                body.append(message);
+
+                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
+
+            } else {
+                var li = document.createElement("li")
+                li.classList.add("clearfix")
+
+                var span = document.createElement("span");
+                span.classList.add("message-data-time");
+                span.appendChild(document.createTextNode(data.timestamp));
+
+                var div1 = document.createElement("div")
+                div1.classList.add("message-data")
+                div1.appendChild(span);
+
+                var div2 = document.createElement("div");
+                div2.classList.add("message");
+                div2.classList.add("my-message");
+                div2.appendChild(document.createTextNode(data.text));
+
+                message.appendChild(li);
+                message.appendChild(div1);
+                //message.appendChild(span);
+                message.appendChild(div2);
+
+                var body = document.querySelector('.chat-history')
+                body.append(message);
+
+                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
+            }
+
+        })
+
+
+
+        connection.on("RecieveNotification", function (data) {
+
+            var pow = $('<span/>', {
+                'id': 'notifications',
+                'class': 'badge rounded-pill badge-notification bg-danger',
+                'text': '.',
+            });
+
+            var dzwonekpow = document.getElementById('dzwonekPow');
+            pow.appendTo(dzwonekpow);  //powiadomienia, notyfikacje
+
+           //var pow= jQuery('<span>', {
+           //     id: 'notification',
+           //     class: 'badge rounded-pill badge-notification bg-danger'
+           //  });
+           // var pow = document.createElement("span");
+           // pow.classList.add("badge rounded-pill badge-notification bg-danger")
+
+           // document.getElementById('dzwonekPow').appendChild(pow);
+
+           // var item = jQuery('<span>', {
+           //     id: 'notification',
+           //     class: 'badge rounded-pill badge-notification bg-danger'
+           // });
+
+
+
+        })
+
+
+        @*var joinRoom = function () {
+            var url='/Chat/JoinRoom/'+ _connectionId+'/@Model.Name'
+            axios.post(url, null)
+                .then(res => {
+                    console.log("dolaczono do pokoju!", res);
+                })
+                .catch(err => {
+                    console.err("nieudalo sie dolaczyc do pokoju", res);
+                })
+        }*@
+        connection.start()
+            .then(function () {
+                connection.invoke('GetConnectionId')
+                    .then(function (connectionId) {
+                        _connectionId = connectionId
+
+                    })
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+
+
+        //var sendMessage = function (event) {
+        //    event.preventDefault();
+        //    var data = new FormData(event.target);
+
+        //    document.getElementById('message-input').value = '';   //czysczenie inputu "message"
+
+        //    axios.post('/Chat/SendMessage', data)
+        //        .then(res => {
+        //            console.log("wiadomosc wyslana")
+        //        })
+        //        .catch(err => {
+        //            console.log("nie udalo sie wyslac")
+        //        })
+
+        //    axios.post('/Chat/SendNotification', data)
+        //        .then(res => {
+        //            console.log("powiadomienie wyslane")
+        //        })
+        //        .catch(err => {
+        //            console.log("powiadomienie niewyslane")
+        //        })
+        //}
+
+</script>
+<script src="~/js/site.js"></script>

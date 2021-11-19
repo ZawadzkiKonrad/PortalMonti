@@ -586,3 +586,83 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116120257_InitialNotifications1')
+BEGIN
+    CREATE TABLE [Notification] (
+        [Id] int NOT NULL IDENTITY,
+        [Text] nvarchar(max) NULL,
+        [AppUserId] nvarchar(450) NULL,
+        CONSTRAINT [PK_Notification] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_Notification_AspNetUsers_AppUserId] FOREIGN KEY ([AppUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116120257_InitialNotifications1')
+BEGIN
+    CREATE INDEX [IX_Notification_AppUserId] ON [Notification] ([AppUserId]);
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116120257_InitialNotifications1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211116120257_InitialNotifications1', N'5.0.8');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
+BEGIN
+    ALTER TABLE [Notification] DROP CONSTRAINT [FK_Notification_AspNetUsers_AppUserId];
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
+BEGIN
+    ALTER TABLE [Notification] DROP CONSTRAINT [PK_Notification];
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
+BEGIN
+    EXEC sp_rename N'[Notification]', N'Notifications';
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
+BEGIN
+    EXEC sp_rename N'[Notifications].[IX_Notification_AppUserId]', N'IX_Notifications_AppUserId', N'INDEX';
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
+BEGIN
+    ALTER TABLE [Notifications] ADD CONSTRAINT [PK_Notifications] PRIMARY KEY ([Id]);
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
+BEGIN
+    ALTER TABLE [Notifications] ADD CONSTRAINT [FK_Notifications_AspNetUsers_AppUserId] FOREIGN KEY ([AppUserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211116151628_Initialnotofications2', N'5.0.8');
+END;
+GO
+
+COMMIT;
+GO
+

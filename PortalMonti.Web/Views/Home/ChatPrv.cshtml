@@ -30,48 +30,18 @@
                             <input type="text" class="form-control" placeholder="Search...">
                         </div>
                         <ul class="list-unstyled chat-list mt-2 mb-0">
+                            @foreach (var friend in ViewBag.friends)
+                                {
                             <li class="clearfix">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Vincent Porter</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
-                                </div>
+                                <a  asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
+                                    <img src="~/upload/@friend.UserPhoto" alt="avatar" style="display: inline;width:50px;height:50px;">
+                                    <div class="about"style=" width:75%; ">
+                                        <span class="name" style="display: inline" >@friend.Email</span>
+                                        <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="clearfix active">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Aiden Chavez</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Mike Thomas</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Christian Kelly</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago </div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Monica Ward</div>
-                                    <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                                </div>
-                            </li>
-                            <li class="clearfix">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                                <div class="about">
-                                    <div class="name">Dean Henry</div>
-                                    <div class="status"> <i class="fa fa-circle offline"></i> offline since Oct 28 </div>
-                                </div>
-                            </li>
+                                }
                         </ul>
                     </div>
                     <div class="chat">
@@ -114,7 +84,7 @@
                                     <div class="message-data text-right">
                                         <span class="message-data-time">@message.Timestamp</span>
                                     </div>
-                                    <div class="message other-message float-right">@message.Text</div>
+                                    <div class="message other-message float-right" >@message.Text</div>
                                 </li>
                             </ul>
                                     }
@@ -129,16 +99,13 @@
                                         <span class="message-data-time">@message.Timestamp</span>
 
                                     </div>
-                                    <div class="message my-message"> @message.Text </div>
+                                    <div class="message my-message "> @message.Text </div>
+                                    
                                 </li>
 
                             </ul>
                                     }
-                            @*<div class="message">
-                                    <header>@message.Name</header>
-                                    <p>@message.Text</p>
-                                    <footer>@message.Timestamp</footer>
-                                </div>*@
+                           
                                 }
                             }
 
@@ -149,10 +116,11 @@
                                 <div class="input-group-prepend">
                                     <input type="hidden" name="chatId" value="@Model.Id">
                                     <input type="hidden" name="roomName" value="@Model.Name">
-
-                                    <button class="input-group-text" type="submit"><i class="fa fa-send"></i></button>
+                                    <input type="hidden" name="appUserId" value="@ViewBag.UserToChat.Id"> @*//do notyfikacji*@
+                                
                                 </div>
                                 <input type="text" name="message" id="message-input" class="form-control">
+                                <button class="input-group-text" type="submit"><i class="fa fa-send"></i></button>
                             </form>
                         </div>
                     </div>
@@ -162,71 +130,10 @@
     </div>
 
 
-    <div class="main">
+    
+    <input type="hidden" id="UserEmail" value="@ViewBag.UserToChat.Email">  @*//ukryty input aby przekazac go do javascript i wiedziac jak ukladac wiadomosci(kto jest nadawca)*@
 
-        @*@await Component.InvokeAsync("Room")*@
-
-        @*<div class="side-menu">
-
-
-            @foreach (var friend in ViewBag.friends)
-            {
-                <a class="room-button" asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
-                    @friend.Email
-                </a>
-
-            }*@
-
-        @*</div>*@
-
-        <div class="chat">
-            <div class="chat-body">
-                @if (Model.Messages == null)
-                {
-                <div>adsfasdasdas</div>
-                }
-                else
-                {
-                @foreach (var message in Model.Messages)
-                    {
-                <div class="message">
-                    <header>@message.Name</header>
-                    <p>@message.Text</p>
-                    <footer>@message.Timestamp</footer>
-                </div>
-                    }
-                }
-
-
-
-            </div>
-        </div>
-    </div>
-    <input type="hidden" id="UserEmail" value="@ViewBag.UserToChat.Email">
-
-    @*asp-controller="Home" asp-action="CreateMessage"*@
-    <form class="chat-input" onsubmit="sendMessage(event)">
-        <input type="hidden" name="chatId" value="@Model.Id">
-        <input type="hidden" name="roomName" value="@Model.Name">
-        <input type="text" name="message" id="message-input">
-        <button type="submit">Wyslij</button>
-    </form>
-
-
-
-
-    @*<div class="modal" id="create-room-modal">
-
-            <form asp-controller="Home" asp-action="CreateRoom" class="modal-body">
-                <button onclick="closeModal()" type="button" class="close">X</button>
-                <header>Utwórz Pokój</header>
-                <div><input name="name" /></div>
-                <footer>
-                    <button>Utwórz</button>
-                </footer>
-
-            </form>
-        </div>*@
+   
 
 
 
@@ -235,12 +142,17 @@
     <script src="~/js/site.js"></script>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
 
+    
+
     <script>
+
+
+
         var d = $('#chat-history');
         d.scrollTop(d.prop("scrollHeight")); //Przewijanie diva z wiadomosciami na sam doł
 
         var UserLogin = $("#UserEmail").val();  //pobieranie e-mail usera(z div id="UserEmail") zeby ustawic style wiadomosci
-        alert(UserLogin);
+
 
         var connection = new signalR.HubConnectionBuilder()
             .withUrl("/chatHub")
@@ -251,27 +163,105 @@
 
 
         connection.on("RecieveMessage", function (data) {
-            console.log(data);
-            var message = document.createElement("div")
-            message.classList.add('message')
-          
+            //var pow = $('<span/>', {
+            //    'id': 'notifications',
+            //    'class': 'badge rounded-pill badge-notification bg-danger',
+            //    'text': '.',
+            //});
 
-            var header = document.createElement("header")
-            header.appendChild(document.createTextNode(data.name))
+            //var dzwonekpow = document.getElementById('dzwonekPow');
+            //pow.appendTo(dzwonekpow);  //POWIADOMIENIA
 
-            var p = document.createElement("p")
-            p.appendChild(document.createTextNode(data.text))
+            var message = document.createElement("ul")
+            message.classList.add('m-b-0')
+            if (UserLogin != data.name) {//sprawdzam czy wczesniej podany userlopgin nalzy do odbiorcy/nadawcy
+                var li = document.createElement("li")
+                li.classList.add("clearfix")
 
-            var footer = document.createElement("footer")
-            footer.appendChild(document.createTextNode(data.timestamp))
+                var span = document.createElement("span");
+                span.classList.add("message-data-time");
+                span.appendChild(document.createTextNode(data.timestamp));
 
-            message.appendChild(header);
-            message.appendChild(p);
-            message.appendChild(footer);
+                var div1 = document.createElement("div")
+                div1.classList.add("message-data")
+                div1.classList.add("text-right")
+                div1.appendChild(span); //dolaczam wczesniej span do div1 aby byl w srodku div(wystylizowana data)
 
-            var body = document.querySelector('.chat-history')
-            body.append(message);
-            d.scrollTop(d.prop("scrollHeight"));
+
+                var div2 = document.createElement("div");
+                div2.classList.add("message");
+                div2.classList.add("other-message");
+                div2.classList.add("float-right");
+                div2.appendChild(document.createTextNode(data.text))
+
+                message.appendChild(li);
+                message.appendChild(div1);
+                //message.appendChild(span);
+                message.appendChild(div2);
+
+                var body = document.querySelector('.chat-history')
+                body.append(message);
+
+                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
+
+            } else {
+                var li = document.createElement("li")
+                li.classList.add("clearfix")
+
+                var span = document.createElement("span");
+                span.classList.add("message-data-time");
+                span.appendChild(document.createTextNode(data.timestamp));
+
+                var div1 = document.createElement("div")
+                div1.classList.add("message-data")
+                div1.appendChild(span);
+
+                var div2 = document.createElement("div");
+                div2.classList.add("message");
+                div2.classList.add("my-message");
+                div2.appendChild(document.createTextNode(data.text));
+
+                message.appendChild(li);
+                message.appendChild(div1);
+                //message.appendChild(span);
+                message.appendChild(div2);
+
+                var body = document.querySelector('.chat-history')
+                body.append(message);
+
+                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
+            }
+
+        })
+
+
+
+        connection.on("RecieveNotification", function (data) {
+
+            var pow = $('<span/>', {
+                'id': 'notifications',
+                'class': 'badge rounded-pill badge-notification bg-danger',
+                'text': '.',
+            });
+
+            var dzwonekpow = document.getElementById('dzwonekPow');
+            pow.appendTo(dzwonekpow);  //powiadomienia, notyfikacje
+
+           //var pow= jQuery('<span>', {
+           //     id: 'notification',
+           //     class: 'badge rounded-pill badge-notification bg-danger'
+           //  });
+           // var pow = document.createElement("span");
+           // pow.classList.add("badge rounded-pill badge-notification bg-danger")
+
+           // document.getElementById('dzwonekPow').appendChild(pow);
+
+           // var item = jQuery('<span>', {
+           //     id: 'notification',
+           //     class: 'badge rounded-pill badge-notification bg-danger'
+           // });
+
+
 
         })
 
@@ -312,6 +302,14 @@
                 })
                 .catch(err => {
                     console.log("nie udalo sie wyslac")
+                })
+
+            axios.post('/Chat/SendNotification', data)
+                .then(res => {
+                    console.log("powiadomienie wyslane")
+                })
+                .catch(err => {
+                    console.log("powiadomienie niewyslane")
                 })
         }
 

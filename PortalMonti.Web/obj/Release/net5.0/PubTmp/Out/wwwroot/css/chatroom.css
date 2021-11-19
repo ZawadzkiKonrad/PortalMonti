@@ -1,6 +1,6 @@
 ﻿body {
     background-color: #f4f7f6;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     
 }
 
@@ -113,7 +113,8 @@
             }
 
     .chat .chat-history .message-data {
-        margin-bottom: 15px
+        margin-bottom: 15px;
+         
     }
 
         .chat .chat-history .message-data img {
@@ -151,7 +152,8 @@
         }
 
     .chat .chat-history .my-message {
-        background: #efefef
+        background: #efefef;
+        width: 45%;   /*szerokosc widomosci nadawcy*/
     }
 
         .chat .chat-history .my-message:after {
@@ -170,7 +172,8 @@
 
     .chat .chat-history .other-message {
         background: #e8f1f3;
-        text-align: right
+        text-align: right;
+        width: 45%; /*szerokosc widomosci odbiorcy*/
     }
 
         .chat .chat-history .other-message:after {
@@ -179,7 +182,8 @@
         }
 
 .chat .chat-message {
-    padding: 20px
+    padding: 20px;
+    
 }
 
 .online,

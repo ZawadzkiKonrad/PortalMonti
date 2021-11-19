@@ -20,6 +20,7 @@ namespace PortalMonti.Domain.Model
         public virtual List<Image> Images { get; set; }
         public virtual List<Post> Posts { get; set; }
         public virtual List<Chat> Chats { get; set; }
+        public virtual List<Notification> Notifications { get; set; }
        // public ICollection<ChatUser> Chats { get; set; }
 
         
@@ -35,6 +36,7 @@ namespace PortalMonti.Domain.Model
             Images = new List<Image>();
             Posts = new List<Post>();
             Chats = new List<Chat>();
+            Notifications = new List<Notification>();
         }
     }
  
