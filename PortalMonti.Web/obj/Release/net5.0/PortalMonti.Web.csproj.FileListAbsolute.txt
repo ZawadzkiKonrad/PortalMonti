@@ -293,7 +293,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\Flue
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\FluentValidation.AspNetCore.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\Humanizer.dll
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\Microsoft.AspNet.Identity.Core.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -490,3 +489,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\ref\
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PortalMonti.Web.pdb
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PortalMonti.Web.genruntimeconfig.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\SixLabors.ImageSharp.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Shared\Components\Notifications\Default.cshtml.g.cs

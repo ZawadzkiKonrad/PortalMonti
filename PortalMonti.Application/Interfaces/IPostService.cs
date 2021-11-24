@@ -16,5 +16,6 @@ namespace PortalMonti.Application.Interfaces
         void UpdatePost(NewPostVm model);
         void DeletePost(int id);
         IEnumerable<Post> GetUserPosts(string appUserId);
+        IEnumerable<Post> GetPostsSearch(string searchString);
     }
 }

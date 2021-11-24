@@ -70,6 +70,12 @@ namespace PortalMonti.Application.Services
             return postList;
            
         }
+
+        public IEnumerable<Post> GetPostsSearch(string searchString)
+        {
+            var posts = _postRepo.GetAllPosts().Where(p => p.Name.StartsWith(searchString)).AsEnumerable();
+            return posts;
+        }
         public PostDetailsVm GetPostById(int id)
         {
            // var post = new Post();

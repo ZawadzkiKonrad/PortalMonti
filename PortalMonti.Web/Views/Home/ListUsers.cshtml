@@ -7,10 +7,6 @@
 <h1>Lista Zarejestrowanych użytkowników</h1>
 
 
-<p id="test">This is another paragraph.</p>
-
-<button id="btn">schowaj</button>
-<button id="btn2">pokaz</button>
 
 @if (Model.Any())
 {
@@ -64,15 +60,5 @@ else
 }
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#btn").click(function () {
-            $("#test").hide();
-        });
-        $("#btn2").click(function () {
-            $("#test").show();
-        });
-    });
-</script>
+
 

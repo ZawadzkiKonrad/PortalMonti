@@ -25,12 +25,7 @@
 
         <div class="chat">
             <div class="chat-body">
-                @if (Model.Messages == null)
-                {
-                    <div>adsfasdasdas</div>
-                }
-                else
-                {
+              
                     @foreach (var message in Model.Messages)
                     {
                         <div class="message">
@@ -39,7 +34,7 @@
                             <footer>@message.Timestamp</footer>
                         </div>
                     }
-                }
+                
 
 
 

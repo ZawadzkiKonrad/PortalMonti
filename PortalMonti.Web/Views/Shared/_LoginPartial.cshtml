@@ -119,108 +119,122 @@ else
 
 
 
-        connection.on("RecieveMessage", function (data) {
-            //var pow = $('<span/>', {
-            //    'id': 'notifications',
-            //    'class': 'badge rounded-pill badge-notification bg-danger',
-            //    'text': '.',
-            //});
+        //connection.on("RecieveMessage", function (data) {
+        //    //var pow = $('<span/>', {
+        //    //    'id': 'notifications',
+        //    //    'class': 'badge rounded-pill badge-notification bg-danger',
+        //    //    'text': '.',
+        //    //});
 
-            //var dzwonekpow = document.getElementById('dzwonekPow');
-            //pow.appendTo(dzwonekpow);  //POWIADOMIENIA
+        //    //var dzwonekpow = document.getElementById('dzwonekPow');
+        //    //pow.appendTo(dzwonekpow);  //POWIADOMIENIA
 
-            var message = document.createElement("ul")
-            message.classList.add('m-b-0')
-            if (UserLogin != data.name) {//sprawdzam czy wczesniej podany userlopgin nalzy do odbiorcy/nadawcy
-                var li = document.createElement("li")
-                li.classList.add("clearfix")
+        //    var message = document.createElement("ul")
+        //    message.classList.add('m-b-0')
+        //    if (UserLogin != data.name) {//sprawdzam czy wczesniej podany userlopgin nalzy do odbiorcy/nadawcy
+        //        var li = document.createElement("li")
+        //        li.classList.add("clearfix")
 
-                var span = document.createElement("span");
-                span.classList.add("message-data-time");
-                span.appendChild(document.createTextNode(data.timestamp));
+        //        var span = document.createElement("span");
+        //        span.classList.add("message-data-time");
+        //        span.appendChild(document.createTextNode(data.timestamp));
 
-                var div1 = document.createElement("div")
-                div1.classList.add("message-data")
-                div1.classList.add("text-right")
-                div1.appendChild(span); //dolaczam wczesniej span do div1 aby byl w srodku div(wystylizowana data)
-
-
-                var div2 = document.createElement("div");
-                div2.classList.add("message");
-                div2.classList.add("other-message");
-                div2.classList.add("float-right");
-                div2.appendChild(document.createTextNode(data.text))
-
-                message.appendChild(li);
-                message.appendChild(div1);
-                //message.appendChild(span);
-                message.appendChild(div2);
-
-                var body = document.querySelector('.chat-history')
-                body.append(message);
-
-                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
-
-            } else {
-                var li = document.createElement("li")
-                li.classList.add("clearfix")
-
-                var span = document.createElement("span");
-                span.classList.add("message-data-time");
-                span.appendChild(document.createTextNode(data.timestamp));
-
-                var div1 = document.createElement("div")
-                div1.classList.add("message-data")
-                div1.appendChild(span);
-
-                var div2 = document.createElement("div");
-                div2.classList.add("message");
-                div2.classList.add("my-message");
-                div2.appendChild(document.createTextNode(data.text));
-
-                message.appendChild(li);
-                message.appendChild(div1);
-                //message.appendChild(span);
-                message.appendChild(div2);
-
-                var body = document.querySelector('.chat-history')
-                body.append(message);
-
-                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
-            }
-
-        })
+        //        var div1 = document.createElement("div")
+        //        div1.classList.add("message-data")
+        //        div1.classList.add("text-right")
+        //        div1.appendChild(span); //dolaczam wczesniej span do div1 aby byl w srodku div(wystylizowana data)
 
 
+        //        var div2 = document.createElement("div");
+        //        div2.classList.add("message");
+        //        div2.classList.add("other-message");
+        //        div2.classList.add("float-right");
+        //        div2.appendChild(document.createTextNode(data.text))
 
-        connection.on("RecieveNotification", function (data) {
+        //        message.appendChild(li);
+        //        message.appendChild(div1);
+        //        //message.appendChild(span);
+        //        message.appendChild(div2);
 
-            var pow = $('<span/>', {
-                'id': 'notifications',
-                'class': 'badge rounded-pill badge-notification bg-danger',
-                'text': '.',
-            });
+        //        var body = document.querySelector('.chat-history')
+        //        body.append(message);
 
-            var dzwonekpow = document.getElementById('dzwonekPow');
-            pow.appendTo(dzwonekpow);  //powiadomienia, notyfikacje
+        //        d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
 
-           //var pow= jQuery('<span>', {
-           //     id: 'notification',
-           //     class: 'badge rounded-pill badge-notification bg-danger'
-           //  });
-           // var pow = document.createElement("span");
-           // pow.classList.add("badge rounded-pill badge-notification bg-danger")
+        //    } else {
+        //        var li = document.createElement("li")
+        //        li.classList.add("clearfix")
 
-           // document.getElementById('dzwonekPow').appendChild(pow);
+        //        var span = document.createElement("span");
+        //        span.classList.add("message-data-time");
+        //        span.appendChild(document.createTextNode(data.timestamp));
 
-           // var item = jQuery('<span>', {
-           //     id: 'notification',
-           //     class: 'badge rounded-pill badge-notification bg-danger'
-           // });
+        //        var div1 = document.createElement("div")
+        //        div1.classList.add("message-data")
+        //        div1.appendChild(span);
+
+        //        var div2 = document.createElement("div");
+        //        div2.classList.add("message");
+        //        div2.classList.add("my-message");
+        //        div2.appendChild(document.createTextNode(data.text));
+
+        //        message.appendChild(li);
+        //        message.appendChild(div1);
+        //        //message.appendChild(span);
+        //        message.appendChild(div2);
+
+        //        var body = document.querySelector('.chat-history')
+        //        body.append(message);
+
+        //        d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
+        //    }
+            
+        //})
+    
+
+
+    connection.on("RecieveNotification", function (data) {
+        
+        var pow = $('<span/>', {
+            'id': 'notifications',
+            'class': 'badge rounded-pill badge-notification bg-danger',
+            'text': '.',
+        });
+
+        var dzwonekpow = document.getElementById('dzwonekPow');
+        pow.appendTo(dzwonekpow);  //powiadomienia, notyfikacje
 
 
 
-        })
+        var listapow = document.getElementById('listaPow') //sprawdzic czy dziala
+        var pow2 = $('<li/>');
+
+        var pow3 = $('<a/>', {
+            'href': '#',
+            'class': 'dropdown-item',
+            'text': data.text1,
+
+        });
+        pow3.appendTo(pow2);
+        pow2.prependTo(listapow);
+
+        //var pow= jQuery('<span>', {
+        //     id: 'notification',
+        //     class: 'badge rounded-pill badge-notification bg-danger'
+        //  });
+        // var pow = document.createElement("span");
+        // pow.classList.add("badge rounded-pill badge-notification bg-danger")
+
+        // document.getElementById('dzwonekPow').appendChild(pow);
+
+        // var item = jQuery('<span>', {
+        //     id: 'notification',
+        //     class: 'badge rounded-pill badge-notification bg-danger'
+        // });
+
+
+
+    })
 
 
         @*var joinRoom = function () {

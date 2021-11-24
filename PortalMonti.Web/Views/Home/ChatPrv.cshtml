@@ -116,6 +116,8 @@
                                 <div class="input-group-prepend">
                                     <input type="hidden" name="chatId" value="@Model.Id">
                                     <input type="hidden" name="roomName" value="@Model.Name">
+                                    <input type="hidden" name="authorId" value="@ViewBag.User.Id">
+                                    <input type="hidden" name="authorName" value="@ViewBag.User.Email">
                                     <input type="hidden" name="appUserId" value="@ViewBag.UserToChat.Id"> @*//do notyfikacji*@
                                 
                                 </div>
@@ -236,34 +238,49 @@
 
 
 
-        connection.on("RecieveNotification", function (data) {
 
-            var pow = $('<span/>', {
-                'id': 'notifications',
-                'class': 'badge rounded-pill badge-notification bg-danger',
-                'text': '.',
-            });
+        //connection.on("RecieveNotification", function (data) {
 
-            var dzwonekpow = document.getElementById('dzwonekPow');
-            pow.appendTo(dzwonekpow);  //powiadomienia, notyfikacje
+        //    var pow = $('<span/>', {
+        //        'id': 'notifications',
+        //        'class': 'badge rounded-pill badge-notification bg-danger',
+        //        'text': '.',
+        //    });
 
-           //var pow= jQuery('<span>', {
-           //     id: 'notification',
-           //     class: 'badge rounded-pill badge-notification bg-danger'
-           //  });
-           // var pow = document.createElement("span");
-           // pow.classList.add("badge rounded-pill badge-notification bg-danger")
-
-           // document.getElementById('dzwonekPow').appendChild(pow);
-
-           // var item = jQuery('<span>', {
-           //     id: 'notification',
-           //     class: 'badge rounded-pill badge-notification bg-danger'
-           // });
+        //    var dzwonekpow = document.getElementById('dzwonekPow');
+        //    pow.appendTo(dzwonekpow);  //powiadomienia, notyfikacje
 
 
 
-        })
+        //    var listapow = document.getElementById('listaPow') //sprawdzic czy dziala
+        //    var pow2 = $('<li/>');
+
+        //    var pow3 = $('<a/>', {
+        //        'href': '#',
+        //        'class': 'dropdown-item',
+        //        'text': 'hahhahahahahha',
+
+        //    });
+        //    pow3.appendTo(pow2);
+        //    pow2.prependTo(listapow);
+
+        //    //var pow= jQuery('<span>', {
+        //    //     id: 'notification',
+        //    //     class: 'badge rounded-pill badge-notification bg-danger'
+        //    //  });
+        //    // var pow = document.createElement("span");
+        //    // pow.classList.add("badge rounded-pill badge-notification bg-danger")
+
+        //    // document.getElementById('dzwonekPow').appendChild(pow);
+
+        //    // var item = jQuery('<span>', {
+        //    //     id: 'notification',
+        //    //     class: 'badge rounded-pill badge-notification bg-danger'
+        //    // });
+
+
+
+        //})
 
 
         var joinRoom = function () {
@@ -311,6 +328,7 @@
                 .catch(err => {
                     console.log("powiadomienie niewyslane")
                 })
+            
         }
 
     </script>

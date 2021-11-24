@@ -339,7 +339,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211018073446_InitialNewChatnowy')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211018073446_InitialNewChatnowy', N'5.0.8');
+    VALUES (N'20211018073446_InitialNewChatnowy', N'5.0.12');
 END;
 GO
 
@@ -352,7 +352,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211018073530_InitialNewChatnowy1')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211018073530_InitialNewChatnowy1', N'5.0.8');
+    VALUES (N'20211018073530_InitialNewChatnowy1', N'5.0.12');
 END;
 GO
 
@@ -365,7 +365,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211018082911_InitialChat')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211018082911_InitialChat', N'5.0.8');
+    VALUES (N'20211018082911_InitialChat', N'5.0.12');
 END;
 GO
 
@@ -397,7 +397,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211018104926_InitialChat2')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211018104926_InitialChat2', N'5.0.8');
+    VALUES (N'20211018104926_InitialChat2', N'5.0.12');
 END;
 GO
 
@@ -452,7 +452,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211020114810_InitialCreateChat13')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211020114810_InitialCreateChat13', N'5.0.8');
+    VALUES (N'20211020114810_InitialCreateChat13', N'5.0.12');
 END;
 GO
 
@@ -465,7 +465,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211021061224_InitialOnline1')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211021061224_InitialOnline1', N'5.0.8');
+    VALUES (N'20211021061224_InitialOnline1', N'5.0.12');
 END;
 GO
 
@@ -478,7 +478,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211021070344_InitialO2nline')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211021070344_InitialO2nline', N'5.0.8');
+    VALUES (N'20211021070344_InitialO2nline', N'5.0.12');
 END;
 GO
 
@@ -497,7 +497,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211025122031_InitialChat1234')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211025122031_InitialChat1234', N'5.0.8');
+    VALUES (N'20211025122031_InitialChat1234', N'5.0.12');
 END;
 GO
 
@@ -510,7 +510,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211025122914_InitialChat12345')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211025122914_InitialChat12345', N'5.0.8');
+    VALUES (N'20211025122914_InitialChat12345', N'5.0.12');
 END;
 GO
 
@@ -535,7 +535,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211109134818_InitialCompress1')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211109134818_InitialCompress1', N'5.0.8');
+    VALUES (N'20211109134818_InitialCompress1', N'5.0.12');
 END;
 GO
 
@@ -554,7 +554,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211115083352_InitialNewChat1')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211115083352_InitialNewChat1', N'5.0.8');
+    VALUES (N'20211115083352_InitialNewChat1', N'5.0.12');
 END;
 GO
 
@@ -579,7 +579,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211115083904_InitialNewChat2')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211115083904_InitialNewChat2', N'5.0.8');
+    VALUES (N'20211115083904_InitialNewChat2', N'5.0.12');
 END;
 GO
 
@@ -610,7 +610,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116120257_InitialNotifications1')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211116120257_InitialNotifications1', N'5.0.8');
+    VALUES (N'20211116120257_InitialNotifications1', N'5.0.12');
 END;
 GO
 
@@ -659,7 +659,64 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211116151628_Initialnotofications2')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211116151628_Initialnotofications2', N'5.0.8');
+    VALUES (N'20211116151628_Initialnotofications2', N'5.0.12');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211119094543_Notification3')
+BEGIN
+    ALTER TABLE [Notifications] ADD [Showed] bit NOT NULL DEFAULT CAST(0 AS bit);
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211119094543_Notification3')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211119094543_Notification3', N'5.0.12');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211119134548_Notification4')
+BEGIN
+    ALTER TABLE [Notifications] ADD [AuthorId] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211119134548_Notification4')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211119134548_Notification4', N'5.0.12');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211119135650_InitialNotification6')
+BEGIN
+    ALTER TABLE [Notifications] ADD [AuthorName] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211119135650_InitialNotification6')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211119135650_InitialNotification6', N'5.0.12');
 END;
 GO
 

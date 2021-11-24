@@ -2152,3 +2152,4 @@ C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Home\ChatPrv.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\Room\Default.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\Notifications\Default.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\Search.cshtml.g.cs

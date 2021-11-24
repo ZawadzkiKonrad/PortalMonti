@@ -1708,7 +1708,7 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubT
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\fontawesome\webfonts\fa-solid-900.ttf
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\fontawesome\webfonts\fa-solid-900.woff
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\fontawesome\webfonts\fa-solid-900.woff2
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\2Chat.js
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\ChatNoti.js
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\messageBuilder.js
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\site.js
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -2127,7 +2127,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubT
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\FluentValidation.AspNetCore.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Humanizer.dll
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNet.Identity.Core.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll

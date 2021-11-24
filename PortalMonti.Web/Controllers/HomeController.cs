@@ -49,9 +49,11 @@ namespace PortalMonti.Web.Controllers
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var chats = _context.Chats
                 .Include(x => x.Users)
-                .Where(x => !x.Users    //pobieranie czatow do ktorych user NIE JEST podłaczony
+                .Include(x=>x.Messages)
+                .Where(x => x.Users    //pobieranie czatow do ktorych user NIE JEST podłaczony(z !)
                 .Any(y => y.UserId == userId))
                 .ToList();
+            
             return View(chats);
         }
 

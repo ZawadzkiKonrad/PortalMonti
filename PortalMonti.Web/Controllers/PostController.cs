@@ -58,6 +58,17 @@ namespace PortalMonti.Web.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult Search(string searchString)
+        {
+            if (searchString is null)
+            {
+                searchString = String.Empty;
+            }
+            var posts = _postService.GetPostsSearch(searchString);
+            return View(posts);
+        }
+
         [HttpGet]//widok z formularzem dla uzytkownika do wypelnienia
         public IActionResult AddPost()
         {
