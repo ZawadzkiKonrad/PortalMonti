@@ -18,118 +18,129 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/css/chatroom.css" rel="stylesheet" />
 
-    <div class="container">
-        <div class="row clearfix">
-            <div class="col-lg-12">
-                <div class="card chat-app">
-                    <div id="plist" class="people-list">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-search"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search...">
-                        </div>
-                        <ul class="list-unstyled chat-list mt-2 mb-0">
-                            @foreach (var friend in ViewBag.friends)
-                                {
-                            <li class="clearfix">
-                                <a  asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId">
-                                    <img src="~/upload/@friend.UserPhoto" alt="avatar" style="display: inline;width:50px;height:50px;">
-                                    <div class="about"style=" width:75%; ">
-                                        <span class="name" style="display: inline" >@friend.Email</span>
-                                        <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
-                                    </div>
-                                </a>
-                            </li>
-                                }
-                        </ul>
-                    </div>
-                    <div class="chat">
-                        <div class="chat-header clearfix">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
-                                        <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar">
-                                    </a>
-                                    <div class="chat-about">
+    <main class="content">
+        <div class="container p-0">
+            <div class="row-clearfix">
+                <div class="card"">
+                    <div class="row g-0">
+                        <div class="col-12 col-lg-5 col-xl-3 border-right">
 
-                                        <h6 class="m-b-0">@ViewBag.UserToChat.Email</h6>
-                                        <small>
-                                            Aktywny 10 minut temu..
-                                        </small>
+                            <div class="px-4 d-none d-md-block">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <input type="text" class="form-control my-3" placeholder="Search...">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 hidden-sm text-right">
-                                    <a href="javascript:void(0);" class="btn btn-outline-secondary"><i class="fa fa-camera"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-outline-primary"><i class="fa fa-image"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-outline-info"><i class="fa fa-cogs"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-question"></i></a>
-                                </div>
                             </div>
+                            @foreach (var friend in ViewBag.friends){
+                            <a asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId" class="list-group-item list-group-item-action border-0">
+                                <div class="badge bg-success float-right">5</div>
+                                <div class="d-flex align-items-start">
+                                    <img src="~/upload/@friend.UserPhoto" class="rounded-circle mr-1" alt="@friend.Email" width="40" height="40">
+                                    <div class="flex-grow-1 ml-3">
+                                        @friend.Email
+                                        <div class="small"><span class="fas fa-circle chat-online"></span> Online  </div>
+                                    </div>
+                                </div>
+                            </a>
+                                }
+                            <hr class="d-block d-lg-none mt-1 mb-0">
                         </div>
-                        <div class="chat-history" id="chat-history">
-                            @if (Model.Messages == null)
+                        <div class="col-12 col-lg-7 col-xl-9">
+                            
+
+                            <div class="chat">
+                                <div class="chat-header clearfix">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                                <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar">
+                                            </a>
+                                            <div class="chat-about">
+
+                                                <h6 class="m-b-0">@ViewBag.UserToChat.Email</h6>
+                                                <small>
+                                                    Aktywny 10 minut temu..
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 hidden-sm text-right">
+                                            <a href="javascript:void(0);" class="btn btn-outline-secondary"><i class="fa fa-camera"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-outline-primary"><i class="fa fa-image"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-outline-info"><i class="fa fa-cogs"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-question"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-history" id="chat-history"style="height:500px;overflow-y:scroll">
+                                    @if (Model.Messages == null)
                             {
-                            <div>adsfasdasdas</div>
+                                    <div>adsfasdasdas</div>
                             }
                             else
                             {
-                            @foreach (var message in Model.Messages)
+                                    @foreach (var message in Model.Messages)
                                 {
                                     if (message.Name==ViewBag.User.Email)
                                     {
-                            <ul class="m-b-0">
+                                    <ul class="m-b-0">
 
-                                <li class="clearfix">
-                                    <div class="message-data text-right">
-                                        <span class="message-data-time">@message.Timestamp</span>
-                                    </div>
-                                    <div class="message other-message float-right" >@message.Text</div>
-                                </li>
-                            </ul>
+                                        <li class="clearfix">
+                                            <div class="message-data text-right">
+                                                <span class="message-data-time">@message.Timestamp</span>
+                                            </div>
+                                            <div class="message other-message float-right">@message.Text</div>
+                                        </li>
+                                    </ul>
                                     }
                                     else
                                     {
 
 
-                            <ul class="m-b-0">
-                                <li class="clearfix">
-                                    <div class="message-data">
-                                        <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar">
-                                        <span class="message-data-time">@message.Timestamp</span>
+                                    <ul class="m-b-0">
+                                        <li class="clearfix">
+                                            <div class="message-data">
+                                                <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar">
+                                                <span class="message-data-time">@message.Timestamp</span>
 
-                                    </div>
-                                    <div class="message my-message "> @message.Text </div>
-                                    
-                                </li>
+                                            </div>
+                                            <div class="message my-message "> @message.Text </div>
 
-                            </ul>
+                                        </li>
+
+                                    </ul>
                                     }
-                           
+
                                 }
                             }
 
-                        </div>
-                        <div class="chat-message clearfix">
-
-                            <form class="input-group mb-0" onsubmit="sendMessage(event)">
-                                <div class="input-group-prepend">
-                                    <input type="hidden" name="chatId" value="@Model.Id">
-                                    <input type="hidden" name="roomName" value="@Model.Name">
-                                    <input type="hidden" name="authorId" value="@ViewBag.User.Id">
-                                    <input type="hidden" name="authorName" value="@ViewBag.User.Email">
-                                    <input type="hidden" name="appUserId" value="@ViewBag.UserToChat.Id"> @*//do notyfikacji*@
-                                
                                 </div>
-                                <input type="text" name="message" id="message-input" class="form-control">
-                                <button class="input-group-text" type="submit"><i class="fa fa-send"></i></button>
-                            </form>
+                                <div class="chat-message clearfix">
+
+                                    <form class="input-group mb-0" onsubmit="sendMessage(event)">
+                                        <div class="input-group-prepend">
+                                            <input type="hidden" name="chatId" value="@Model.Id">
+                                            <input type="hidden" name="roomName" value="@Model.Name">
+                                            <input type="hidden" name="authorId" value="@ViewBag.User.Id">
+                                            <input type="hidden" name="authorName" value="@ViewBag.User.Email">
+                                            <input type="hidden" name="appUserId" value="@ViewBag.UserToChat.Id"> @*//do notyfikacji*@
+
+                                        </div>
+                                        <input type="text" name="message" id="message-input" class="form-control">
+                                        <button class="input-group-text" type="submit"><i class="fa fa-send"></i></button>
+                                    </form>
+                                </div>
+                                <div class="chat-message clearfix">
+
+                                    <p id="hamburger" onclick="emoji(hamburger)">🍔</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
 
     
@@ -148,7 +159,14 @@
 
     <script>
 
-
+        function emoji(emo) {
+            
+            console.log(emo);
+            var emotka = $(emo).text();
+            var value = $("#message-input").val();
+            $("#message-input").val(value + emotka);
+            
+        }
 
         var d = $('#chat-history');
         d.scrollTop(d.prop("scrollHeight")); //Przewijanie diva z wiadomosciami na sam doł

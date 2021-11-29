@@ -47,13 +47,28 @@ namespace PortalMonti.Web.Controllers
             var friends = _friendService.GetAllFriends();
             ViewBag.friends = friends;
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
             var chats = _context.Chats
                 .Include(x => x.Users)
                 .Include(x=>x.Messages)
                 .Where(x => x.Users    //pobieranie czatow do ktorych user NIE JEST podłaczony(z !)
                 .Any(y => y.UserId == userId))
                 .ToList();
-            
+            List<Message> messages = new List<Message>();
+            foreach (var chat in chats)
+            {
+                
+                foreach (var mess in chat.Messages)
+                {
+                    messages.Add(mess);
+                }
+                
+            }
+            var mess2 = messages
+                .OrderBy(m => m.Timestamp)
+                .Where(x=>x.Name!=user.Email)
+                .Last();
+            var name = mess2.Name;
             return View(chats);
         }
 
@@ -103,7 +118,7 @@ namespace PortalMonti.Web.Controllers
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var name = appUserId + userId;
-            var name2 = userId+appUserId;
+            var name2 = userId + appUserId;
 
             //ViewBag.UserName = User.Identity.Name;
 
@@ -115,6 +130,7 @@ namespace PortalMonti.Web.Controllers
             var chat = _context.Chats
                 .Include(x => x.Messages)
                 .FirstOrDefault(x => x.Name == name||x.Name==name2);
+            
             if (chat!=null)
             {
                 return View(chat);
