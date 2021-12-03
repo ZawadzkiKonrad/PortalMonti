@@ -8,7 +8,7 @@
    role="button"
    data-mdb-toggle="dropdown"
    aria-expanded="false">
-    <i class="fas fa-bell" onclick="removeNotifications()" id="dzwonekPow">
+    <i class="fas fa-bell" onclick="removeNoti()" id="dzwonekPow">
         <span class="badge rounded-pill badge-notification bg-danger" id="notifications">.</span>
     </i>
 </a>
@@ -20,15 +20,15 @@
    role="button"
    data-mdb-toggle="dropdown"
    aria-expanded="false">
-    <i class="fas fa-bell" onclick="removeNotifications()" id="dzwonekPow">
+    <i class="fas fa-bell" onclick="removeNoti()" id="dzwonekPow">
         
     </i>
 </a>
 }
 
 
-<ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuLink" id="listaPow">
-    @foreach (var noti in Model)
+<ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuLink" id="zaladuj">
+    <!--@foreach (var noti in Model)
     {
     <li>
         <a class="dropdown-item" href="@Url.Action("ChatPrv", "Home",new {appUserId=noti.AuthorId })">@noti.Text od : @noti.AuthorName</a>
@@ -37,7 +37,7 @@
     }<li>
     <a class="dropdown-item" onclick="removeNoti()">Oznacz Jako przeczytane(JS)</a>
     @Html.ActionLink("Oznacz jako przeczytane", "SetNotiShowed", "Chat")
-</li>
+</li>-->
     @*<li>
             <a class="dropdown-item" href="#">Another news</a>
         </li>

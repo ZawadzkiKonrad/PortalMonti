@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PortalMonti.Domain.Model.Notification>
+
+
+    @foreach (var noti in Model)
+    {
+        <li>
+            <a class="dropdown-item" href="@Url.Action("ChatPrv", "Home",new {appUserId=noti.AuthorId })">@noti.Text od : @noti.AuthorName</a>
+
+        </li>
+    }
+    <li>
+        <a class="dropdown-item" onclick="removeNoti()">Oznacz Jako przeczytane(JS)</a>
+        @Html.ActionLink("Oznacz jako przeczytane", "SetNotiShowed", "Chat")
+    </li>
+    @*<li>
+            <a class="dropdown-item" href="#">Another news</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </li>*@
+
+
+<script>
+
+</script>

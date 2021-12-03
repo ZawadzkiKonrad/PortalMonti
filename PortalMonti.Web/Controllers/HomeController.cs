@@ -49,27 +49,66 @@ namespace PortalMonti.Web.Controllers
             var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
             var chats = _context.Chats
-                .Include(x => x.Users)
-                .Include(x=>x.Messages)
-                .Where(x => x.Users    //pobieranie czatow do ktorych user NIE JEST podłaczony(z !)
+                .Where(x => x.Users    //pobieranie czatow do ktorych user  JEST podłaczony(dodaje ! jesli chce do NIE POLACZOPMNYCH)
                 .Any(y => y.UserId == userId))
-                .ToList();
+                .Include(x => x.Messages
+                .OrderBy(y => y.Timestamp))
+                .Include(x => x.Users);              
+               // .ToList();
+            ViewBag.Chats = chats;
+
+
             List<Message> messages = new List<Message>();
-            foreach (var chat in chats)
+            foreach (var item in chats)
             {
-                
-                foreach (var mess in chat.Messages)
+
+                foreach (var mess in item.Messages)
                 {
                     messages.Add(mess);
                 }
-                
-            }
+
+            }                                     //wyszukiwanie najnowszej wiadomosci
+          
             var mess2 = messages
+                .Where(x => x.Name != user.UserName)
                 .OrderBy(m => m.Timestamp)
-                .Where(x=>x.Name!=user.Email)
                 .Last();
-            var name = mess2.Name;
-            return View(chats);
+
+
+            var nameMess = mess2.Name;
+            var appUserId = _context.Users.FirstOrDefault(x => x.UserName == nameMess).Id;         
+            var name = appUserId + userId;
+            var name2 = userId + appUserId;
+            ViewBag.User = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            ViewBag.UserToChat = _context.Users.FirstOrDefault(x => x.Id == appUserId);          
+            
+            var chat = _context.Chats           //ustawianie domyslnego chatu na ten z najnowsza wiadomoscia
+                .Include(x => x.Messages)
+                .FirstOrDefault(x => x.Name == name || x.Name == name2);
+
+
+
+            if (chat != null)
+            {
+
+                if (chat.Users.Count < 2 && chat.Users.Any(x => x.UserId == userId) == false)
+                {
+                    chat.Users.Add(new ChatUser
+                    {
+                        UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,  //szybsze pobieranie id uzytkownika
+                        Role = UserRole.Admin,
+                    });
+
+                    _context.SaveChanges();
+                }
+                return View(chat);
+            }
+            else
+            {
+                var chat2 = createChatprv(appUserId);
+                return View(chat2);
+            }
+
         }
 
      
@@ -96,6 +135,7 @@ namespace PortalMonti.Web.Controllers
             };
             chat.Users.Add(new ChatUser
             {
+                
                 UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,  //szybsze pobieranie id uzytkownika
                 Role = UserRole.Admin
             });
@@ -129,22 +169,34 @@ namespace PortalMonti.Web.Controllers
 
             var chat = _context.Chats
                 .Include(x => x.Messages)
+                .Include(x=>x.Users)
                 .FirstOrDefault(x => x.Name == name||x.Name==name2);
-            
-            if (chat!=null)
+
+            if (chat != null)
             {
+
+                if (chat.Users.Count < 2 && chat.Users.Any(x=>x.UserId==userId)==false)
+                {
+                    chat.Users.Add(new ChatUser
+                    {
+                        UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,  //szybsze pobieranie id uzytkownika
+                        Role = UserRole.Admin,
+                    });
+                    
+                    _context.SaveChanges();
+                }
                 return View(chat);
             }
             else
             {
-                var chat2 =  createChatprv(appUserId);
+                var chat2 = createChatprv(appUserId);
                 return View(chat2);
             }
 
             //var chat = _context.Chats
             //    .Include(x => x.Messages)
             //    .FirstOrDefault(x => x.Id == id);             
-            
+
         } 
 
         [HttpGet]
@@ -197,7 +249,7 @@ namespace PortalMonti.Web.Controllers
             chat.Users.Add(new ChatUser
             {
                 UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,  //szybsze pobieranie id uzytkownika
-                Role = UserRole.Admin
+                Role = UserRole.Member,
             });
             _context.Chats.Add(chat);
              _context.SaveChanges();

@@ -7,22 +7,22 @@
 @if (SignInManager.IsSignedIn(User))
 {
 
-    <li class="nav-item">
+    @*<li class="nav-item">*@
 
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Siemano @User.Identity.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Witaj @User.Identity.Name!</a>
+    @*</li>*@
+    @*<li class="nav-item">*@
+        @*<form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button type="submit" class="nav-link btn btn-link text-dark">Wyloguj</button>
-        </form>
-    </li>
+        </form>*@
+    @*</li>*@
 
 
 
     <!-- Collapsible wrapper -->
     <!-- Right elements -->
 
-    <li class="d-flex align-items-center" id="zaladuj">
+    <li class="d-flex align-items-center" @*id="zaladuj"*@>
         <!-- Icon -->
         @*<a class="text-reset me-3" href="#">
                 <i class="fas fa-bell"></i>
@@ -82,12 +82,12 @@
 }
 else
 {
-    <li class="nav-item">
+    @*<li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Rejestracja</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Logowanie</a>
-    </li>
+    </li>*@
 }
 
 
@@ -106,6 +106,7 @@ else
 
     function removeNoti() {
         $("#zaladuj").load("@Url.Action("SetNotiShowed", "Chat")"); //podmieniam na navbarze dzwonek z powiadomeiniami na 'odczytany'
+        $("#dzwonekPow").find("span").remove();
     }
 
        
@@ -206,7 +207,7 @@ else
 
 
 
-        var listapow = document.getElementById('listaPow') //sprawdzic czy dziala
+        var listapow = document.getElementById('zaladuj') //sprawdzic czy dziala
         var pow2 = $('<li/>');
 
         var pow3 = $('<a/>', {

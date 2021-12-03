@@ -66,6 +66,7 @@ namespace PortalMonti.Application.Services
             bool iscopied = false;
             try
             {
+                
                 if (file.Length > 0)
                 {
                     filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
@@ -114,6 +115,8 @@ namespace PortalMonti.Application.Services
                 return img.Height.ToString() + "," + img.Width.ToString();
             }
         }
+
+      
     }
 }
 

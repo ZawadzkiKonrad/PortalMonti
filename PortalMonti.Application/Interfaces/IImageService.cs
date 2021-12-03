@@ -14,6 +14,7 @@ namespace PortalMonti.Application.Interfaces
         IQueryable<Image> GetAllImages();
         IQueryable<Image> GetUserImages(string appUserId);
         string AddImage(IFormFile file);
+        string UploadFile(IFormFile file);
         void ProfileSet(string path);
 
     }

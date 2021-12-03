@@ -723,3 +723,28 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211130082143_InitialMessageFile1')
+BEGIN
+    ALTER TABLE [Messages] ADD [File] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211130082143_InitialMessageFile1')
+BEGIN
+    ALTER TABLE [Messages] ADD [Image] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211130082143_InitialMessageFile1')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211130082143_InitialMessageFile1', N'5.0.12');
+END;
+GO
+
+COMMIT;
+GO
+

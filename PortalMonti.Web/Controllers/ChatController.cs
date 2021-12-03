@@ -12,6 +12,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Extensions;
+using System.IO;
 
 namespace PortalMonti.Web.Controllers
 {
@@ -22,12 +23,14 @@ namespace PortalMonti.Web.Controllers
         private IHubContext<ChatHub> _chat;
         private Context _context;
         private IFriendService _friendService;
+        private IImageService _imageService;
 
-        public ChatController(IHubContext<ChatHub> chat, Context context, IFriendService friendService)
+        public ChatController(IHubContext<ChatHub> chat, Context context, IFriendService friendService, IImageService imageService)
         {
             _chat = chat;
             _context = context;
             _friendService = friendService;
+            _imageService = imageService;
         }
         [HttpPost("[action]/{connectionId}/{roomName}")]
         public async Task<IActionResult> JoinRoom(string connectionId, string roomName)
@@ -44,10 +47,26 @@ namespace PortalMonti.Web.Controllers
             return Ok();
         }
         [HttpPost("[action]")]
-        public async Task<IActionResult> SendMessage(int chatId, string message, string roomName, string appUserId)
+        public async Task<IActionResult> SendMessage(int chatId, string message, string roomName, string appUserId, IFormFile file,IFormFile image)
         {
+           
+            string imagePath = string.Empty;
+            if (image!=null)
+            {
+                imagePath = _imageService.UploadFile(image);
+            };
+
+            string filePath=string.Empty;
+            if (file != null)
+            {
+               filePath = await UploadFile(file);
+                
+            };
+
             var msg = new Message
             {
+                Image = imagePath,
+                File = filePath,
                 ChatId = chatId,
                 Text = message,
                 Name = User.Identity.Name,
@@ -62,8 +81,10 @@ namespace PortalMonti.Web.Controllers
                 {      //tworze tu niwy obiekt zeby data nie wariowala parsuje ja na string
                     Text = msg.Text,
                     Name = msg.Name,
-                    Timestamp = msg.Timestamp.ToString("dd/MM/yyyy hh:mm:ss")
-                });
+                    Timestamp = msg.Timestamp.ToString("dd/MM/yyyy hh:mm:ss"),
+                    File = msg.File,
+                    Image=msg.Image
+                }); ;
 
             return Ok();
         }
@@ -107,9 +128,43 @@ namespace PortalMonti.Web.Controllers
             // return Redirect(path);
 
 
-            return ViewComponent("Notifications", noti);
+            return ViewComponent("NotificationsList", noti);
 
             
+        }
+
+        public async Task<string> UploadFile(IFormFile file)
+        {
+            string path = "";
+            string pathEnd = "";
+            string filename;
+            bool iscopied = false;
+            try
+            {
+                if (file.Length > 0)
+                {
+                    filename = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                    path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/upload"));
+                    using (var filestream = new FileStream(Path.Combine(path, filename), FileMode.Create))
+                    {
+                        await file.CopyToAsync(filestream);
+                    }
+                    iscopied = true;
+
+                    //pathEnd = path + "\\" + filename;
+                    pathEnd = filename;
+                }
+                else
+                {
+                    iscopied = false;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return pathEnd;
         }
     }
 }

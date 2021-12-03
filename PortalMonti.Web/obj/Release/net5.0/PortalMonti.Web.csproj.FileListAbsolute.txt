@@ -491,3 +491,4 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Port
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Release\net5.0\SixLabors.ImageSharp.dll
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Shared\Components\Notifications\Default.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Post\Search.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Shared\Components\NotificationsList\Default.cshtml.g.cs
