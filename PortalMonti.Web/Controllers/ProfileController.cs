@@ -37,35 +37,27 @@ namespace PortalMonti.Web.Controllers
             var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
             ViewBag.User = user;
             var posts = _postService.GetUserPosts(user.Id).ToList();
-            
-            var images = _imageService.GetAllImages();
-            List<string> imagepath = new List<string>();
-            foreach (var image in images)
-            {
-                imagepath.Add(image.Path);
-            }
-            
+
+            var images = _imageService.GetAllImages().ToList().TakeLast(10);
+         
             ViewBag.Posts = posts;
             ViewBag.Count = posts.Count;
-            ViewBag.Images = imagepath;
-            
+            ViewBag.Images = images.Reverse();
+
             return View();
         }
         [HttpGet]
         public IActionResult ViewProfile(string appUserId)
         {
             var user = _userManager.Users.FirstOrDefault(u => u.Id == appUserId);
+            ViewBag.User = user;
             var posts = _postService.GetUserPosts(appUserId).ToList();
 
-            var images = _imageService.GetUserImages(appUserId);
-            List<string> imagepath = new List<string>();
-            foreach (var image in images)
-            {
-                imagepath.Add(image.Path);
-            }
+            var images = _imageService.GetAllImages().ToList().TakeLast(10);
+
             ViewBag.Posts = posts;
             ViewBag.Count = posts.Count;
-            ViewBag.Images = imagepath;
+            ViewBag.Images = images.Reverse();
             return View(user);
         }
 

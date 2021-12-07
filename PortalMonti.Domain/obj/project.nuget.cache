@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "H4P+m4T5dW5Ujmy8cZLW4zQpHWnrWS048rKa9NCUiQpPEipBs3zcBBT3oyvRaHwnguZXWBmnxq97/XJ2GxmE6g==",
+  "dgSpecHash": "399ufA3Tcn89u0lvqL9Qy7H/r62FcKtt4jwWWddm7gdXNE2kty5iOrEavS+Ew7sAbBRV+UiKEdMHMmwEDkrXVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
   "expectedPackageFiles": [
@@ -93,6 +93,7 @@
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\5.0.2\\microsoft.visualstudio.web.codegenerators.mvc.5.0.2.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",

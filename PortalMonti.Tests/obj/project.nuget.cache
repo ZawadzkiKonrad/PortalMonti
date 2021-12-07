@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "l9SSJTdPiCa0i7RIJsPSDMYm1hXkCkvMLEbEih4ih5BFufFVm+VqMS4MkfhlOdKs/yA3EJgR0vy9DucAyqs6og==",
+  "dgSpecHash": "9J9hWYT7yNzEJQxZEM4Phz4xgQj0iQgqQctCWQZt3ih033/nynM93hQbV52KuhNVNfJQVelAHMpHfah7vJ/VTQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,7 @@
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",

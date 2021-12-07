@@ -54,11 +54,20 @@ namespace PortalMonti.Infrastructure.Repositories
 
         public void ProfileSet(string path)
         {
-            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
+            var user = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;  //szybkie pobieranie user
             _postRepository.UpdateImage(path, user);
             _postRepository.UpdateImageCom(path, user);
             _friendRepository.UpdateImage(path, user);
+
+            //wyjebac to do innych repo itp
             
+            foreach (var item in _context.ChatUsers.Where(x => x.UserId == user.Id))
+            {
+                item.ProfileImage = path;
+                
+            }_context.SaveChanges();
+            
+                
             user.ImageProfile = path;
             _context.SaveChanges();
         }

@@ -450,7 +450,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razo
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Friend\ViewFriend.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Home\Chat.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Home\ChatPrv.cshtml.g.cs
-C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Home\ListUsers.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\Razor\Views\Image\Index.cshtml.g.cs

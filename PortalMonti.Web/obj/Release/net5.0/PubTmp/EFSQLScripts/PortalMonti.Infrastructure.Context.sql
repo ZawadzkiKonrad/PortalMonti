@@ -748,3 +748,28 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211203142359_initialChat23232')
+BEGIN
+    ALTER TABLE [ChatUsers] ADD [Email] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211203142359_initialChat23232')
+BEGIN
+    ALTER TABLE [ChatUsers] ADD [ProfileImage] nvarchar(max) NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20211203142359_initialChat23232')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20211203142359_initialChat23232', N'5.0.12');
+END;
+GO
+
+COMMIT;
+GO
+

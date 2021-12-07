@@ -70,17 +70,18 @@
                     <h5 class="card-heading">Friends</h5>
                     <div class="mda-list">
                         @foreach (var friend in ViewBag.Friends)
-                {
-                        <div class="mda-list-item">
-                            <img src="~/upload/@friend.UserPhoto" alt="List user" class="mda-list-item-img thumb48">
-                            <div class="mda-list-item-text mda-2-line">
-                                <h3><a href="#">@friend.Email</a></h3>
-                                @Html.ActionLink("Zobacz Profil", "ViewProfile", "Profile", new { appUserId = friend.AuthorId })
-                                <div class="text-muted text-ellipsis">Ut ac nisi id mauris</div>
+                        {
+                            <div class="mda-list-item">
+                                <img src="~/upload/@friend.UserPhoto" alt="List user" class="mda-list-item-img thumb48">
+                                <div class="mda-list-item-text mda-2-line">
+                                    <h3>@friend.Email</h3>
+                                    @Html.ActionLink("Zobacz Profil", "ViewProfile", "Profile", new { appUserId = friend.AuthorId })<br />
+                                    
+                                   @Html.ActionLink("Wyślij wiadomość", "ChatPrv", "Home", new { appUserId = friend.AuthorId })
+                                </div>
                             </div>
-                        </div>
-                }
-
+                        }
+                        
 
 
                     </div>
