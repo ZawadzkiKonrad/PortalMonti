@@ -81,25 +81,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Post" asp-action="Index">Posty</a>
                         </li>
+                        <li class="nav-item">
+                            <span class="nav-link text-dark font-weight-bold">
+                                
+                                Online Users (with Cookies) : <span>@OnlineUsersMiddleware.GetOnlineUsersCount()</span>
+                            </span>
+                        </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
 
                             <li class="nav-item">
-                              <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Logout">Wyloguj</a>
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Logout">Wyloguj</a>
                             </li>
-                                }
-                                else
-                                {
+                        }
+                        else
+                        {
                             <li>
                                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Rejestracja</a>
                             </li>
                             <li>
                                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Logowanie</a>
                             </li>
-                                }
+                        }
 
 
-                        </ul>
+                    </ul>
                     <!-- Left links -->
                 </div>
                 <!-- Collapsible wrapper -->
@@ -236,6 +242,12 @@
 
 
     <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/onlineUsersHub").build();
+
+        connection.on("UpdateOnlineUsers", function (count) {
+            document.getElementById("onlineUsersCount").innerText = count;
+        });
+
         //$(document).ready(function () {
         //    $('a[href^="11"]').on('click', function (e) {
         //        e.preventDefault();
