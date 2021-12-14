@@ -417,3 +417,4 @@ C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Tests\obj\Debug\n
 C:\Users\48797\Documents\web\PortalMonti — kopia\PortalMonti.Tests\obj\Debug\net5.0\PortalMonti.Tests.genruntimeconfig.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\obj\Debug\net5.0\PortalMonti.Tests.csproj.AssemblyReference.cache
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Tests\bin\Debug\net5.0\MoreLinq.dll

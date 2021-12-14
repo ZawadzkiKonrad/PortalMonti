@@ -1,0 +1,101 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<PortalMonti.Domain.Model.AppUser>
+@{
+    ViewData["Title"] = "ListUsers";
+}
+<link href="~/css/ListUsersStyle.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+@if (Model.Any())
+{
+
+    @*<div class="row bootstrap snippets bootdeys">
+        <div class="col-md-9 col-sm-7">
+            <h2>Wyszukaj użytkownika</h2>
+            <p>Wpisz e-mail lub login</p>
+        </div>
+        <div class="col-md-3 col-sm-5">
+            <form method="get" role="form" class="search-form-full">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="s" id="search-input" placeholder="Search..." style="margin-top:10px">
+                    <i class="entypo-search"></i>
+                </div>
+            </form>
+        </div>
+    </div>*@
+    foreach (var user in Model)
+    {
+        
+        @*<div class="container">*@
+
+            <div class="member-entry">
+                <a href="#" class="member-img">
+                    <img src="~/upload/@user.ImageProfile" class="img-rounded">
+                    <i class="fa fa-forward"></i>
+                </a>
+                <div class="member-details">
+                    <h4> <a href="#">@user.Email</a> </h4>
+                    <div class="row info-list">
+                        <div class="col-sm-4">
+                            <i class="fa fa-briefcase"></i>
+                            Co-Founder at <a href="#">Complete Tech</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="fa fa-twitter"></i>
+                            <a href="#">johnnie</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="fa fa-facebook"></i>
+                            <a href="#">fb.me/johnnie</a>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-sm-4">
+                            <i class="fa fa-location"></i>
+                            <a href="#">Prishtina</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="fa fa-envelope"></i>
+                            <a href="#">john@gmail.com</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="fa fa-linkedin"></i>
+                            <a href="#">johnkennedy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        @*</div>*@
+
+    }
+    <br />
+    <br>
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No uses created yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button bellow to create a user
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-area="Identity" asp-page="/Account/Register">
+                Add new User
+            </a>
+
+            fore
+        </div>
+
+    </div>
+}
+
+
+
+
+
+

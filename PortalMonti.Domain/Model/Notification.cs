@@ -13,6 +13,7 @@ namespace PortalMonti.Domain.Model
         public bool Showed { get; set; }
         public string AppUserId { get; set; }
         public string AuthorName { get; set; }
+        public string AuthorImage { get; set; }
         public string AuthorId { get; set; }
         public virtual AppUser AppUser { get; set; }
     }

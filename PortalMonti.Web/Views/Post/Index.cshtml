@@ -18,39 +18,46 @@
     <link rel="stylesheet" href="~/assets/css/post.css">
 </head>
 
-<div id="addpost" style="display: none">@await Html.PartialAsync("_AddPostPartial", new PortalMonti.Application.ViewModels.Post.NewPostVm())</div>
+<div id="addpost" style="display: none; margin-top:10px;">@await Html.PartialAsync("_AddPostPartial", new PortalMonti.Application.ViewModels.Post.NewPostVm())</div>
 
 
 
-<form asp-action="Search" asp-controller="Post" method="post">
-
-
-
+<form asp-action="Search" asp-controller="Post" method="post" style="margin-top: 20px; margin-bottom: 10px; margin-left: 4px;">
         <div class="row row2">
             <div class="col-md-8">
                 <div>
-                    <div class="input-group">
-                        <div class="form-outline">
-                            <input type="text" asp-for="SearchString" name="searchString" id="searchString" class="form-control" height="30" />
-                            <label class="form-label" for="form1">Szukaj</label>
+                    <div class="input-group" style="justify-content:center; ">
+                        <div style="margin-right:5%;">
+                            <p id="btn2" class="btn btn-primary" @*style="background-color:Highlight "*@>Dodaj Post</p>
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-search"></i>
-                        </button>
+                        <div class="form-outline" style="width: 70%; height: 75%;">
+                            <input type="text" asp-for="SearchString" name="searchString" id="searchString" class="form-control" height="30" />
+                            <label class="form-label"  for="form1">Szukaj</label>
+
+                        </div>
+                        <div >
+                            <button type="submit" class="btn btn-primary" >
+                                <i class="fas fa-search" style="height:18px"></i>
+                            </button>
+                        </div>
 
                     </div> @if (Model.SearchString != String.Empty)
                     {
                         <a asp-action="Index">Back to List</a>
                     }
-                    <br />
+                   
                 </div>
                 <input type="hidden" name="pageNo" id="pageNo" />
                 <input type="hidden" name="pageSize" id="pageSize" value="5" />
             </div>
+            <div class="col-md-4">
+                <p style=" text-align:center;margin-top:10px; font-size:large" id="ct">
+                    Dzisiaj jest : <script>document.write(new Date().toLocaleDateString());</script>
+                    
+                </p>
+            </div>
         </div>
     </form>
-<button id="btn2" class="btn btn-success" style="margin-left:4px">Dodaj Post</button>
-<br />
 
 
         <!-- Post /////-->
@@ -67,7 +74,7 @@
             <div class="col-md-4 d-none d-lg-block">
                 <div class="push-down"></div>
                 <div class="card card-columns">
-                    <h5 class="card-heading">Friends</h5>
+                    <h5 class="card-heading" style="padding:10px; text-align:center">Znajomi</h5>
                     <div class="mda-list">
                         @foreach (var friend in ViewBag.Friends)
                         {
@@ -102,8 +109,26 @@
                     document.getElementById("pageNo").value = index; //chyba wyjebac(paginacja)
                     document.getElementById("pageNo").form.submit();
                 }
-            </script>
-            <script type="text/javascript">
+
+
+
+
+                function display_c() {
+                    var refresh = 1000; // Refresh rate in milli seconds                //aktualna data i godzina z sekundami
+                    mytime = setTimeout('display_ct()', refresh)
+                }
+
+                function display_ct() {
+                    var x = new Date()
+                    var x1 = x.getMonth() + 1 + "/" + x.getDate() + "/" + x.getFullYear();
+                    x1 = x1 + " - " + x.getHours() + ":" + x.getMinutes() + ":" + x.getSeconds();
+                    document.getElementById('ct').innerHTML = x1;
+                    display_c();
+                }
+                window.onload = display_ct();  //odpalanie funkcji podczas ladowania strony
+
+
+
 
 
 
@@ -141,7 +166,7 @@
                         $(data).each(function () {
                             if (data.length<15) {
 
-                                $('#load_data_message').html("<button type='button' class='btn btn-info'>Nie ma więcej postów do wyświetlenia :(</button>");
+                                $('#load_data_message').html("<button type='button' class='btn btn-danger'>BRAK POSTÓW</button>");
                                 action = 'active';
                             }
                             else {
@@ -254,24 +279,6 @@ function showCommentsAfter() {
 
                 }
 
-                @*function createComment(com_id) {
-
-                    console.log("kliknieto");
-                $.ajax({
-                    type: "POST",
-                    url: "@Url.Action("AddCommentNew")",
-                    data: { postId: com_id, text: $("#text").val() },
-                    dataType:"text",
-                    success: function (data) {
-                        console.log("dodaj komentarz");
-                        showCommentsAfter(); //wyswietlanie razem z dodanym nowo komentarzem
-
-
-                       }
-
-                       });
-
-                }*@
 
 
 

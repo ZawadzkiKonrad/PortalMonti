@@ -59,16 +59,37 @@ namespace PortalMonti.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Search(string searchString)
+        public IActionResult Search(int pageSize, int? pageNo, string searchString)
         {
+            ViewBag.Comments = _commentService.GetFullComment();
+            ViewBag.Friends = _friendService.GetAllFriends();
             if (searchString is null)
             {
                 searchString = String.Empty;
             }
-            var posts = _postService.GetPostsSearch(searchString);
+            var posts = _postService.GetPostsSearch(pageSize,pageNo,searchString);
+            
             return View(posts);
         }
+        [HttpGet]
+                public IActionResult GetPostForList(int pageSize, int? pageNo,string searchString)
+                {
+                    //if (!pageNo.HasValue)
+                    //{
+                    //    pageNo = 1;
+                    //}
+                    if (searchString is null)
+                    {
+                        searchString = String.Empty;
+                    }
+                    var model = _postService.GetAllPostForList(pageSize, pageNo, searchString);
+                    //if (model.Posts.Count < 1)
+                    //{
+                    //    return PartialView("_ShowPostPartialEmpty");
+                    //}
+                    return PartialView("_ShowPostPartial", model);
 
+                }
         [HttpGet]//widok z formularzem dla uzytkownika do wypelnienia
         public IActionResult AddPost()
         {
@@ -88,25 +109,7 @@ namespace PortalMonti.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public IActionResult GetPostForList(int pageSize, int? pageNo,string searchString)
-        {
-            //if (!pageNo.HasValue)
-            //{
-            //    pageNo = 1;
-            //}
-            if (searchString is null)
-            {
-                searchString = String.Empty;
-            }
-            var model = _postService.GetAllPostForList(pageSize, pageNo, searchString);
-            //if (model.Posts.Count < 1)
-            //{
-            //    return PartialView("_ShowPostPartialEmpty");
-            //}
-            return PartialView("_ShowPostPartial", model);
-
-        }
+        
         // po wypenieniu formularza zwrocony odpopiedni model ktory zostanie przekazany do serwisu i nastepnie do repozytorium aby utrworzyc post
         
         [HttpGet]
@@ -126,28 +129,7 @@ namespace PortalMonti.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpGet]
-        //public IActionResult AddCommentNew(int postId)
-        //{
-        //    var comments = _commentService.GetAllComment(postId);
-        //    if (comments.Count() < 1)                                 //gdy nie ma komengtarzy tworze domyslny
-        //    {
-        //        List<CommentVm> lista = new List<CommentVm>();
-        //        CommentVm com = new CommentVm()
-        //        {
-        //            Text = "Brak komentarzy !",
-        //            //PostId=postId
-        //        };
-        //        lista.Add(com);
-        //        lista.AsQueryable();
-        //        return PartialView("_ShowCommentsPartial", lista);
-        //    }
-        //    else
-        //    {
-        //        return PartialView("_ShowCommentsPartial", comments);
-        //    }
-
-        //}
+        
 
         [HttpPost]
         public IActionResult AddCommentNew(NewCommentVm model,string text)
@@ -201,7 +183,8 @@ namespace PortalMonti.Web.Controllers
                 List< CommentVm > lista = new List<CommentVm>();
                 CommentVm com = new CommentVm() {
                     Text = "Brak Komentarzy!",
-                    PostId=postId
+                    PostId = postId,
+                    ProfileImage = "coment.jpg",
                 };
                 lista.Add(com);
                 lista.AsQueryable();

@@ -71,10 +71,21 @@ namespace PortalMonti.Application.Services
            
         }
 
-        public IEnumerable<Post> GetPostsSearch(string searchString)
+        public ListPostForListVm GetPostsSearch(int pageSize, int? pageNo, string searchString)
         {
-            var posts = _postRepo.GetAllPosts().Where(p => p.Name.StartsWith(searchString)).AsEnumerable();
-            return posts;
+            var posts = _postRepo.GetAllPosts().Where(p => p.Name.StartsWith(searchString))
+                .ProjectTo<PostForListVm>(_mapper.ConfigurationProvider).ToList();
+            posts.Reverse();
+           // var postToShow = posts.Skip((int)(pageSize * (pageNo - 1))).Take(pageSize).ToList();
+            var postList = new ListPostForListVm()
+            {
+                PageSize = pageSize,
+                CurrentPage = pageNo,
+                SearchString = searchString,
+                Posts = posts,
+                Count = posts.Count
+            };
+            return postList;
         }
         public PostDetailsVm GetPostById(int id)
         {

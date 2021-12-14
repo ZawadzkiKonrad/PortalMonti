@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+   
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/css/chatroom.css" rel="stylesheet" />
 
@@ -33,43 +33,44 @@
                                     </div>
                                 </div>
                             </div>
-                            @foreach (var friend in ViewBag.ChatUsers){
-                            <a asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.UserId" class="list-group-item list-group-item-action border-0">
-                                @*<div class="badge bg-success float-right">5</div>*@
-                                <div class="d-flex align-items-start">
-                                    <img src="~/upload/@friend.ProfileImage" class="rounded-circle mr-1" alt="@friend.Email" width="40px" height="40px"> 
-                                    <div class="flex-grow-1 ml-3">
-                                        @friend.Email
-                                        <div class="small"><span class="fas fa-circle chat-online"></span> Online  </div>
+                            @foreach (var friend in ViewBag.ChatUsers)
+                            {
+                                <a asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.UserId" class="list-group-item list-group-item-action border-0">
+                                    @*<div class="badge bg-success float-right">5</div>*@
+                                    <div class="d-flex align-items-start">
+                                        <img src="~/upload/@friend.ProfileImage" class="rounded-circle mr-1" alt="@friend.Email" width="40px" height="40px">
+                                        <div class="flex-grow-1 ml-3">
+                                            @friend.Email
+                                            <div class="small"><span class="fas fa-circle chat-online"></span> Online  </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                                }
-    
-    @*@foreach (var friend in ViewBag.friends){
-                            <a asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId" class="list-group-item list-group-item-action border-0">
-                                <div class="badge bg-success float-right">5</div>
-                                <div class="d-flex align-items-start">
-                                    
-                                    <div class="flex-grow-1 ml-3">
-                                        @friend.Email
-                                        <div class="small"><span class="fas fa-circle chat-online"></span> Online  </div>
+                                </a>
+                            }
+
+                            @*@foreach (var friend in ViewBag.friends){
+                                <a asp-controller="Home" asp-action="ChatPrv" asp-route-appUserId="@friend.AuthorId" class="list-group-item list-group-item-action border-0">
+                                    <div class="badge bg-success float-right">5</div>
+                                    <div class="d-flex align-items-start">
+
+                                        <div class="flex-grow-1 ml-3">
+                                            @friend.Email
+                                            <div class="small"><span class="fas fa-circle chat-online"></span> Online  </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                                }*@
+                                </a>
+                                    }*@
                             <hr class="d-block d-lg-none mt-1 mb-0">
                         </div>
                         <div class="col-12 col-lg-7 col-xl-9">
-                            
+
 
                             <div class="chat">
                                 <div class="chat-header clearfix">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            
-                                                <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar" width="40px" height="40px">
-                                            
+
+                                            <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar" width="40px" height="40px">
+
                                             <div class="chat-about">
 
                                                 <h6 class="m-b-0">@ViewBag.UserToChat.Email</h6>
@@ -81,79 +82,80 @@
                                         <div class="col-lg-6 hidden-sm text-right">
                                             <label for="file-input"><i class="btn btn-outline-secondary fa fa-file"></i></label>
                                             <label for="image-input"><i class="btn btn-outline-primary fa fa-image"></i></label>
-                                                <a href="javascript:void(0);" class="btn btn-outline-info"><i class="fa fa-files-o"></i></a>
-                                                <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-file-picture-o"></i></a>
-                                                                                            
-                                            
+                                            <a href="javascript:void(0);" class="btn btn-outline-info"><i class="fa fa-files-o"></i></a>
+                                            <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-file-picture-o"></i></a>
+
+
                                         </div>
                                     </div>
                                 </div>
-                                <div class="chat-history" id="chat-history"style="height:500px;overflow-y:scroll">
+                                <div class="chat-history" id="chat-history" style="height:500px;overflow-y:scroll">
                                     @if (Model.Messages == null)
-                            {
-                                    <div>adsfasdasdas</div>
-                            }
-                            else
-                            {
-                                    @foreach (var message in Model.Messages)
-                                {
-                                    if (message.Name==ViewBag.User.Email)
                                     {
-                                    <ul class="m-b-0">
-
-                                        <li class="clearfix">
-                                            <div class="message-data text-right">
-                                                <span class="message-data-time">@message.Timestamp</span>
-                                            </div>
-                                            <div class="message other-message float-right">@message.Text
-                                            @if (!string.IsNullOrEmpty(message.File))
-                                            {
-                                                <a href="~/upload/@message.File">Pobierz</a>
-                                            }
-                                            @if (!string.IsNullOrEmpty(message.Image))
-                                            {
-                                                <img src="~/upload/@message.Image" class="resImage" />
-                                            }
-                                            
-                                            </div>
-                                        </li>
-                                    </ul>
+                                        <div>adsfasdasdas</div>
                                     }
                                     else
                                     {
+                                        @foreach (var message in Model.Messages)
+                                        {
+                                            if (message.Name == ViewBag.User.Email)
+                                            {
+                                                <ul class="m-b-0">
+
+                                                    <li class="clearfix">
+                                                        <div class="message-data text-right">
+                                                            <span class="message-data-time">@message.Timestamp</span>
+                                                        </div>
+                                                        <div class="message other-message float-right">
+                                                            @message.Text
+                                                        @if (!string.IsNullOrEmpty(message.File))
+                                                        {
+                                                            <a href="~/upload/@message.File">Pobierz</a>
+                                                        }
+                                                        @if (!string.IsNullOrEmpty(message.Image))
+                                                        {
+                                                            <img src="~/upload/@message.Image" class="resImage" /><p>@* do przyciagamia wiadomosci ze zdjeciem do dolu, zrobic js *@</p>
+                                                        }
+
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        }
+                                        else
+                                        {
 
 
-                                    <ul class="m-b-0">
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar" width="40px" height="40px">
-                                                <span class="message-data-time">@message.Timestamp</span>
+                                            <ul class="m-b-0">
+                                                <li class="clearfix">
+                                                    <div class="message-data">
+                                                        <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar" width="40px" height="40px">
+                                                        <span class="message-data-time">@message.Timestamp</span>
 
-                                            </div>
-                                            <div class="message my-message ">
-                                                @message.Text
-                                                @if (!string.IsNullOrEmpty(message.File))
-                                                {
-                                                    <a href="~/upload/@message.File">Pobierz</a>
-                                                }
-                                                @if (!string.IsNullOrEmpty(message.Image))
-                                                {
-                                                    <img src="~/upload/@message.Image" class="resImage"/>
-                                                }
-                                            </div>
+                                                    </div>
+                                                    <div class="message my-message ">
+                                                        @message.Text
+                                                        @if (!string.IsNullOrEmpty(message.File))
+                                                        {
+                                                            <a href="~/upload/@message.File">Pobierz</a>
+                                                        }
+                                                        @if (!string.IsNullOrEmpty(message.Image))
+                                                        {
+                                                            <img src="~/upload/@message.Image" class="resImage" /><p>@* do przyciagamia wiadomosci ze zdjeciem do dolu, zrobic js *@</p>
+                                                        }
+                                                    </div>
 
-                                        </li>
+                                                </li>
 
-                                    </ul>
+                                            </ul>
+                                        }
+
                                     }
-
-                                }
-                            }
+                                    }
 
                                 </div>
                                 <div class="chat-message clearfix">
 
-                                    <form class="input-group mb-0" onsubmit="sendMessage(event)" id="dataForm" enctype="multipart/form-data">
+                                    <form class="input-group mb-0" onsubmit="sendMessage(event)"  enctype="multipart/form-data">
                                         <div class="input-group-prepend">
                                             <input type="hidden" name="chatId" value="@Model.Id">
                                             <input type="hidden" name="roomName" value="@Model.Name">
@@ -168,9 +170,44 @@
                                         <button class="input-group-text" type="submit"><i class="fa fa-send"></i></button>
                                     </form>
                                 </div>
-                                <div class="chat-message clearfix">
+                                <div class="chat-message clearfix" style="display:inline">
 
-                                    <p id="hamburger" onclick="emoji(hamburger)">🍔</p>
+                                    <p id="hamburger" onclick="emoji(hamburger)"style="display:inline">🍔</p>
+                                    <p id="smile" onclick="emoji(smile)"style="display:inline">😀</p>
+                                    <p id="smileTooth" onclick="emoji(smileTooth)" style="display:inline">😁</p>
+                                    <p id="smileCry" onclick="emoji(smileCry)"style="display:inline">😂</p>
+                                    <p id="smileCry2" onclick="emoji(smileCry2)" style="display:inline">😅</p>
+                                    <p id="angel" onclick="emoji(angel)" style="display:inline">😇</p>
+                                    <p id="devil" onclick="emoji(devil)"style="display:inline">😈</p>
+                                    <p id="winking" onclick="emoji(winking)" style="display:inline">😉</p>
+                                    <p id="smiling" onclick="emoji(smiling)" style="display:inline">😊</p>
+                                    <p id="delicious" onclick="emoji(delicious)"style="display:inline">😋</p>
+                                    <p id="love" onclick="emoji(love)" style="display:inline">😍</p>
+                                    <p id="cool" onclick="emoji(cool)" style="display:inline">😎</p>                                    
+                                    <p id="smirking" onclick="emoji(smirking)" style="display:inline">😏</p>
+                                    <p id="neutral" onclick="emoji(neutral)" style="display:inline">😐</p>
+                                    <p id="unmaused" onclick="emoji(unmaused)" style="display:inline">😒</p>
+                                    <p id="coldsweat" onclick="emoji(coldsweat)" style="display:inline">😓</p>
+                                    <p id="confused" onclick="emoji(confused)" style="display:inline">😕</p>
+                                    <p id="stuckout" onclick="emoji(stuckout)" style="display:inline">😛</p>                                    
+                                    <p id="xp" onclick="emoji(xp)" style="display:inline">😝</p>
+                                    <p id="pff" onclick="emoji(pff)" style="display:inline">😤</p>
+                                    <p id="cry" onclick="emoji(cry)" style="display:inline">😥</p>
+                                    <p id="cold" onclick="emoji(cold)" style="display:inline">😨</p>
+                                    <p id="grimacing" onclick="emoji(grimacing)" style="display:inline">😬</p>
+                                    <p id="ooo" onclick="emoji(ooo)" style="display:inline">😲</p>                                    
+                                    <p id="wrr" onclick="emoji(wrr)" style="display:inline">🤬</p>
+                                    <p id="rotfl" onclick="emoji(rotfl)" style="display:inline">🤪</p>
+                                    <p id="whats" onclick="emoji(whats)" style="display:inline">🤨</p>
+                                    <p id="rodeo" onclick="emoji(rodeo)" style="display:inline">🤠</p>
+                                    <p id="hmm" onclick="emoji(hmm)" style="display:inline">🤔</p>
+                                    <p id="clown" onclick="emoji(clown)" style="display:inline">🤡</p>                                    
+                                    <p id="strong" onclick="emoji(strong)" style="display:inline">💪🏻</p>
+                                    <p id="nigga" onclick="emoji(nigga)" style="display:inline">🧑🏿</p>
+                                    <p id="dog" onclick="emoji(dog)" style="display:inline">👮</p>
+                                    <p id="tree" onclick="emoji(tree)" style="display:inline">🎄</p>
+                                    <p id="hamster" onclick="emoji(hamster)" style="display:inline">🐹</p>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -181,10 +218,10 @@
     </main>
 
 
-    
+
     <input type="hidden" id="UserEmail" value="@ViewBag.UserToChat.Email">  @*//ukryty input aby przekazac go do javascript i wiedziac jak ukladac wiadomosci(kto jest nadawca)*@
 
-   
+
 
 
 
@@ -193,27 +230,30 @@
     <script src="~/js/site.js"></script>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
 
-    
+
     <style>
-input#file-input{
-    display:none;
-}input#image-input{
-    display:none;
-}
-        .resImage{
-            width:100%;
-            height:100%;
+        input#file-input {
+            display: none;
+        }
+
+        input#image-input {
+            display: none;
+        }
+
+        .resImage {
+            width: 100%;
+            height: 100%;
         }
     </style>
     <script>
 
         function emoji(emo) {
-            
+
             console.log(emo);
             var emotka = $(emo).text();
             var value = $("#message-input").val();
             $("#message-input").val(value + emotka);
-            
+
         }
 
         var d = $('#chat-history');
@@ -264,7 +304,7 @@ input#file-input{
 
                 var file = data.file;
                 if (file.length>5) {
-                    
+
                     var file2 = document.createElement('a');
                     file2.href = '/upload/' + data.file;
                     file2.text = '  Pobierz';
@@ -276,11 +316,12 @@ input#file-input{
                     var image = document.createElement('img');
                     image.src = '/upload/' + data.image;
                     image.classList.add("resImage");
+                   
                     div2.appendChild(image);
                     d.scrollTop(d.prop("scrollHeight"));
-                                       
+
                 }
-                
+
                 //if (image.length > 5) {
 
                 //    var image = document.createElement('img');
@@ -292,12 +333,12 @@ input#file-input{
                 //message.appendChild(span);
                 message.appendChild(div2);
 
-                
+
 
                 var body = document.querySelector('.chat-history')
                 body.append(message);
 
-                
+
 
                 d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
 
@@ -320,7 +361,7 @@ input#file-input{
                 var file = data.file;
 
                 if (file.length>5) {            //dodawanie linku do pliku jesli byl dolaczony
-                    
+
                     var file2 = document.createElement('a');
                     file2.href = '/upload/' + data.file;
                     file2.text = '  Pobierz';
@@ -332,6 +373,8 @@ input#file-input{
                     var image = document.createElement('img');
                     image.src = '/upload/' + data.image;
                     image.classList.add("resImage");
+                   
+                   
                     div2.appendChild(image);
                     d.scrollTop(d.prop("scrollHeight"));
 
@@ -345,7 +388,7 @@ input#file-input{
                 var body = document.querySelector('.chat-history')
                 body.append(message);
 
-                
+
                 d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
             }
             document.getElementById("dataForm").reset(); //resetowanie formularza zeby nie powtarzaly sie zdjecia i pliki przy wysl;aniu nastepnej wiadomosci bez przeladowania strony
@@ -353,50 +396,6 @@ input#file-input{
         })
 
 
-
-
-        //connection.on("RecieveNotification", function (data) {
-
-        //    var pow = $('<span/>', {
-        //        'id': 'notifications',
-        //        'class': 'badge rounded-pill badge-notification bg-danger',
-        //        'text': '.',
-        //    });
-
-        //    var dzwonekpow = document.getElementById('dzwonekPow');
-        //    pow.appendTo(dzwonekpow);  //powiadomienia, notyfikacje
-
-
-
-        //    var listapow = document.getElementById('listaPow') //sprawdzic czy dziala
-        //    var pow2 = $('<li/>');
-
-        //    var pow3 = $('<a/>', {
-        //        'href': '#',
-        //        'class': 'dropdown-item',
-        //        'text': 'hahhahahahahha',
-
-        //    });
-        //    pow3.appendTo(pow2);
-        //    pow2.prependTo(listapow);
-
-        //    //var pow= jQuery('<span>', {
-        //    //     id: 'notification',
-        //    //     class: 'badge rounded-pill badge-notification bg-danger'
-        //    //  });
-        //    // var pow = document.createElement("span");
-        //    // pow.classList.add("badge rounded-pill badge-notification bg-danger")
-
-        //    // document.getElementById('dzwonekPow').appendChild(pow);
-
-        //    // var item = jQuery('<span>', {
-        //    //     id: 'notification',
-        //    //     class: 'badge rounded-pill badge-notification bg-danger'
-        //    // });
-
-
-
-        //})
 
 
         var joinRoom = function () {
@@ -429,6 +428,8 @@ input#file-input{
 
             document.getElementById('message-input').value = '';   //czysczenie inputu "message"
 
+
+
             axios.post('/Chat/SendMessage', data)
                 .then(res => {
                     console.log("wiadomosc wyslana")
@@ -444,7 +445,7 @@ input#file-input{
                 .catch(err => {
                     console.log("powiadomienie niewyslane")
                 })
-            
+
         }
 
     </script>

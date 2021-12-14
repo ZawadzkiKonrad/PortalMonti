@@ -2154,3 +2154,6 @@ C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Post\Search.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Shared\Components\NotificationsList\Default.cshtml.g.cs
 C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\bin\Debug\net5.0\MoreLinq.dll
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Home\Notifications.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Home\NoChat.cshtml.g.cs
+C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Debug\net5.0\Razor\Views\Home\SearchUsers.cshtml.g.cs

@@ -224,6 +224,9 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<bool>("logged")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -432,6 +435,9 @@ namespace PortalMonti.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("AuthorId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorImage")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AuthorName")

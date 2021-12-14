@@ -91,8 +91,8 @@ namespace PortalMonti.Web.Controllers
 
         [HttpPost("[action]")]
         public async Task<IActionResult> SendNotification(string appUserId,string authorId,string authorName)
-        {
-            var not = new Notification() { Text = "nowa wiadomość",AuthorId=authorId,AuthorName=authorName };
+        {   var AuthorUser= _context.Users.FirstOrDefault(x => x.Id == authorId);
+            var not = new Notification() { Text = "nowa wiadomość",AuthorId=authorId,AuthorName=authorName,AuthorImage=AuthorUser.ImageProfile };
             
             var user = _context.Users.FirstOrDefault(x => x.Id == appUserId);
             user.Notifications.Add(not);

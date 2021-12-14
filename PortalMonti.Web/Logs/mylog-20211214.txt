@@ -1,0 +1,130 @@
+2021-12-14T08:21:05.4190845+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-12-14T08:21:05.4243030+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-12-14T08:21:05.4292606+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-12-14T08:21:05.4311146+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-12-14T08:21:05.4329561+01:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-12-14T08:42:27.9251890+01:00  [INF] Application is shutting down... (90f52c38)
+2021-12-14T08:42:41.0535564+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-12-14T08:42:41.0586230+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-12-14T08:42:41.0625007+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-12-14T08:42:41.0645123+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-12-14T08:42:41.0663308+01:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-12-14T08:48:46.8639255+01:00 0HMDUQL7IKK5I:00000003 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))' (74d62de4)
+2021-12-14T08:48:56.7463879+01:00 0HMDUQL7IKK5L:00000001 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))' (74d62de4)
+2021-12-14T08:58:43.1714559+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-12-14T08:58:43.1777680+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-12-14T08:58:43.1820036+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-12-14T08:58:43.1841261+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-12-14T08:58:43.1907114+01:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-12-14T08:59:06.3395026+01:00 0HMDUQU69SHOR:00000001 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))' (74d62de4)
+2021-12-14T08:59:07.3540884+01:00 0HMDUQU69SHOR:00000003 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))' (74d62de4)
+2021-12-14T08:59:21.8725276+01:00 0HMDUQU69SHP3:00000001 [INF] User logged in. (fdce0db4)
+2021-12-14T09:00:20.6604640+01:00 0HMDUQU69SHPB:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+SixLabors.ImageSharp.UnknownImageFormatException: Image cannot be loaded. Available decoders:
+ - JPEG : JpegDecoder
+ - PNG : PngDecoder
+ - TGA : TgaDecoder
+ - GIF : GifDecoder
+ - BMP : BmpDecoder
+
+   at SixLabors.ImageSharp.Image.Load(Configuration configuration, Stream stream, IImageFormat& format)
+   at SixLabors.ImageSharp.Image.Load(Configuration configuration, Stream stream)
+   at SixLabors.ImageSharp.Image.Load(Stream stream)
+   at PortalMonti.Application.Services.ImageService.UploadFile(IFormFile file) in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\Services\ImageService.cs:line 75
+   at PortalMonti.Web.Controllers.ChatController.SendMessage(Int32 chatId, String message, String roomName, String appUserId, IFormFile file, IFormFile image) in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Controllers\ChatController.cs:line 56
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-12-14T09:00:42.6388672+01:00 0HMDUQU69SHPC:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+SixLabors.ImageSharp.UnknownImageFormatException: Image cannot be loaded. Available decoders:
+ - JPEG : JpegDecoder
+ - PNG : PngDecoder
+ - TGA : TgaDecoder
+ - GIF : GifDecoder
+ - BMP : BmpDecoder
+
+   at SixLabors.ImageSharp.Image.Load(Configuration configuration, Stream stream, IImageFormat& format)
+   at SixLabors.ImageSharp.Image.Load(Configuration configuration, Stream stream)
+   at SixLabors.ImageSharp.Image.Load(Stream stream)
+   at PortalMonti.Application.Services.ImageService.UploadFile(IFormFile file) in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\Services\ImageService.cs:line 75
+   at PortalMonti.Web.Controllers.ChatController.SendMessage(Int32 chatId, String message, String roomName, String appUserId, IFormFile file, IFormFile image) in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Controllers\ChatController.cs:line 56
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-12-14T09:01:03.4938026+01:00 0HMDUQU69SHPH:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+SixLabors.ImageSharp.UnknownImageFormatException: Image cannot be loaded. Available decoders:
+ - JPEG : JpegDecoder
+ - PNG : PngDecoder
+ - TGA : TgaDecoder
+ - GIF : GifDecoder
+ - BMP : BmpDecoder
+
+   at SixLabors.ImageSharp.Image.Load(Configuration configuration, Stream stream, IImageFormat& format)
+   at SixLabors.ImageSharp.Image.Load(Configuration configuration, Stream stream)
+   at SixLabors.ImageSharp.Image.Load(Stream stream)
+   at PortalMonti.Application.Services.ImageService.UploadFile(IFormFile file) in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Application\Services\ImageService.cs:line 75
+   at PortalMonti.Web.Controllers.ChatController.SendMessage(Int32 chatId, String message, String roomName, String appUserId, IFormFile file, IFormFile image) in C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Controllers\ChatController.cs:line 56
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-12-14T09:29:14.0150244+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-12-14T09:29:14.0200791+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-12-14T09:29:14.0248056+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-12-14T09:29:14.0262381+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-12-14T09:29:14.0277939+01:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-12-14T10:15:14.9466485+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-12-14T10:15:14.9511187+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-12-14T10:15:14.9548232+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-12-14T10:15:14.9564824+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-12-14T10:15:14.9583918+01:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-12-14T11:32:28.4291625+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-12-14T11:32:28.4365172+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-12-14T11:32:28.4422740+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-12-14T11:32:28.4444948+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-12-14T11:32:28.4509712+01:00  [INF] Content root path: "C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web" (b5d60022)
+2021-12-14T11:32:40.5915671+01:00 0HMDUTK3HRRV8:00000015 [WRN] Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))' (74d62de4)

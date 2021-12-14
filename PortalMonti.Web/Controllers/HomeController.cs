@@ -38,8 +38,17 @@ namespace PortalMonti.Web.Controllers
         [HttpGet]
         public IActionResult ListUsers()
         { var users = _userManager.Users;
-            ViewBag.Users = users;
-            return View(users);
+              return View(users);
+
+
+        }
+        [HttpGet]
+        public IActionResult SearchUsers(string searchString)
+        {
+            var users = _userManager.Users.Where(x => x.Email.StartsWith(searchString));
+            return PartialView(users);
+
+
         }
         
       
@@ -58,9 +67,9 @@ namespace PortalMonti.Web.Controllers
 
             var UserChats = chats.SelectMany(d => d.Users).ToList();        
             var userzy2 = UserChats.DistinctBy(x => x.Email); //usuwanie powtarzajacych sie rekordow, uzylem dodatkowej biblioteki MoreLINQ
-                              
+            ViewBag.User = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;                  
             ViewBag.ChatUsers = userzy2.ToList();
-
+            
 
             List<Message> messages = new List<Message>();
             foreach (var item in chats)
@@ -71,52 +80,58 @@ namespace PortalMonti.Web.Controllers
                     messages.Add(mess);
                 }
 
-            }                                     //wyszukiwanie najnowszej wiadomosci
-          
-            var mess2 = messages
-                .Where(x => x.Name != user.UserName)
-                .OrderBy(m => m.Timestamp)
-                .Last();
-
-
-            var nameMess = mess2.Name;
-            var appUserId = _context.Users.FirstOrDefault(x => x.UserName == nameMess).Id;         
-            var name = appUserId + userId;
-            var name2 = userId + appUserId;
-            ViewBag.User = _userManager.GetUserAsync(_accessor.HttpContext.User).Result;
-            ViewBag.UserToChat = _context.Users.FirstOrDefault(x => x.Id == appUserId);          
-                    
-            
-            var chat = _context.Chats           //ustawianie domyslnego chatu na ten z najnowsza wiadomoscia
-                .Include(x => x.Messages)
-                .FirstOrDefault(x => x.Name == name || x.Name == name2);
-
-
-
-            if (chat != null)
+            }                                     
+            if (messages.Count < 1 || messages.Any(x=>x.Name!=user.Email)==false)    //sprawdzenie czy sa wiadomosci od inncyb uzytkownikow, jesli nie to chat z samym soba
             {
-
-                //if (chat.Users.Count < 2 && chat.Users.Any(x => x.UserId == userId) == false)
-                //{
-                //    chat.Users.Add(new ChatUser
-                //    {
-                //        UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value,  //szybsze pobieranie id uzytkownika
-                //        Role = UserRole.Admin,
-                //    });
-
-                //    _context.SaveChanges();
-                //}
-                return View("ChatPrv", chat);
+              return  RedirectToAction("ChatPrv", new { appUserId = user.Id });
+                
             }
-            else
+            else                                             //wyszukiwanie najnowszej wiadomosci
             {
-                var chat2 = createChatprv(appUserId);
-                return View("ChatPrv", chat2);
+                var mess2 = messages
+                    .Where(x => x.Name != user.UserName)
+                    .OrderBy(m => m.Timestamp)
+                    .Last();
+
+
+                var nameMess = mess2.Name;
+                var appUserId = _context.Users.FirstOrDefault(x => x.UserName == nameMess).Id;
+                var name = appUserId + userId;
+                var name2 = userId + appUserId;
+                
+                   
+                ViewBag.UserToChat = _context.Users.FirstOrDefault(x => x.Id == appUserId);
+
+
+                var chat = _context.Chats           //ustawianie domyslnego chatu na ten z najnowsza wiadomoscia
+                    .Include(x => x.Messages)
+                    .FirstOrDefault(x => x.Name == name || x.Name == name2);
+
+
+
+                if (chat != null)
+                {
+                    return View("ChatPrv", chat);
+                }
+                else
+                {
+                    var chat2 = createChatprv(appUserId);
+                    return View("ChatPrv", chat2);
+                }
             }
+        }
+        [HttpGet]
+        public IActionResult Notifications()
+        {
+            var userId  = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            ViewBag.User = user;
+            var notis = _context.Notifications.Where(x => x.AppUserId == userId).ToList();
+            notis.Reverse();
+            return View(notis);
 
         }
 
-     
         public IActionResult AddFriend(string id)
         {
             
@@ -215,11 +230,6 @@ namespace PortalMonti.Web.Controllers
                 var chat2 = createChatprv(appUserId);
                 return View(chat2);
             }
-
-            //var chat = _context.Chats
-            //    .Include(x => x.Messages)
-            //    .FirstOrDefault(x => x.Id == id);             
-
         } 
 
         [HttpGet]

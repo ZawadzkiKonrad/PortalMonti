@@ -15,6 +15,7 @@ namespace PortalMonti.Domain.Model
         public int ReceivedMessageId { get; set; }
         public int ImageId { get; set; }
         public int MessageId { get; set; }
+        public bool logged { get; set; }
         public virtual List<Friend> Friends { get; set; } 
         public virtual List<ReceivedMessage> ReceivedMessages { get; set; }
         public virtual List<Image> Images { get; set; }

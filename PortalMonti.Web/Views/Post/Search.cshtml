@@ -1,77 +1,539 @@
-﻿@model IEnumerable<PortalMonti.Domain.Model.Post>
+﻿@using PortalMonti.Domain.Model;
+@model PortalMonti.Application.ViewModels.Post.ListPostForListVm;
+
+
 
 @{
-    ViewData["Title"] = "Search";
+    ViewData["Title"] = "Index";
+
 }
 
-<h1>Search</h1>
+@*<h1>Wyszukiwarka Postów</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Text)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AuthorId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AuthorImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AppUser)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuthorId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuthorImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AppUser.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <p>
+        <a asp-action="AddPost">Dodaj  post</a>
+    </p>*@
+<head>
+    @*<script src="jquery-1.11.2.js"></script>*@
+    <link rel="stylesheet" href="~/assets/css/post.css">
+</head>
+
+<div id="addpost" style="display: none; margin-top: 10px;">@await Html.PartialAsync("_AddPostPartial", new PortalMonti.Application.ViewModels.Post.NewPostVm())</div>
+
+
+
+<form asp-action="Search" asp-controller="Post" method="post"style="margin-top:10px;">
+
+
+
+    <div class="row row2">
+        <div class="col-md-8">
+            <div>
+                <div class="input-group"style="justify-content:center">
+                    <div class="form-outline"style="width:90%;" >
+                        <input  type="text" asp-for="SearchString" name="searchString" id="searchString" class="form-control" height="30" />
+                        <label class="form-label" for="form1">Szukaj</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                </div>
+                    <a asp-action="Index" style="">Powrót na stronę główną</a>
+                
+                <br />
+            </div>
+            <input type="hidden" name="pageNo" id="pageNo" />
+            <input type="hidden" name="pageSize" id="pageSize" value="5" />
+        </div>
+        <div class="col-md-4">
+            <p style="padding-top:15px; text-align:center">
+                Dzisiaj jest :
+                <script>document.write(new Date().toLocaleDateString());</script>
+            </p>
+        </div>
+    </div>
+    </form>
+
+        <!-- Post /////-->
+        <div class="row row2">
+            <div class="col-md-8">
+
+
+                <div>
+                    @{int indexBtn = 0;
+                        int indexCom = 10;
+                    }
+                    @foreach (var post in Model.Posts)
+                    {
+                        indexBtn++;
+                        indexCom++;
+
+                        <!--- \\\\\\\Post-->
+                        <div class="row">
+                            <div class="col-md-12 grid-margin">
+                                <div class="card rounded">
+                                    <div class="card-header">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="d-flex align-items-center">
+                                                <img class="img-xs rounded-circle" src="~/upload/@post.Authorimage">
+                                                <div class="ml-2">
+                                                    @post.Author
+                                                    <p class="tx-11 text-muted">@post.Date</p>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button class="btn p-0" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal icon-lg pb-3px">
+                                                        <circle cx="12" cy="12" r="1"></circle>
+                                                        <circle cx="19" cy="12" r="1"></circle>
+                                                        <circle cx="5" cy="12" r="1"></circle>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-meh icon-sm mr-2">
+                                                            <circle cx="12" cy="12" r="10"></circle>
+                                                            <line x1="8" y1="15" x2="16" y2="15"></line>
+                                                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                                        </svg> <span class="">Unfollow</span>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-right-up icon-sm mr-2">
+                                                            <polyline points="10 9 15 4 20 9"></polyline>
+                                                            <path d="M4 20h7a4 4 0 0 0 4-4V4"></path>
+                                                        </svg> <span class="">Go to post</span>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2 icon-sm mr-2">
+                                                            <circle cx="18" cy="5" r="3"></circle>
+                                                            <circle cx="6" cy="12" r="3"></circle>
+                                                            <circle cx="18" cy="19" r="3"></circle>
+                                                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                                        </svg> <span class="">Share</span>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy icon-sm mr-2">
+                                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                                        </svg> <span class="">Copy link</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @{
+                                        var poscikk = "pe" + @post.Id;
+                                        var poscikk2 = "de" + @post.Id;
+                                        var poscikk3 = "ke" + @post.Id;
+                                        var poscikk4 = "komshow" + @post.Id;
+                                        var poscikk5 = "text" + post.Id;
+                                    }
+                                    <div class="card-body">
+                                        <p class="poscik" id="@poscikk">
+                                            <b>@post.Name</b>  <br />
+                                            @post.Text
+
+
+                                        </p>
+                                        @if (string.IsNullOrEmpty(post.Text))
+                                        {
+
+                                            <h1>brak tekstu :(</h1>
+                                        }
+                                        else
+                                        {
+                                            @if (post.Text.Length > 50)
+                                            {
+                                                <p onclick="showText(@poscikk,@poscikk2)" id="@poscikk2">Pokaż całość</p>
+                                            }
+                                        }
+
+
+
+                                        @if (post.PostImage != null)
+                                        {
+                                            <a href="~/upload/@post.PostImage" data-lightbox="@post.PostImage"><img class="img-fluid" src="~/upload/@post.PostImage"></a>
+                                        }
+                                    </div>
+                                    <div class="card-footer">
+
+                                        <div class="d-flex post-actions">
+                                            <a href="javascript:;" class="d-flex align-items-center text-muted mr-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart icon-md">
+                                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                                </svg>
+                                                <p class="d-none d-md-block ml-2">Lubię to !</p>
+                                            </a>
+                                            <a href="javascript:;" class="d-flex align-items-center text-muted mr-4" onclick="showComments(@post.Id)" id="@post.Id" data-arg1="@poscikk3" data-arg2="@poscikk4" data-arg3="@poscikk5">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square icon-md">
+                                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                                </svg>
+                                                <p class="d-none d-md-block ml-2">Komentarze</p>
+                                            </a>
+                                            <a href="javascript:;" class="d-flex align-items-center text-muted">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share icon-md">
+                                                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                                    <polyline points="16 6 12 2 8 6"></polyline>
+                                                    <line x1="12" y1="2" x2="12" y2="15"></line>
+                                                </svg>
+                                                <p class="d-none d-md-block ml-2">Udostępnij</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*//Komentarze*@
+                            <div class="" @*style="padding-top:5px"*@>
+                                <div id="@poscikk3" style="display: none" class="card-body">
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Post /////-->
+                    }
+                </div>
+              
+
+            </div>
+
+
+
+            <div class="col-md-4 d-none d-lg-block">
+                <div class="push-down"></div>
+                <div class="card card-columns">
+                    <h5 class="card-heading" style="padding: 10px; text-align: center">Znajomi</h5>
+                    <div class="mda-list">
+                        @foreach (var friend in ViewBag.Friends)
+                        {
+                            <div class="mda-list-item">
+                                <img src="~/upload/@friend.UserPhoto" alt="List user" class="mda-list-item-img thumb48">
+                                <div class="mda-list-item-text mda-2-line">
+                                    <h3>@friend.Email</h3>
+                                    @Html.ActionLink("Zobacz Profil", "ViewProfile", "Profile", new { appUserId = friend.AuthorId })<br />
+                                    
+                                   @Html.ActionLink("Wyślij wiadomość", "ChatPrv", "Home", new { appUserId = friend.AuthorId })
+                                </div>
+                            </div>
+                        }
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br>
+
+        @section Scripts
+{
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                function PagerClick(index) {
+                    document.getElementById("pageNo").value = index; //chyba wyjebac(paginacja)
+                    document.getElementById("pageNo").form.submit();
+                }
+            </script>
+            <script type="text/javascript">
+
+
+
+    //$(document).ready(function () {
+    //        var currentPage = 1;
+    //        loadPageData(currentPage);
+    //        $(window).scroll(function () {
+    //            if (Math.floor($(window).scrollTop()) >= $(document).height() - $(window).height()-200 ) {
+    //                currentPage += 1;
+    //                loadPageData(currentPage);
+    //            }
+    //        });
+
+
+    //    $(function () {
+    //        console.log("strona gotowa");
+    //    });
+    //    $(document).ready(function () {
+    //        $("#btn2").click(function () {
+    //            $("#addpost").toggle(1500);
+    //        });
+    //    });
+
+    //    });
+                @*function loadPageData(currentPageNumber) {
+                $.ajax({
+                    url: "@Url.Action("GetPostForList")",
+                    method: 'get',
+                    dataType: "text",
+                    data: { pageNo: currentPageNumber, pageSize:8},
+                    success: function (data) {
+                        var employeeTable = $('#tblEmployee');
+                        var action = "inactive";
+
+                        $(data).each(function () {
+                            if (data.length<15) {
+
+                                $('#load_data_message').html("<button type='button' class='btn btn-info'>Nie ma więcej postów do wyświetlenia :(</button>");
+                                action = 'active';
+                            }
+                            else {
+                                console.log("sa dane")
+                                console.log(data)
+                                $('#load_data_message').html("<button type='button' class='btn btn-warning'>Prosze czekać</button>");
+                                action = 'inactive';
+                            }
+                            employeeTable.append(data);
+
+                        });
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            }*@
+
+
+
+        function showComments(post_id) {
+            $(document).ready(function () {
+
+
+
+                    console.log("przycisk zostal klikniety");
+
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("ShowComments")",
+                    data: { postId: post_id },
+                    dataType:"text",
+                    success: function (data) {
+                        var div = document.getElementById(post_id);
+                        var poscikk3 = div.getAttribute("data-arg1");
+                        var poscikk4 = div.getAttribute("data-arg2");
+                        var poscikk5 = div.getAttribute("data-arg3");
+                        console.log(poscikk3);
+                        console.log(poscikk4);
+
+                        $("#" + poscikk3).toggle(300); //zwijanie i rozwijanie, mozna dodac efekty
+                        $("#" + poscikk3).html(data); //wrzucenie w danego diva pobranych danych
+
+
+                        $("#" + poscikk4).click(function () {
+                    event.preventDefault();
+                    console.log("kliknieto");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("AddCommentNew")",
+                    data: { postId: post_id, text: $("#" + poscikk5).val() },
+                    dataType:"text",
+                    success: function (data) {
+
+                        showCommentsAfter(); //wyswietlanie razem z dodanym nowo komentarzem
+                        
+
+                       }
+
+                       });
+                });
+
+
+
+function showCommentsAfter() {
+              $.ajax({
+                    type: "GET",
+                  url: "@Url.Action("ShowComments")",
+                  data: { postId: post_id },
+                    dataType: "text",
+                    success: function (data) {
+                        event.preventDefault();
+                        console.log("kliknieto create");
+                        $("#" + poscikk3).show(1000);
+                        $("#" + poscikk3).html(data); //wrzucenie w danego diva pobranych danych
+
+                    }
+                   })
+
+                }                                 }
+
+                });
+
+
+
+
+
+
+
+
+            });
+
+
+                }
+
+
+                var bol = true;
+                function showText(click,poscikk2) {
+                    console.log(click);
+                    if (bol==true) {
+                        $(click).removeClass("poscik");
+                        $(poscikk2).text("Zwiń");
+                        bol = false;
+                    } else {
+                        $(click).addClass("poscik");
+                        $(poscikk2).text("Pokaż całość");
+                        bol = true;
+                    }
+
+
+                }
+
+                @*function createComment(com_id) {
+
+                    console.log("kliknieto");
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("AddCommentNew")",
+                    data: { postId: com_id, text: $("#text").val() },
+                    dataType:"text",
+                    success: function (data) {
+                        console.log("dodaj komentarz");
+                        showCommentsAfter(); //wyswietlanie razem z dodanym nowo komentarzem
+
+
+                       }
+
+                       });
+
+                }*@
+
+
+
+            </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+        }
+
+
+        <style type="text/css">
+            body {
+                background-color: #e9ebee;
+            }
+
+            .be-comment-block {
+                margin-bottom: 50px !important;
+                border: 1px solid #edeff2;
+                border-radius: 2px;
+                padding: 50px 70px;
+                border: 1px solid #ffffff;
+            }
+
+            .comments-title {
+                font-size: 16px;
+                color: #262626;
+                margin-bottom: 15px;
+                font-family: 'Conv_helveticaneuecyr-bold';
+            }
+
+            .be-img-comment {
+                width: 60px;
+                height: 60px;
+                float: left;
+                margin-bottom: 15px;
+            }
+
+            .be-ava-comment {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+
+            .be-comment-content {
+                margin-left: 80px;
+            }
+
+                .be-comment-content span {
+                    display: inline-block;
+                    width: 49%;
+                    margin-bottom: 15px;
+                }
+
+            .be-comment-name {
+                font-size: 13px;
+                font-family: 'Conv_helveticaneuecyr-bold';
+            }
+
+            .be-comment-content a {
+                color: #383b43;
+            }
+
+            .be-comment-content span {
+                display: inline-block;
+                width: 49%;
+                margin-bottom: 15px;
+            }
+
+            .be-comment-time {
+                text-align: right;
+            }
+
+            .be-comment-time {
+                font-size: 11px;
+                color: #b4b7c1;
+            }
+
+            .be-comment-text {
+                font-size: 13px;
+                line-height: 18px;
+                color: #7a8192;
+                display: block;
+                background: #f6f6f7;
+                border: 1px solid #edeff2;
+                padding: 15px 20px 20px 20px;
+            }
+
+            .form-group.fl_icon .icon {
+                position: absolute;
+                top: 1px;
+                left: 16px;
+                width: 48px;
+                height: 48px;
+                background: #f6f6f7;
+                color: #b5b8c2;
+                text-align: center;
+                line-height: 50px;
+                -webkit-border-top-left-radius: 2px;
+                -webkit-border-bottom-left-radius: 2px;
+                -moz-border-radius-topleft: 2px;
+                -moz-border-radius-bottomleft: 2px;
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+            }
+
+            .form-group .form-input {
+                font-size: 13px;
+                line-height: 50px;
+                font-weight: 400;
+                color: #b4b7c1;
+                width: 100%;
+                height: 50px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border: 1px solid #edeff2;
+                border-radius: 3px;
+            }
+
+            .form-group.fl_icon .form-input {
+                padding-left: 70px;
+            }
+
+            .form-group textarea.form-input {
+                height: 150px;
+            }
+        </style>
