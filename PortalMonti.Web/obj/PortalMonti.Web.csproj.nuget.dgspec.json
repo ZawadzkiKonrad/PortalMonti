@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\PortalMonti.Web.csproj": {}
+    "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Web\\PortalMonti.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj": {
+    "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Application\\PortalMonti.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Application\\PortalMonti.Application.csproj",
         "projectName": "PortalMonti.Application",
-        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
-        "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Application\\PortalMonti.Application.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -28,11 +33,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
-                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
+              "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
               },
-              "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
+              "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
               }
             }
           }
@@ -123,22 +128,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+    "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
         "projectName": "PortalMonti.Domain",
-        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
-        "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -241,22 +251,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+    "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
         "projectName": "PortalMonti.Infrastructure",
-        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -269,8 +284,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
-                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
+              "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
               }
             }
           }
@@ -355,22 +370,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\PortalMonti.Web.csproj": {
+    "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Web\\PortalMonti.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\PortalMonti.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Web\\PortalMonti.Web.csproj",
         "projectName": "PortalMonti.Web",
-        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\PortalMonti.Web.csproj",
-        "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Web\\PortalMonti.Web.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Web\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -383,11 +403,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj": {
-                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj"
+              "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Application\\PortalMonti.Application.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Application\\PortalMonti.Application.csproj"
               },
-              "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
+              "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\konradPeojekty\\Monti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
               }
             }
           }
@@ -463,7 +483,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

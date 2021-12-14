@@ -81,10 +81,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Post" asp-action="Index">Posty</a>
                         </li>
+                        @*<li class="nav-item">
+                            <span class="nav-link text-dark font-weight-bold">
+
+                                Online Users (with Cookies) : <span>@PortalMonti.Web.Hubs.OnlineUsersMiddleware.GetOnlineUsersCount()</span>
+                            </span>
+                        </li>*@
                         <li class="nav-item">
                             <span class="nav-link text-dark font-weight-bold">
-                                
-                                Online Users (with Cookies) : <span>@OnlineUsersMiddleware.GetOnlineUsersCount()</span>
+                                Online Users (with SignalR) : <span id="onlineUsersCount"></span>
                             </span>
                         </li>
                         @if (SignInManager.IsSignedIn(User))
@@ -239,25 +244,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="~/mdb/js/mdb.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+   
 
 
     <script>
-        var connection = new signalR.HubConnectionBuilder().withUrl("/onlineUsersHub").build();
+        var connection2 = new signalR.HubConnectionBuilder().withUrl("/onlineUsersHub").build();
 
-        connection.on("UpdateOnlineUsers", function (count) {
+        connection2.on("UpdateOnlineUsers", function (count) {
             document.getElementById("onlineUsersCount").innerText = count;
         });
 
-        //$(document).ready(function () {
-        //    $('a[href^="11"]').on('click', function (e) {
-        //        e.preventDefault();
-        //        var target = this.hash;
-        //        var $target = $(target);
-        //        $('html, body').animate({
-        //            'scrollTop': $target.offset().top
-        //        }, 1000, 'swing');
-        //    });
-        //}); //nie pamieam czemu zakomentowane xd
+        connection2.start();
+
+       
         $(function () {
             $(window).scroll(function () {
                 if ($(this).scrollTop() != 0) {

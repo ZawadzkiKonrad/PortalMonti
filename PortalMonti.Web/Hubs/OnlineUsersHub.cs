@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineUsers
+namespace PortalMonti.Web.Hubs
 {
     public class OnlineUsersHub : Hub
     {
@@ -43,6 +43,7 @@ namespace OnlineUsers
 
         public static int GetOnlineUsersCount()
         {
+            
             return _onlineUsers.Count(p => p.Value);
         }
     }

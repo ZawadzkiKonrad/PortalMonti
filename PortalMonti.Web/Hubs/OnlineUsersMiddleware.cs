@@ -6,7 +6,7 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineUsers
+namespace PortalMonti.Web.Hubs
 {
     public static class OnlineUsersMiddlewareExtensions
     {

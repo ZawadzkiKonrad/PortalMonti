@@ -28,7 +28,7 @@ using Microsoft.AspNetCore.Http;
 using PortalMonti.Web.Hubs;
 using PortalMonti.Domain.Model;
 using Newtonsoft.Json.Serialization;
-using OnlineUsers;
+
 
 namespace PortalMonti.Web
 {
@@ -122,7 +122,7 @@ namespace PortalMonti.Web
                     pattern: "{controller=Post}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/chatHub");
-                endpoints.MapHub<OnlineUsersHub>("/onlineUsersHub");
+                endpoints.MapHub<OnlineUsersHub>("/OnlineUsersHub");
             });
         }
     }
