@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = PortalMonti.Tests
-build_property.ProjectDir = C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Tests\
+build_property.ProjectDir = C:\Users\48797\source\repos\PortalMonti\PortalMonti.Tests\

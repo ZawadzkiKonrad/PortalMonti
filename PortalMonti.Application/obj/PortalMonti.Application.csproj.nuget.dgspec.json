@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj": {}
+    "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj": {
+    "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
+        "projectUniqueName": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
         "projectName": "PortalMonti.Application",
-        "projectPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
+        "projectPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
         "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Application\\obj\\",
+        "outputPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
-                "projectPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
+              "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+                "projectPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
               },
-              "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
+              "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj"
               }
             }
           }
@@ -127,14 +127,14 @@
         }
       }
     },
-    "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+    "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
         "projectName": "PortalMonti.Domain",
-        "projectPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
+        "projectPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
         "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\obj\\",
+        "outputPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -245,14 +245,14 @@
         }
       }
     },
-    "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+    "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
         "projectName": "PortalMonti.Infrastructure",
-        "projectPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -269,8 +269,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
-                "projectPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
+              "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+                "projectPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
               }
             }
           }

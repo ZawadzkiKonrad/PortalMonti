@@ -1207,7 +1207,6 @@ C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0
 C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0\PortalMonti.Application.AssemblyInfoInputs.cache
 C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0\PortalMonti.Application.AssemblyInfo.cs
 C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0\PortalMonti.Application.csproj.CoreCompileInputs.cache
-C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0\PortalMonti.Application.csproj.CopyComplete
 C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0\PortalMonti.Application.dll
 C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0\ref\PortalMonti.Application.dll
 C:\Users\48797\Source\Repos\PortalMonti\PortalMonti.Application\obj\Debug\net5.0\PortalMonti.Application.pdb

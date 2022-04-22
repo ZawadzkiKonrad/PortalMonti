@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj": {}
+    "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj": {
+    "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj",
         "projectName": "PortalMonti.Tests",
-        "projectPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj",
+        "projectPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj",
         "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Tests\\obj\\",
+        "outputPath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",

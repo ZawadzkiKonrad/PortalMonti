@@ -1,12 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PortalMonti.Web",
-    "\\PortalMonti.Web\\Controllers",
-    "\\PortalMonti.Web\\Hubs",
-    "\\PortalMonti.Web\\Views",
-    "\\PortalMonti.Web\\Views\\Shared"
+    "\\PortalMonti.Web"
   ],
-  "SelectedNode": "\\PortalMonti.Web\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\PortalMonti.Web\\PortalMonti.Web.csproj",
   "PreviewInSolutionExplorer": false
 }

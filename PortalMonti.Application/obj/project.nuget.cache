@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ezTI+irVUt2Bby1ampPP38K7+U8g2aBqGoJh7YlMtVUt4LeQp94smgONkvRWpvQQbddCrqihjb6QJ/kxWiUzuw==",
+  "dgSpecHash": "fvGfTkPWyxp9V91Q3QwcHqFSdV/IZ2ijVV9qFFZl38fruqC48AOn+sSgFy58OfDaPnz++6CsfEbJvWK8j4BG9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48797\\Source\\Repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
+  "projectFilePath": "C:\\Users\\48797\\source\\repos\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48797\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
