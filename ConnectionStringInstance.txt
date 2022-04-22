@@ -1,3 +1,0 @@
-Server=localhost\SQLEXPRESS01;Database=master;Trusted_Connection=True;
-
-SQLEXPRESS01 - instance name
