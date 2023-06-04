@@ -28,9 +28,7 @@
 
                             <div class="px-4 d-none d-md-block">
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <input type="text" class="form-control my-3" placeholder="Search...">
-                                    </div>
+                                    <br>
                                 </div>
                             </div>
                             @foreach (var friend in ViewBag.ChatUsers)
@@ -41,7 +39,6 @@
                                         <img src="~/upload/@friend.ProfileImage" class="rounded-circle mr-1" alt="@friend.Email" width="40px" height="40px">
                                         <div class="flex-grow-1 ml-3">
                                             @friend.Email
-                                            <div class="small"><span class="fas fa-circle chat-online"></span> Online  </div>
                                         </div>
                                     </div>
                                 </a>
@@ -70,20 +67,17 @@
                                         <div class="col-lg-6">
 
                                             <img src="~/upload/@ViewBag.UserToChat.ImageProfile" alt="avatar" width="40px" height="40px">
-
+                                           
                                             <div class="chat-about">
 
                                                 <h6 class="m-b-0">@ViewBag.UserToChat.Email</h6>
-                                                <small>
-                                                    Aktywny 10 minut temu..
-                                                </small>
+                                               
                                             </div>
                                         </div>
                                         <div class="col-lg-6 hidden-sm text-right">
                                             <label for="file-input"><i class="btn btn-outline-secondary fa fa-file"></i></label>
-                                            <label for="image-input"><i class="btn btn-outline-primary fa fa-image"></i></label>
-                                            <a href="javascript:void(0);" class="btn btn-outline-info"><i class="fa fa-files-o"></i></a>
-                                            <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-file-picture-o"></i></a>
+                                            <label for="image-input"><i class="btn btn-outline-primary fa fa-image" ></i></label>
+                                            
 
 
                                         </div>
@@ -162,8 +156,8 @@
                                             <input type="hidden" name="authorId" value="@ViewBag.User.Id">
                                             <input type="hidden" name="authorName" value="@ViewBag.User.Email">
                                             <input type="hidden" name="appUserId" value="@ViewBag.UserToChat.Id"> @*//do notyfikacji*@
-                                            <input name="file" type="file" id="file-input" />
-                                            <input name="image" type="file" id="image-input" accept="image/*" />
+                                            <input name="file" type="file" id="file-input" onchange="createToast(2)" />
+                                            <input name="image" type="file" id="image-input" accept="image/*" onchange="createToast(1)" />
 
                                         </div>
                                         <input type="text" name="message" id="message-input" class="form-control">
@@ -216,7 +210,7 @@
             </div>
         </div>
     </main>
-
+    <img src="" />
 
 
     <input type="hidden" id="UserEmail" value="@ViewBag.UserToChat.Email">  @*//ukryty input aby przekazac go do javascript i wiedziac jak ukladac wiadomosci(kto jest nadawca)*@
@@ -246,6 +240,33 @@
         }
     </style>
     <script>
+       
+        
+       function createToast(type){
+           let text;
+           if(type==1){
+               text="Dodano zdjęcie!";
+           }else if(type==2){
+               text="Dodano plik!";
+           }
+            Toastify({
+                text: text,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
+       } 
+
+
+
 
         function emoji(emo) {
 
@@ -253,6 +274,15 @@
             var emotka = $(emo).text();
             var value = $("#message-input").val();
             $("#message-input").val(value + emotka);
+
+        }
+
+        function uploadFile() {
+
+           
+            //var value = $("#message-input").val();
+            //$("#message-input").val(value + "Dodano plik!" );
+            alert("dodano plik!");2
 
         }
 
@@ -265,24 +295,13 @@
         var connection = new signalR.HubConnectionBuilder()
             .withUrl("/chatHub")
             .build();
-
         var _connectionId = '';
 
-
-
-        connection.on("RecieveMessage", function (data) {
-            //var pow = $('<span/>', {
-            //    'id': 'notifications',
-            //    'class': 'badge rounded-pill badge-notification bg-danger',
-            //    'text': '.',
-            //});
-
-            //var dzwonekpow = document.getElementById('dzwonekPow');
-            //pow.appendTo(dzwonekpow);  //POWIADOMIENIA
+        connection.on("RecieveMessage", function (data) {            
 
             var message = document.createElement("ul")
             message.classList.add('m-b-0')
-            if (UserLogin != data.name) {//sprawdzam czy wczesniej podany userlopgin nalzy do odbiorcy/nadawcy
+            if (UserLogin != data.name) {
                 var li = document.createElement("li")
                 li.classList.add("clearfix")
 
@@ -293,8 +312,7 @@
                 var div1 = document.createElement("div")
                 div1.classList.add("message-data")
                 div1.classList.add("text-right")
-                div1.appendChild(span); //dolaczam wczesniej span do div1 aby byl w srodku div(wystylizowana data)
-
+                div1.appendChild(span); 
 
                 var div2 = document.createElement("div");
                 div2.classList.add("message");
@@ -310,37 +328,24 @@
                     file2.text = '  Pobierz';
                     div2.appendChild(file2);
                 }
-
                 var imagePath = data.image;
                 if (imagePath.length>5) {
+                    
                     var image = document.createElement('img');
                     image.src = '/upload/' + data.image;
                     image.classList.add("resImage");
                    
                     div2.appendChild(image);
                     d.scrollTop(d.prop("scrollHeight"));
-
-                }
-
-                //if (image.length > 5) {
-
-                //    var image = document.createElement('img');
-                //    image.src = '/upload/' + data.file;
-                //    div2.appendChild(image);
-                //}
+                }          
                 message.appendChild(li);
                 message.appendChild(div1);
-                //message.appendChild(span);
                 message.appendChild(div2);
-
-
 
                 var body = document.querySelector('.chat-history')
                 body.append(message);
 
-
-
-                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
+                d.scrollTop(d.prop("scrollHeight"));  
 
             } else {
                 var li = document.createElement("li")
@@ -367,31 +372,25 @@
                     file2.text = '  Pobierz';
                     div2.appendChild(file2);
                 }
-
                 var imagePath = data.image;
                 if (imagePath.length > 5) {
                     var image = document.createElement('img');
                     image.src = '/upload/' + data.image;
-                    image.classList.add("resImage");
-                   
-                   
+                    image.classList.add("resImage");                
                     div2.appendChild(image);
                     d.scrollTop(d.prop("scrollHeight"));
-
                 }
-
                 message.appendChild(li);
                 message.appendChild(div1);
-                //message.appendChild(span);
                 message.appendChild(div2);
 
                 var body = document.querySelector('.chat-history')
                 body.append(message);
-
-
-                d.scrollTop(d.prop("scrollHeight"));  //przewijanie w dol okna z chatem
+                d.scrollTop(d.prop("scrollHeight")); 
+               
             }
-            document.getElementById("dataForm").reset(); //resetowanie formularza zeby nie powtarzaly sie zdjecia i pliki przy wysl;aniu nastepnej wiadomosci bez przeladowania strony
+            document.getElementById("message-input").value = "";
+            data.image = "";
 
         })
 
@@ -426,13 +425,14 @@
             event.preventDefault();
             var data = new FormData(event.target);
 
-            document.getElementById('message-input').value = '';   //czysczenie inputu "message"
+            
 
 
 
             axios.post('/Chat/SendMessage', data)
                 .then(res => {
                     console.log("wiadomosc wyslana")
+                    
                 })
                 .catch(err => {
                     console.log("nie udalo sie wyslac")
@@ -445,6 +445,12 @@
                 .catch(err => {
                     console.log("powiadomienie niewyslane")
                 })
+
+            document.getElementById('message-input').value = '';
+            document.getElementById("image-input").value = "";
+            document.getElementById("file-input").value = "";
+
+            
 
         }
 

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4lsU4A1oxUnOTn6yuHk0TtgwG3SQsgpBvF8ZHhstHUI80cpLAk1OPC0Jn4ncHEWzMYOGjzKbEejLFDfTchSdaQ==",
+  "dgSpecHash": "qmdVRaW0UYxKZ42fdL3ekER7RAXWp4jIAcSNTLfl5ofq6yOnMekdJ77mIhNGm++fMfTbTuXJmh5rBWYq9Et3GQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Application\\PortalMonti.Application.csproj",
+  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Application\\PortalMonti.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\48797\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
@@ -99,7 +100,7 @@
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\48797\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

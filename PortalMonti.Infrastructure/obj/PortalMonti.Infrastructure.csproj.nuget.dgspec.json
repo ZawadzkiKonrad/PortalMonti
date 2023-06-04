@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {}
+    "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+    "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
         "projectName": "PortalMonti.Domain",
-        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
+        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Domain\\PortalMonti.Domain.csproj",
         "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\obj\\",
+        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -109,7 +109,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -118,18 +119,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
+    "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
         "projectName": "PortalMonti.Infrastructure",
-        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\48797\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\48797\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -146,8 +147,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
-                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
+              "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Domain\\PortalMonti.Domain.csproj": {
+                "projectPath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Domain\\PortalMonti.Domain.csproj"
               }
             }
           }
@@ -223,7 +224,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -232,7 +234,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,6 +13,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Extensions;
 using System.IO;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace PortalMonti.Web.Controllers
 {
@@ -24,13 +25,15 @@ namespace PortalMonti.Web.Controllers
         private Context _context;
         private IFriendService _friendService;
         private IImageService _imageService;
+        private readonly INotyfService _notyf;
 
-        public ChatController(IHubContext<ChatHub> chat, Context context, IFriendService friendService, IImageService imageService)
+        public ChatController(IHubContext<ChatHub> chat, Context context, IFriendService friendService, IImageService imageService,INotyfService notyf)
         {
             _chat = chat;
             _context = context;
             _friendService = friendService;
             _imageService = imageService;
+            _notyf = notyf;
         }
         [HttpPost("[action]/{connectionId}/{roomName}")]
         public async Task<IActionResult> JoinRoom(string connectionId, string roomName)
@@ -53,7 +56,9 @@ namespace PortalMonti.Web.Controllers
             string imagePath = string.Empty;
             if (image!=null)
             {
+
                 imagePath = _imageService.UploadFile(image);
+               
             };
 
             string filePath=string.Empty;
@@ -85,6 +90,8 @@ namespace PortalMonti.Web.Controllers
                     File = msg.File,
                     Image=msg.Image
                 }); ;
+           
+            
 
             return Ok();
         }
@@ -92,7 +99,7 @@ namespace PortalMonti.Web.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> SendNotification(string appUserId,string authorId,string authorName)
         {   var AuthorUser= _context.Users.FirstOrDefault(x => x.Id == authorId);
-            var not = new Notification() { Text = "nowa wiadomość",AuthorId=authorId,AuthorName=authorName,AuthorImage=AuthorUser.ImageProfile };
+            var not = new PortalMonti.Domain.Model.Notification() { Text = "nowa wiadomość",AuthorId=authorId,AuthorName=authorName,AuthorImage=AuthorUser.ImageProfile };
             
             var user = _context.Users.FirstOrDefault(x => x.Id == appUserId);
             user.Notifications.Add(not);

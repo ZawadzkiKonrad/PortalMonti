@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FzDWssnDmTBTxYNcnB+E51Zqzg1UpmU5JvyeC7W3ggeV98ye7Wmb2+vdqcxSkUDUx94ZzDjqh661yVtpUHqoXg==",
+  "dgSpecHash": "eYts6qVWe/VzygdLHtdWCv+0Ho985gTlbVzxfVKC+1R64Z4QWGTzf6tpQzd6K4SzkFrMS2qfP4A99bhk6QtDfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Web\\PortalMonti.Web.csproj",
+  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Web\\PortalMonti.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\48797\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\fluentvalidation\\10.3.4\\fluentvalidation.10.3.4.nupkg.sha512",
@@ -100,7 +101,7 @@
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
-    "C:\\Users\\48797\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\serilog\\2.5.0\\serilog.2.5.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\serilog.extensions.logging\\2.0.2\\serilog.extensions.logging.2.0.2.nupkg.sha512",
@@ -188,7 +189,8 @@
     "C:\\Users\\48797\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\48797\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\48797\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\48797\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }

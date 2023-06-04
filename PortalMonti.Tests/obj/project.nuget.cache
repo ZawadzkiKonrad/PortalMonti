@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9J9hWYT7yNzEJQxZEM4Phz4xgQj0iQgqQctCWQZt3ih033/nynM93hQbV52KuhNVNfJQVelAHMpHfah7vJ/VTQ==",
+  "dgSpecHash": "dPpVPKX8GPGfUiOQKrUSLU1DC3/hD2FWHMVE85XRIKkmLskQBgCRPGBfde2UlkLVGBdgAZtnrLd6zedVzf6pHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Tests\\PortalMonti.Tests.csproj",
+  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Tests\\PortalMonti.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48797\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",

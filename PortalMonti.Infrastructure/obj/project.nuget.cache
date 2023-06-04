@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qGijwde1gwfWYBTuwPO7lyPWbdUryoAsKk+v44FkRu8doL4qZlM0xF9BJJvhBux1q7mkKLu1O/tVXJkqRCFC9Q==",
+  "dgSpecHash": "oJadT9mEb2eBsI62r/6YIDd8btEz9DI/7lKcfLwSlXQhDvSzzQk46Dsyveb1a98W4TyeucP2sk/s95hqgQD6Fg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\48797\\Documents\\web\\PortalMonti — kopia (2)backup\\PortalMonti.Infrastructure\\PortalMonti.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48797\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\48797\\.nuget\\packages\\jquery\\1.8.0\\jquery.1.8.0.nupkg.sha512",

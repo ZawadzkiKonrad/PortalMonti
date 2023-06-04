@@ -11,22 +11,26 @@ using System.Text;
 using System.Threading.Tasks;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace PortalMonti.Application.Services
 {
     public class ImageService : IImageService
 
     {
+        private readonly INotyfService _notyf;
         private readonly IImageRepository _imageRepo;
        
-        public ImageService(IImageRepository imageRepo)
+        public ImageService(IImageRepository imageRepo, INotyfService notyf)
         {
             _imageRepo = imageRepo;
-            
+            _notyf = notyf;
+
         }
         public string AddImage(IFormFile file)
         {
-           var path=  UploadFile(file);
+            _notyf.Success("Success Notification");
+            var path=  UploadFile(file);
             PortalMonti.Domain.Model.Image image = new PortalMonti.Domain.Model.Image()
             {
                 Path = path,

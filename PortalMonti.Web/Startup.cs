@@ -29,6 +29,8 @@ using PortalMonti.Web.Hubs;
 using PortalMonti.Domain.Model;
 using Newtonsoft.Json.Serialization;
 using OnlineUsers;
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 
 namespace PortalMonti.Web
 {
@@ -85,8 +87,9 @@ namespace PortalMonti.Web
                 options.ClientSecret = googleAuthNSection["ClientSecret"];
             });
             services.AddSignalR();
-            
-            
+
+            services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -124,6 +127,7 @@ namespace PortalMonti.Web
                 endpoints.MapHub<ChatHub>("/chatHub");
                 endpoints.MapHub<OnlineUsersHub>("/onlineUsersHub");
             });
+            app.UseNotyf();
         }
     }
 }

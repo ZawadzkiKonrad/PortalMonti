@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\" />
-  <dbfullsql path="C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\obj\Release\net5.0\PubTmp\EFSQLScripts\PortalMonti.Infrastructure.Context.sql" />
+  <IisApp path="C:\Users\48797\Documents\web\PortalMonti — kopia (2)backup\PortalMonti.Web\obj\Release\net5.0\PubTmp\Out\" />
 </sitemanifest>

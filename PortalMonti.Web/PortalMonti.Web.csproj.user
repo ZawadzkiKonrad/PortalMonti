@@ -13,7 +13,7 @@
     <_SelectedScaffolderCategoryPath>root/Identity</_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_LayoutPageFile />
     <ActiveDebugProfile>PortalMonti.Web</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>C:\Users\48797\Documents\web\PortalMonti\PortalMonti.Web\Properties\PublishProfiles\Default Settings.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\48797\Documents\web\PortalMonti — kopia %282%29backup\PortalMonti.Web\Properties\PublishProfiles\portalmonti.hostingasp.pubxml</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_DbContextTypeFullName>PortalMonti.Infrastructure.Context</WebStackScaffolding_DbContextTypeFullName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
